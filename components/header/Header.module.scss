@@ -1,0 +1,40 @@
+#headerMainPage{
+    display: flex;
+    background-color: #EEE;
+    justify-content: space-around;
+}
+#segundaSessao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+}
+#listaNaoOrdenada{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 400px;
+}
+.links{
+    color: #053B50;
+    text-decoration: none;
+    font-weight: 700;
+}
+#boxPesquisa{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #053B50;
+    border-radius: 5px;
+
+}
+#btnPesquisa{
+    height: 100%;
+    border: none;
+    padding: 0 10px;
+}
+#entradaPesquisa{
+    height: 100%;  
+    border: none;
+    background-color: #EEE;
+}
