@@ -8,6 +8,7 @@ import arrowRight from "@/public/icons/arrow_right_white.png"
 import Header from '@/components/header/Header';
 
 import { robotoFlex } from '@/fonts/font';
+import Footer from '@/components/footer/Footer';
 
 export default function Home() {
   return (
@@ -50,7 +51,7 @@ export default function Home() {
 
             </div>
           </main>
-          <footer>
+          <div>
             <nav id={styles.navegacao}>
               <a className={styles.paises} href="">Brasília</a>
               <a className={styles.paises} href="">Sydney</a>
@@ -62,7 +63,8 @@ export default function Home() {
               <a className={styles.paises} href="">Johannesburgo</a>
               <a className={styles.paises} href="">São Paulo</a>
             </nav>
-          </footer>
+          </div>
+          <Footer/>
         </div>
       </div>
     </div>

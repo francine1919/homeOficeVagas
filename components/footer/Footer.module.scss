@@ -1,0 +1,90 @@
+@import '../../styles/cores.module.scss';
+
+#footerIndex{
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+#aboutUsOne{
+    display: flex;
+    align-items: center;
+}
+#imgAboutUs{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+#verticalLineAboutUs{
+    width: 3px;
+    height: 70px;
+    background-color: $secondary-color;
+}
+#descriptionAboutUs{
+    color: $secondary-color;
+    width: 150px;
+    margin-left: 20px;
+}
+#aboutUsTwo{
+    margin-top: 30px;
+}
+.titleFooter{
+    color: $secondary-color;
+    margin-bottom: 10px;
+}
+#descriptionAboutUsTwo{
+    width: 300px;
+    color: $secondary-color;
+}
+.descriptionFooter{
+    color: $secondary-color;
+    display: block;
+    margin-bottom: 8px;
+}
+.unList{
+    list-style: none;
+}
+.boxIconsContactUs{
+    display: flex;
+}
+.icons{
+    margin-right: 10px;
+}
+#boxRegister{
+    display: flex;
+    flex-direction: column;
+}
+#inputRegister{
+    border: 2px solid $secondary-color;
+    height: 40px;
+    width: 220px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+#btnRegister{
+    width: 120px;
+    background-color: $secondary-color;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: $primary-color;
+    }
+}
+#rights{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pgraphRights{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+}
+.registerTitle{
+    width: 270px;
+}
