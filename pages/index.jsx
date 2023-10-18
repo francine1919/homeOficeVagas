@@ -30,7 +30,7 @@ export default function Home() {
                   <Image src={logoMain} alt="Logo HomeOfficeVagas" height={200} width={200}/>
                 </div>
                 <h1 id={styles.tituloDaPagina}>Na Home Office Vagas, você encontra sua vaga Home Office num piscar de olhos.</h1>
-                <Image src={arrowRight} alt="" width={200}/>
+                <Image src={arrowRight} alt="seta a direita" width={200}/>
               </div>
 
               <div id={styles.boxPesquisa}>

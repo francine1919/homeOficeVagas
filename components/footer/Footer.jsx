@@ -14,7 +14,7 @@ export default function Footer(){
             <div id={styles.footerIndex}>
                 <div id={styles.aboutUs}>
                     <div id={styles.aboutUsOne}>
-                        <Image id={styles.imgAboutUs} src={logo} height={200} width={300}/>
+                        <Image id={styles.imgAboutUs} src={logo} height={200} width={300} alt="Logo"/>
                         <div id={styles.verticalLineAboutUs}></div>
                         <h4 id={styles.descriptionAboutUs}>A sua vaga internacional está aqui!</h4>
                     </div>
@@ -64,13 +64,13 @@ export default function Footer(){
                 <div id={styles.contactUs}>
                     <h3 className={styles.titleFooter}>Contate-nos</h3>
                     <div className={styles.boxIconsContactUs}>
-                        <Image className={styles.icons} src={iconTell} height={20} width={20}/>
+                        <Image className={styles.icons} src={iconTell} height={20} width={20} alt="icone de telefone"/>
                         <div>
                             <span className={styles.descriptionFooter}>61 9 9244-4596</span>
                         </div>
                     </div>
                     <div className={styles.boxIconsContactUs}>
-                        <Image className={styles.icons} src={iconEmail} height={20} width={20}/>
+                        <Image className={styles.icons} src={iconEmail} height={20} width={20} alt="icone de email"/>
                         <div>
                             <span className={styles.descriptionFooter}>homeofficevagas@gmail.com</span>
                         </div>

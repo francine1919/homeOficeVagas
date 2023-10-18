@@ -1,40 +1,57 @@
+@import "../../styles/cores.module.scss";
+
 #headerMainPage{
+    height: 120px;
     display: flex;
-    background-color: #EEE;
+    background-color: #f1f1f1;
     justify-content: space-around;
+    align-items: center;
+}
+#logo{
+    
 }
 #segundaSessao{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 700px;
+    width: 800px;
 }
-#listaNaoOrdenada{
+#unOrdenedList{
     display: flex;
     justify-content: space-between;
     list-style: none;
-    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
 }
 .links{
-    color: #053B50;
     text-decoration: none;
+    color: $primary-color;
     font-weight: 700;
 }
-#boxPesquisa{
-    height: 40px;
-    display: flex;
-    align-items: center;
-    border: 2px solid #053B50;
-    border-radius: 5px;
+#boxSearch{
 
 }
-#btnPesquisa{
-    height: 100%;
-    border: none;
-    padding: 0 10px;
+#entrySearch{
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-right: 5px;
+    background-color: #f1f1f1;
+    border: 2px solid $primary-color;
 }
-#entradaPesquisa{
-    height: 100%;  
+#btnSearch{
+    background-color: $primary-color;
+    color: #fff;
     border: none;
-    background-color: #EEE;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover{
+        background-color: $secondary-color;
+    }
+}
+#teste{
+    border-bottom: 2px solid $primary-color;
 }
