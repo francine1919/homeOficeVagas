@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import logo from "@/public/imgs/logo-um-recorte.png";
+import logo from "@/public/logos/logo-um-recorte.png";
 import Link from "next/link";
 
 import iconEmail from "@/public/icons/email_icon.png";
