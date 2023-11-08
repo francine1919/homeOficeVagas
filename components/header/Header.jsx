@@ -1,6 +1,6 @@
 import styles from "./Header.module.scss";
 
-import logoHeader from "../../public/imgs/logo-tres-copia.png"
+import logoHeader from "../../public/logos/logo-tres-copia.png"
 
 import Image from "next/image";
 import Link from "next/link";

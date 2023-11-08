@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import styles from "@/styles/index.module.scss";
 
-import logoMain from "@/public/imgs/logo-um.png";
+import logoMain from "@/public/logos/logo-um.png";
 import arrowRight from "@/public/icons/arrow_right_white.png"
 import Header from '@/components/header/Header';
 
