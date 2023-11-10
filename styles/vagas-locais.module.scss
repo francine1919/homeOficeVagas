@@ -1,0 +1,206 @@
+@import "./cores.module.scss";
+
+
+#vagasLocais{
+    background-color: #f1f1f1;
+}
+/* INICIO FORM */
+#filterForm{
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 20px;
+}
+#boxForm{
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+#entryJob, .entrySelect{
+    display: block;
+    height: 40px;
+    width: 220px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    padding-left: 10px;
+    color: $primary-color;
+}
+#btnFilter{
+    width: 220px;
+    height: 40px;
+    background-color: $secondary-color;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/* FIM FORM */
+
+
+/* INICIO CONTENT */
+#content{
+    width: 85%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+/* INICIO BANNER */
+#banner{
+    height: 450px;
+    width: 300px;
+    background-image: url(../public/localJobs/foto_1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#bgBanner{
+    background-color: #000000a8;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contentBanner{
+    height: 80%;
+    width: 85%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#titleBanner{
+    font-size: 16px;
+    border-left: 2px solid #fff;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+.descriptionBanner{
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding-left: 12px;
+}
+#likeIdea{
+    font-size: 13px;
+    padding-left: 12px;
+    margin-top: 30px;
+}
+/* FIM BANNER */
+#boxLinkBanner{
+    display: flex;
+    justify-content: center;
+}
+#wantBanner{
+    display: block;
+    border: 2px solid #fff;
+    width: 150px;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 50px;
+    color: #fff;
+    font-size: 13px;
+}
+#boxCards{
+    
+}
+/* FIM CONTENT */
+/* INICIO BOTAO MOSTRAR MAIS */
+#boxBtnShowMore{
+    width: 85%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+#btnShowMore{
+    width: 750px;
+    font-size: 18px;
+    background-color: $secondary-color;
+    color: #fff;
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+}
+/* FIM BOTAO MOSTRAR MAIS */
+
+/* INICIO SEARCHBY */
+#searchBy{
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px 0 100px;
+}
+#boxTitleSearchBy{
+    width: 1100px;
+    margin: 50px 0;
+}
+#titleSearchBy{
+    color: #fff;
+    font-size: 20px;
+}
+#unListSearchBy{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    list-style: none;
+    width: 1100px;
+}
+.linkSearchBy{
+    color: $third-color;
+    text-decoration: none;
+}
+
+/* FIM SEARCHBY */
+
+/* INICIO SECTION WEBTECH */
+#sectionWebTech{
+    background-color: #001C31;
+    display: flex;
+    justify-content: center;
+}
+#contentWebtech{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#boxTitleWebtech{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    width: 75%;
+}
+#titleWebtech{
+    color: #fff;
+    font-size: 20px;
+}
+#webtechWantSite{
+    background-color: $primary-color;
+    color: #fff;
+    text-decoration: none;
+    width: 150px;
+    text-align: center;
+    padding: 10px 0;
+}
+#boxImgWebTech{
+}
+#webtech{
+    color: $secondary-color;
+}
+#imgWebtech{
+    width: 200px;
+    height: 100px;
+}
+/* FIM SECTION WEBTECH */
+
+
+
+
+
+
+
+
+
+
+

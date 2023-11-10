@@ -1,0 +1,55 @@
+@import "../../styles/cores.module.scss";
+
+.card{
+    border: 2px solid $secondary-color;
+    width: 750px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+.boxTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    background-color: $primary-color;
+    color: #fff;
+    padding: 15px 50px;
+    margin: 20px 0;
+    font-size: 20px;
+}
+.remuneration{
+    color: #575E7D;
+    margin-right: 50px;
+}
+.descriptionJob{
+    color: #4D4B4B;
+    padding: 0 50px;
+    margin-bottom: 30px;
+}
+.boxAboutJob{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin-bottom: 30px;
+}
+.showJob{
+    background-color: $secondary-color;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    width: 180px;
+    text-align: center;
+    border-radius: 5px;
+}
+.unList{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+.tags{
+    color: $secondary-color;
+}
