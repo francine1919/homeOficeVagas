@@ -1,206 +1,262 @@
 @import "./cores.module.scss";
 
-
 #vagasLocais{
-    background-color: #f1f1f1;
-}
-/* INICIO FORM */
-#filterForm{
     background-color: $primary-color;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px 20px;
 }
-#boxForm{
-    display: flex;
-    justify-content: space-between;
-    width: 800px;
-}
-#entryJob, .entrySelect{
-    display: block;
-    height: 40px;
-    width: 220px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    padding-left: 10px;
-    color: $primary-color;
-}
-#btnFilter{
-    width: 220px;
-    height: 40px;
-    background-color: $secondary-color;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-/* FIM FORM */
-
-
-/* INICIO CONTENT */
-#content{
-    width: 85%;
-    margin: 50px auto;
-    display: flex;
-    justify-content: space-between;
-}
-/* INICIO BANNER */
-#banner{
-    height: 450px;
-    width: 300px;
-    background-image: url(../public/localJobs/foto_1.jpg);
+/* INICIO BANNER ONE */
+#bannerOne{
+    height: 300px;
+    width: 100%;
+    margin: 50px 0;
+    background-image: url(../public/localJobs/banner_one.jpg);
     background-size: cover;
     background-position: center;
 }
-#bgBanner{
-    background-color: #000000a8;
+#bgBannerOne{
+    background-color: #1e1e1ec5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#contentBannerOne{
+    display: flex;
+    align-items: center;
+}
+#boxTitleOne{
+    display: flex;
+    justify-content: flex-end;
+    width: 350px;
+    padding: 10px 30px;
+    border-top: 2px solid $third-color;
+    border-bottom: 2px solid $third-color;
+    border-right: 2px solid $third-color;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#titleBannerOne{
+    color: #fff;
+}
+#boxDescriptionOne{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+#descriptionBannerOne{
+    width: 80%;
+}
+/* FIM BANNER ONE */
+#mainContent{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    border-top: 3px solid #fff;
+    padding: 50px 0;
+}
+/* INICIO BOX FILTER */
+#boxFilter{
+    background-color: $secondary-color;
+    width: 300px;
+    padding: 30px 0;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+#titleMainFilter{
+    color: #fff;
+    background-color: $primary-color;
+    text-align: center;
+    padding: 15px 0;
+}
+#formFilter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#boxMainForm{
+    margin: 20px 0;
+}
+.boxInputs{
+    display: flex;
+    flex-direction: column;
+    
+}
+.titleFilter{
+    color: #fff;
+    padding: 10px 0;
+    font-size: 15px;
+}
+.entrysFilter{
+    border: 2px solid #fff;
+    background-color: $secondary-color;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    color: #fff;
+}
+#btnFilter{
+    background-color: $primary-color;
+    color: #fff;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+/* FIM BOX FILTER */
+
+/* INICIO BANNER TWO */
+#bannerTwo{
+    width: 300px;
+    height: 550px;
+    background-image: url(../public//localJobs/banner_two.jpg);
+    background-size: cover;
+}
+#bgBannerTwo{
+    background-color: rgba(30, 30, 30, 0.603);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#contentBannerTwo{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#titleBannerTwo{
+    color: #FF6B00;
+    text-align: center;
+    font-size: 20px;
+    width: 85%;
+}
+.descriptionTwo{
+    color: #fff;
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#boxDescriptionTwo{
+    width: 80%;
+}
+#btnWantBanner{
+    display: block;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+}
+/* FIM BANNER TWO */
+#btnShowMoreJobs{
+    background-color: $secondary-color;
+    width: 100%;
+    border:none;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: #07769b;
+    }
+}
+/* INICIO ADVERTISING */
+#advertising{
+    height: 300px;
+    margin: 50px 0;
+    background-image: url(../public/localJobs/banner_tree.jpg);
+    background-size: cover;
+    background-position: 0px -250px;
+}
+#bgAdvertising{
+    background-color: #1e1e1e9f;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#contentBanner{
-    height: 80%;
-    width: 85%;
+#contentAdvertising{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#boxDescritionAdvertising{
+}
+#titleAdvertising{
+    color: $third-color;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+#descriptionAdvertising{
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 80%;
 }
-#titleBanner{
-    font-size: 16px;
-    border-left: 2px solid #fff;
-    padding-left: 10px;
-    margin-bottom: 25px;
-}
-.descriptionBanner{
-    font-size: 13px;
-    margin-bottom: 20px;
-    padding-left: 12px;
-}
-#likeIdea{
-    font-size: 13px;
-    padding-left: 12px;
-    margin-top: 30px;
-}
-/* FIM BANNER */
-#boxLinkBanner{
-    display: flex;
-    justify-content: center;
-}
-#wantBanner{
+#wantBannerTwo{
     display: block;
     border: 2px solid #fff;
-    width: 150px;
-    padding: 10px 0;
-    text-align: center;
+    color: #fff;
     text-decoration: none;
-    margin-top: 50px;
-    color: #fff;
-    font-size: 13px;
-}
-#boxCards{
-    
-}
-/* FIM CONTENT */
-/* INICIO BOTAO MOSTRAR MAIS */
-#boxBtnShowMore{
-    width: 85%;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 auto;
-}
-#btnShowMore{
-    width: 750px;
-    font-size: 18px;
-    background-color: $secondary-color;
-    color: #fff;
     padding: 15px 0;
-    border: none;
+    text-align: center;
+    width: 200px;
     border-radius: 5px;
 }
-/* FIM BOTAO MOSTRAR MAIS */
+/* FIM ADVERTISING */
 
-/* INICIO SEARCHBY */
-#searchBy{
-    background-color: $primary-color;
+/* INICIO BLOG */
+#blogSection{
+    width: 85%;
+    margin: 100px auto;
+}
+#titleMainBlog{
+    display: inline-block;
+    font-size: 40px;
+    border-left: 3px solid #fff;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+#contentBlog{
+    margin: 50px 0;
+    
+}
+.boxBlog{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.cardsBlog{
+    width: 500px;
+    border: 2px solid $third-color;
+    padding: 25px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 150px 0 100px;
-}
-#boxTitleSearchBy{
-    width: 1100px;
-    margin: 50px 0;
-}
-#titleSearchBy{
-    color: #fff;
-    font-size: 20px;
-}
-#unListSearchBy{
-    display: flex;
     justify-content: space-between;
-    margin-bottom: 70px;
-    list-style: none;
-    width: 1100px;
+    text-decoration: none;
+    transition: 0.6s;
+    &:hover{
+        background-color: #034661;
+    }
 }
-.linkSearchBy{
+.titleBlog{
     color: $third-color;
-    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 25px;
 }
-
-/* FIM SEARCHBY */
-
-/* INICIO SECTION WEBTECH */
-#sectionWebTech{
-    background-color: #001C31;
-    display: flex;
-    justify-content: center;
-}
-#contentWebtech{
-    width: 85%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-#boxTitleWebtech{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 150px;
-    width: 75%;
-}
-#titleWebtech{
+.descriptionBlog{
     color: #fff;
-    font-size: 20px;
+    margin-bottom: 20px;
 }
-#webtechWantSite{
-    background-color: $primary-color;
+.dateBlog{
     color: #fff;
-    text-decoration: none;
-    width: 150px;
-    text-align: center;
-    padding: 10px 0;
 }
-#boxImgWebTech{
-}
-#webtech{
-    color: $secondary-color;
-}
-#imgWebtech{
-    width: 200px;
-    height: 100px;
-}
-/* FIM SECTION WEBTECH */
-
-
-
-
-
-
-
-
-
+/* FIM BLOG */
 
 
