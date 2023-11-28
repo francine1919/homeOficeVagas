@@ -24,31 +24,33 @@ export default function Home() {
         <div id={styles.conteudo}>
           <main>
             <div id={styles.mainContent}>
-
-              <div>
+              <div id={styles.tituloPrincipal}>
                 <div>
-                  <Image src={logoMain} alt="Logo HomeOfficeVagas" height={200} width={200}/>
+                  <Image id={styles.fotoLogoMain} src={logoMain} alt="Logo HomeOfficeVagas" height={200} width={200} />
                 </div>
-                <h1 id={styles.tituloDaPagina}>Na Home Office Vagas, você encontra sua vaga Home Office num piscar de olhos.</h1>
-                <Image src={arrowRight} alt="seta a direita" width={200}/>
+                <div id={styles.titulo}>
+                  <h1 id={styles.tituloDaPagina}>Na Home Office Vagas, você encontra sua vaga Home Office num piscar de olhos.</h1>
+                  <p id={styles.textoDoTitulo}>VENHA VER COMO É FACIL DE SE CONSEGUIR UM EMPREGO</p>
+                </div>
+                <Image id={styles.fotoSetaaDireita} src={arrowRight} alt="seta a direita" width={200} />
               </div>
-
-              <div id={styles.boxPesquisa}>
-                <h2 id={styles.tituloForm}>Busque suas vagas aqui!</h2>
-                <form id={styles.formPesquisa} action="#">
-                  <input className={styles.entradasForm} type="text" placeholder="Busque por Titulo"/>
-                  <select className={styles.entradasForm} name="" id="">
-                    <option value="">Argentina</option>
-                    <option value="">Uruguai</option>
-                    <option value="">Egito</option>
-                  </select>
-                  <select className={styles.entradasForm} name="" id="">
-                    <option value="">Montevídeu</option>
-                  </select>
-                  <button id={styles.btnBuscar}>Buscar</button>
-                </form>
+              <div id={styles.boxPesquisar}>
+                <div id={styles.boxPesquisa}>
+                  <h2 id={styles.tituloForm}>Busque suas vagas aqui!</h2>
+                  <form id={styles.formPesquisa} action="#">
+                    <input className={styles.entradasForm} type="text" placeholder="Busque por Titulo" />
+                    <select className={styles.entradasForm} name="" id="">
+                      <option value="">Argentina</option>
+                      <option value="">Uruguai</option>
+                      <option value="">Egito</option>
+                    </select>
+                    <select className={styles.entradasForm} name="" id="">
+                      <option value="">Montevídeu</option>
+                    </select>
+                    <button id={styles.btnBuscar}>Buscar</button>
+                  </form>
+                </div>
               </div>
-
             </div>
           </main>
           <div>
