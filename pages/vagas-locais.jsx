@@ -4,17 +4,17 @@ import Header from "@/components/header/Header";
 
 import Link from "next/link";
 
-import styles from "@/styles/vagas-locais.module.scss";
+import styles from "@/styles/vagas.module.scss";
 import { robotoFlex } from "@/fonts/font";
 
 import Footer from "@/components/footer/Footer";
 
 export default function VagasLocais() {
   return (
-    <div id={styles.vagasLocais} className={robotoFlex.className}>
+    <div id={styles.vagas} className={robotoFlex.className}>
       <Header/>
 
-      <div id={styles.bannerOne}>
+      <div id={styles.bannerOne} className={styles.bannerOneLocal}>
         <div id={styles.bgBannerOne}>
           <div id={styles.contentBannerOne}>
             <div id={styles.boxTitleOne}>
@@ -58,7 +58,7 @@ export default function VagasLocais() {
             </form>
           </div>
           
-          <div id={styles.bannerTwo}>
+          <div id={styles.bannerTwo} className={styles.bannerTwoLocal}>
             <div id={styles.bgBannerTwo}>
               <div id={styles.contentBannerTwo}>
                 <h3 id={styles.titleBannerTwo}>Anuncie sua empresa com a gente!</h3>
@@ -80,7 +80,7 @@ export default function VagasLocais() {
         </div>
       </main>
 
-      <div id={styles.advertising}>
+      <div id={styles.advertising} className={styles.bannerTreeLocal}>
         <div id={styles.bgAdvertising}>
           <div id={styles.contentAdvertising}>
             <div id={styles.boxDescritionAdvertising}>
