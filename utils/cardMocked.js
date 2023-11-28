@@ -1,6 +1,6 @@
 export const dataCards = [
   {
-    tituloDaVaga: "Scrum Master / Silper",
+    tituloDaVaga: "Secretariado com APX",
     formaDeRemuneracao: "A combinar",
     descricaoDaVaga: "Estamos precisando de um profissional da área que saiba mexer com Figma, CorelDraw, InDesign e Canva. O trabalho é somente para pessoas com EXPERIÊNCIA.",
     tags: {
