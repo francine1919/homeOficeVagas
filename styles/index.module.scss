@@ -60,3 +60,77 @@
     color: #fff;
     text-decoration: none;
 }
+#textoDoTitulo{
+    display: none;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    #mainContent{
+        display: flex;
+        flex-direction: column;
+    }
+    #fotoLogoMain{
+        display: none;
+    }
+    #fotoSetaaDireita{
+        display: none;
+    }
+    #tituloPrincipal{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    #titulo{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 86%;
+        height: 260px;
+        border-bottom: solid 2px #FFFFFF;
+        border-top: solid 2px #FFFFFF;
+        margin-bottom: 40px;
+    }
+    #tituloDaPagina{
+        font-size: 27px;
+        width: 100%;
+    }
+    #textoDoTitulo{
+        display: block;
+        color: #64CCC5C4;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+
+    }
+    #boxPesquisar{
+        display: flex;
+        justify-content: center;
+    }
+    #boxPesquisa{
+        border: solid 1px  #FFFFFF;
+        border-radius: 3px;
+    }
+    #tituloForm{
+        font-size: 15px;
+        margin-bottom: 50px;
+    }
+    .entradasForm{
+        margin-bottom: 30px;
+    }
+    #btnBuscar{
+       margin-top: 15px;
+    }
+    #navegacao{
+        display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .paises {
+        flex-basis: calc(23% - 10px);
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 12px;
+      }
+}
+@media screen and (min-width: 320px) and (max-width: 460px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 1025px) and (max-width: 1200px) {}
