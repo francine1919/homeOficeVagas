@@ -11,7 +11,7 @@ import { robotoFlex } from "@/fonts/font";
 export default function Header() {
   return (
     <header id={styles.headerMainPage} className={robotoFlex.className}>
-      <Image id={styles.logo} src={logoHeader} alt="Home Office Vagas" width={300} />
+      <Link href="/"><Image id={styles.logo} src={logoHeader} alt="Home Office Vagas"/></Link>
       <div id={styles.secondSection}>
         <nav>
           <ul id={styles.unOrdenedList}>

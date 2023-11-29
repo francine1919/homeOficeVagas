@@ -73,7 +73,7 @@ export default function VagasLocais() {
           </div>
         </div>
 
-        <div>
+        <div id={styles.sectionCards}>
           <CardJobs/>
           <CardJobs/>
           <button id={styles.btnShowMoreJobs}>Mais vagas</button>

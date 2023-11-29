@@ -69,7 +69,7 @@ export default function VagasInternacionais() {
           </div>
         </div>
 
-        <div>
+        <div id={styles.sectionCards}>
           <CardJobs/>
           <CardJobs/>
           <button id={styles.btnShowMoreJobs}>Mais vagas</button>
