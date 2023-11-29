@@ -1,277 +1,530 @@
 @import "./cores.module.scss";
 
 /* INICIO BANNER */
-#contactPage{
-    background-color: $primary-color;
+#contactPage {
+  background-color: $primary-color;
 }
-#banner{
-    padding: 50px 0;
+
+#banner {
+  padding: 50px 0;
 }
-#bgBanner{
-    background-image: url(../public/contact/banner.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 350px;
+
+#bgBanner {
+  background-image: url(../public/contact/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 350px;
 }
-#bgFrontBanner{
-    height: 100%;
-    background-color: #1e1e1eb9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+#bgFrontBanner {
+  height: 100%;
+  background-color: #1e1e1eb9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#content{
-    display: flex;
-    width: 85%;
+
+#content {
+  display: flex;
+  width: 85%;
 }
-#titlesContact{}
-#titleBanner{
-    color: #fff;
-    font-size: 40px;
-    width: 50%;
-    margin-bottom: 50px;
+
+#titlesContact {}
+
+#titleBanner {
+  color: #fff;
+  font-size: 40px;
+  width: 50%;
+  margin-bottom: 50px;
 }
-#descriptionBanner{
-    color: #64CCC5;
-    width: 80%;
+
+#descriptionBanner {
+  color: #64CCC5;
+  width: 80%;
 }
-#boxLinksPartners{
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
+
+#boxLinksPartners {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
-#linkPartnerSite{
-    display: block;
-    color: #fff;
-    border: 2px solid #fff;
-    width: 180px;
-    padding: 10px 0;
-    text-align: center;
-    text-decoration: none;
+
+#linkPartnerSite {
+  display: block;
+  color: #fff;
+  border: 2px solid #fff;
+  width: 180px;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
 }
-#linkPartner{
-    background-color:  $primary-color;
-    color: #fff;
-    border: 2px solid  $primary-color;
-    text-decoration: none;
-    padding: 10px 0;
-    width: 180px;
-    text-align: center;
+
+#linkPartner {
+  background-color: $primary-color;
+  color: #fff;
+  border: 2px solid $primary-color;
+  text-decoration: none;
+  padding: 10px 0;
+  width: 180px;
+  text-align: center;
 }
+
 /* FIM BANNER */
 
 /* INICIO MAINCONTENT */
-#mainContent{
-    margin: 0 auto;
-    width: 85%;
+#mainContent {
+  margin: 0 auto;
+  width: 85%;
 }
-#sectionMainContact{
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid $third-color;
-    padding: 50px;
-    border-radius: 20px;
+
+#sectionMainContact {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid $third-color;
+  padding: 50px;
+  border-radius: 20px;
 }
-#titleMainContact{
-    color: #fff;
+
+#titleMainContact {
+  color: #fff;
 }
-.descripitonMainContact{
-    color: $third-color;
+
+.descripitonMainContact {
+  color: $third-color;
 }
-#boxLinkMainContact{
-    display: flex;
-    column-gap: 10px;
+
+#boxLinkMainContact {
+  display: flex;
+  column-gap: 10px;
 }
-.whiteLink{
-    display: block;
-    background-color: #fff;
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    text-decoration: none;
-    color: $primary-color;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 5px;
+
+.whiteLink {
+  display: block;
+  background-color: #fff;
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  color: $primary-color;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
 }
-.blueLink{
-    display: block;
-    background-color: $secondary-color;
-    color: #fff;
-    text-decoration: none;
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    border-radius: 5px;
+
+.blueLink {
+  display: block;
+  background-color: $secondary-color;
+  color: #fff;
+  text-decoration: none;
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 5px;
 }
-#mainTextContact{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+
+#mainTextContact {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-#titleMainContact{
-    font-size: 40px;
-    margin-bottom: 30px;
+
+#titleMainContact {
+  font-size: 40px;
+  margin-bottom: 30px;
 }
-.descripitonMainContact{
-    margin-bottom: 30px;
-    width: 75%;
+
+.descripitonMainContact {
+  margin-bottom: 30px;
+  width: 75%;
 }
+
 /* INICIO FORM */
-#sectionForm{
+
+
+#boxForm {
+  background-color: #fff;
+  width: 350px;
+  border-radius: 20px;
 }
-#boxForm{
-    background-color: #fff;
-    width: 350px;
-    border-radius: 20px;
+
+#formPage {
+  width: 80%;
+  margin: 0 auto;
 }
-#formPage{
-    width: 80%;
-    margin: 0 auto;
+
+#titleForm {
+  color: $primary-color;
+  font-size: 15px;
+  border-bottom: 2px solid $primary-color;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 0;
+  margin-bottom: 30px;
 }
-#titleForm{
-    color: $primary-color;
-    font-size: 15px;
-    border-bottom: 2px solid $primary-color;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px 0;
-    margin-bottom: 30px;
+
+.boxInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.boxInputs{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
+.titleEntrys {
+  color: #979797;
+  margin-bottom: 5px;
 }
-.titleEntrys{
-    color: #979797;
-    margin-bottom: 5px;
+
+.entrys {
+  border: 2px solid $secondary-color;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
-.entrys{
-    border: 2px solid $secondary-color;
-    height: 40px;
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
+
+#areaEntry {
+  width: 100%;
+  border: 2px solid $secondary-color;
+  border-radius: 5px;
+  height: 100px;
 }
-#areaEntry{
-    width: 100%;
-    border: 2px solid $secondary-color;
-    border-radius: 5px;
-    height: 100px;
+
+#sendBtn {
+  background-color: $secondary-color;
+  width: 100%;
+  border: none;
+  padding: 10px 0;
+  margin: 30px 0;
+  color: #fff;
+  border-radius: 5px;
 }
-#sendBtn{
-    background-color: $secondary-color;
-    width: 100%;
-    border: none;
-    padding: 10px 0;
-    margin: 30px 0;
-    color: #fff;
-    border-radius: 5px;
+
+#dataClients {
+  color: #4D4B4B;
+  font-size: 13px;
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 30px;
 }
-#dataClients{
-    color: #4D4B4B;
-    font-size: 13px;
-    width: 85%;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 30px;
-}
+
 /* FIM FORM */
 
 /* FIM MAINCONTENT */
 
 /* INICIO SESSAO WEBTECH */
-#sectionWebtech{
-    display: flex;
-    height: 250px;
-    margin: 100px 0;
+#sectionWebtech {
+  display: flex;
+  height: 250px;
+  margin: 100px 0;
 }
-#boxTitleWebtech{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+
+#boxTitleWebtech {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-#titleWebtech{
-   color: #fff; 
-   font-size: 40px;
+
+#titleWebtech {
+  color: #fff;
+  font-size: 40px;
 }
-#webtechStrong{
-    color: #64CCC5;
+
+#webtechStrong {
+  color: #64CCC5;
 }
-.descriptionWebtech{
-    color: #fff;
-    width: 80%;
+
+.descriptionWebtech {
+  color: #fff;
+  width: 80%;
 }
-#boxLinksWebtech{
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
+
+#boxLinksWebtech {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
+
 /* FIM SESSAO WEBTECH */
 
 /* INICIO PUBLICIDADE */
-#bannerAdvertising{
-    height: 300px;
-    background-image: url(../public/contact/black_peoples.jpg);
-    background-size: cover;
-    background-position: center;
+#bannerAdvertising {
+  height: 300px;
+  background-image: url(../public/contact/black_peoples.jpg);
+  background-size: cover;
+  background-position: center;
 }
-#bgAdvertising{
-    height: 100%;
-    background-color: #1e1e1ea8;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
+#bgAdvertising {
+  height: 100%;
+  background-color: #1e1e1ea8;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-#titleAdvertising{
-    color: $third-color;
-    font-size: 40px;
-    margin-bottom: 30px;
+
+#titleAdvertising {
+  color: $third-color;
+  font-size: 40px;
+  margin-bottom: 30px;
 }
-#descriptionAdvertising{
-    color: #fff;
+
+#descriptionAdvertising {
+  color: #fff;
 }
-#wantBannerAdvertising{
-    display: block;
-    border: 2px solid #fff;
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
+
+#wantBannerAdvertising {
+  display: block;
+  border: 2px solid #fff;
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
 }
+
 /* FIM PUBLICIDADE */
 
 /* INICIO SOCIAL MEDIAS */
-#socialMedias{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 85%;
-    margin: 0 auto;
-    padding: 100px 0;
+#socialMedias {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+  padding: 100px 0;
 }
-#titleSocialMedias{
-    font-size: 40px;
-    color: $third-color;
-    margin-bottom: 30px;
-    border-left: 3px solid $third-color;
-    padding-left: 10px;
+
+#titleSocialMedias {
+  font-size: 40px;
+  color: $third-color;
+  margin-bottom: 30px;
+  border-left: 3px solid $third-color;
+  padding-left: 10px;
 }
-#descriptionSocialMedias{
-    color: #fff;
+
+#descriptionSocialMedias {
+  color: #fff;
 }
-#boxIconsSocialMedias{
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
+
+#boxIconsSocialMedias {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
 }
+
 /* FIM SOCIAL MEDIAS */
-.iconSocial{
-    width: 40px;
-    height: 40px;
+.iconSocial {
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 468px) {
+  #sectionMainContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 0px;
+    border-top: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+  }
+
+  #mainTextContact {
+    align-items: center;
+  }
+
+  #titlesContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 35px 0;
+  }
+
+  #titleBanner {
+    font-size: 15px;
+    text-align: center;
+    width: 270px;
+    margin: 35px 0;
+  }
+
+  #descriptionBanner {
+    font-size: 8px;
+    text-align: center;
+    width: 300px;
+  }
+
+  #linkPartnerSite {
+    width: 130px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+
+  #boxLinksPartners {
+    display: flex;
+    justify-content: center;
+  }
+
+  #linkPartner {
+    width: 130px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+#bgBanner{
+  height: 300px;
+}
+  #content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #titleMainContact {
+    font-size: 22px;
+    width: 280px;
+  }
+
+  .descripitonMainContact {
+    font-size: 15px;
+    width: 275px;
+  }
+
+  #titleWebtech {
+    font-size: 19px;
+  }
+
+  .descriptionWebtech {
+    font-size: 12px;
+  }
+
+  #boxLinkMainContact {
+    column-gap: 50px;
+    border-bottom: 3px solid #FFFFFF;
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+
+  .blueLink {
+    width: 110px;
+    font-size: 10px;
+  }
+
+  .whiteLink {
+    width: 110px;
+    font-size: 10px;
+  }
+
+  #titleForm {
+    width: 250px;
+    font-size: 18px;
+  }
+
+  #dataClients {
+    width: 200px;
+    font-size: 11px;
+  }
+
+  #boxForm {
+    width: 300px;
+  }
+
+  .titleEntrys {
+    font-size: 12px;
+  }
+
+  #sectionWebtech {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px #FFFFFF;
+    border-radius: 5px;
+    align-items: center;
+    margin: 40px 0;
+    height: 420px;
+  }
+
+  #titleWebtech {
+    font-size: 22px;
+    width: 250px;
+    margin: 35px 0;
+  }
+
+  .descriptionWebtech {
+    font-size: 12px;
+    width: 250px;
+    margin: 20px 0;
+
+  }
+
+  #boxLinksWebtech {
+    margin: 20px 0;
+    column-gap: 40px;
+  }
+
+  #bgAdvertising {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #titleAdvertising {
+    font-size: 18px;
+    width: 310px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  #descriptionAdvertising {
+    font-size: 15px;
+    text-align: center;
+    width: 300px;
+  }
+
+  #wantBannerAdvertising {
+    width: 160px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+
+  #bannerAdvertising {
+    height: 300px;
+  }
+
+  #titleSocialMedias {
+    font-size: 25px;
+  }
+
+  #descriptionSocialMedias {
+    width: 250px;
+    text-align: center;
+    font-size: 12px;
+    margin: 20px 0;
+  }
+
+  #titleSocialMedias {
+    border: none;
+    padding: 0;
+  }
+
+  #socialMedias {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+  }
+
+  #midias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #boxIconsSocialMedias {
+    margin-top: 20px;
+  }
+
+  #sectionForm {
+    margin-top: 50px;
+  }
 }
