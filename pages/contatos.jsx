@@ -32,7 +32,6 @@ export default function Contatos() {
           </div>
         </div>
       </div>
-
       <div id={styles.mainContent}>
         <div id={styles.sectionMainContact}>
           <div id={styles.mainTextContact}>
@@ -99,7 +98,7 @@ export default function Contatos() {
         </div>
 
         <div id={styles.socialMedias}>
-          <div>
+          <div id={styles.midias}>
             <h2 id={styles.titleSocialMedias}>Redes Socias</h2>
             <p id={styles.descriptionSocialMedias}>Visite nossas rede sociais, que também é outra forma de comunicação.</p>
           </div>
