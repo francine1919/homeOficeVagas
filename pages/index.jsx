@@ -21,51 +21,45 @@ export default function Home() {
       </Head>
       <Header/>
       <div id={styles.mainPage} className={robotoFlex.className}>
-        <div id={styles.conteudo}>
-          <main>
-            <div id={styles.mainContent}>
-              <div id={styles.tituloPrincipal}>
-                <div>
-                  <Image id={styles.fotoLogoMain} src={logoMain} alt="Logo HomeOfficeVagas" height={200} width={200} />
-                </div>
-                <div id={styles.titulo}>
-                  <h1 id={styles.tituloDaPagina}>Na Home Office Vagas, você encontra sua vaga Home Office num piscar de olhos.</h1>
-                  <p id={styles.textoDoTitulo}>VENHA VER COMO É FACIL DE SE CONSEGUIR UM EMPREGO</p>
-                </div>
-                <Image id={styles.fotoSetaaDireita} src={arrowRight} alt="seta a direita" width={200} />
+        <div id={styles.content}>
+          <main id={styles.mainContent}>
+            <div id={styles.tituloPrincipal}>
+              <div>
+                <Image id={styles.fotoLogoMain} src={logoMain} alt="Logo HomeOfficeVagas" height={200} width={200} />
               </div>
-              <div id={styles.boxPesquisar}>
-                <div id={styles.boxPesquisa}>
-                  <h2 id={styles.tituloForm}>Busque suas vagas aqui!</h2>
-                  <form id={styles.formPesquisa} action="#">
-                    <input className={styles.entradasForm} type="text" placeholder="Busque por Titulo" />
-                    <select className={styles.entradasForm} name="" id="">
-                      <option value="">Argentina</option>
-                      <option value="">Uruguai</option>
-                      <option value="">Egito</option>
-                    </select>
-                    <select className={styles.entradasForm} name="" id="">
-                      <option value="">Montevídeu</option>
-                    </select>
-                    <button id={styles.btnBuscar}>Buscar</button>
-                  </form>
-                </div>
+              <div id={styles.titulo}>
+                <h1 id={styles.tituloDaPagina}>Na Home Office Vagas, você encontra sua vaga Home Office num piscar de olhos.</h1>
+                <p id={styles.textoDoTitulo}>Venha conseguir o seu emprego com a gente!</p>
               </div>
+              <Image id={styles.fotoSetaaDireita} src={arrowRight} alt="seta a direita" width={200} />
+            </div>
+            <div id={styles.boxSearch}>
+              <h2 id={styles.tituloForm}>Busque suas vagas aqui!</h2>
+              <form id={styles.formPesquisa} action="#">
+                <input className={styles.entradasForm} type="text" placeholder="Busque por Titulo" />
+                <select className={styles.entradasForm} name="" id="">
+                  <option value="">Argentina</option>
+                  <option value="">Uruguai</option>
+                  <option value="">Egito</option>
+                </select>
+                <select className={styles.entradasForm} name="" id="">
+                  <option value="">Montevídeu</option>
+                </select>
+                <button id={styles.btnBuscar}>Buscar</button>
+              </form>
             </div>
           </main>
-          <div>
-            <nav id={styles.navegacao}>
-              <a className={styles.paises} href="">Brasília</a>
-              <a className={styles.paises} href="">Sydney</a>
-              <a className={styles.paises} href="">Salvador</a>
-              <a className={styles.paises} href="">Seul</a>
-              <a className={styles.paises} href="">New York</a>
-              <a className={styles.paises} href="">Montreal</a>
-              <a className={styles.paises} href="">Paris</a>
-              <a className={styles.paises} href="">Johannesburgo</a>
-              <a className={styles.paises} href="">São Paulo</a>
-            </nav>
-          </div>
+          <nav id={styles.navigationCountrys}>
+            <a className={styles.countrys} href="">Brasília</a>
+            <a className={styles.countrys} href="">Sydney</a>
+            <a className={styles.countrys} href="">Salvador</a>
+            <a className={styles.countrys} href="">Seul</a>
+            <a className={styles.countrys} href="">New York</a>
+            <a className={styles.countrys} href="">Montreal</a>
+            <a className={styles.countrys} href="">Paris</a>
+            <a className={styles.countrys} href="">Johannesburgo</a>
+            <a className={styles.countrys} href="">São Paulo</a>
+          </nav>
           <Footer/>
         </div>
       </div>

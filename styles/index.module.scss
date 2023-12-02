@@ -5,8 +5,6 @@
     display: flex;
     align-items: center;
 }
-#conteudo{
-}
 #mainContent{
     display: flex;
     justify-content: space-evenly;
@@ -18,7 +16,7 @@
     width: 600px;
     margin-bottom: 50px;
 }
-#boxPesquisa{
+#boxSearch{
     border: 2px solid #D9D9D9;
     padding: 30px;
     width: 300px;
@@ -50,87 +48,87 @@
     font-weight: 700;
     border: none;
 }
-#navegacao{
+#navigationCountrys{
     display: flex;
     margin: 60px auto;
     width: 80vw;
     justify-content: space-evenly;
 }
-.paises{
+.countrys{
     color: #fff;
     text-decoration: none;
 }
 #textoDoTitulo{
     display: none;
 }
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+    #mainPage{
+        width: 100%;
+    }
+    #content{
+        width: 100%;
+    }
     #mainContent{
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+    }
+    #tituloPrincipal{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     #fotoLogoMain{
         display: none;
     }
-    #fotoSetaaDireita{
-        display: none;
-    }
-    #tituloPrincipal{
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
     #titulo{
+        border-top:2px solid #fff;
+        border-bottom:2px solid #fff;
+        width: 85%;
+        padding: 50px 0;
         display: flex;
-        justify-content: center;
         flex-direction: column;
-        width: 86%;
-        height: 260px;
-        border-bottom: solid 2px #FFFFFF;
-        border-top: solid 2px #FFFFFF;
-        margin-bottom: 40px;
+        align-items: center;
     }
     #tituloDaPagina{
-        font-size: 27px;
-        width: 100%;
+        width: 85%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
     }
     #textoDoTitulo{
         display: block;
-        color: #64CCC5C4;
-        font-size: 14px;
-        width: 100%;
+        color: $third-color;
+        text-transform: uppercase;
         text-align: center;
-
+        font-size: 15px;
+        width: 85%;
     }
-    #boxPesquisar{
-        display: flex;
-        justify-content: center;
+    #fotoSetaaDireita{
+        display: none;
     }
-    #boxPesquisa{
-        border: solid 1px  #FFFFFF;
-        border-radius: 3px;
+    #boxSearch{
+        margin: 50px auto 0;
     }
     #tituloForm{
-        font-size: 15px;
-        margin-bottom: 50px;
+        font-size: 20px;
+        margin: 10px 0 40px;
     }
-    .entradasForm{
-        margin-bottom: 30px;
+    #navigationCountrys{
+        flex-wrap: wrap;
+        height: 150px;
+        width: 80%;
+        column-gap: 10px;
     }
-    #btnBuscar{
-       margin-top: 15px;
-    }
-    #navegacao{
-        display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .paises {
-        flex-basis: calc(23% - 10px);
-        margin-bottom: 10px;
-        text-align: center;
-        font-size: 12px;
-      }
 }
-@media screen and (min-width: 320px) and (max-width: 460px) {}
-@media screen and (min-width: 769px) and (max-width: 1024px) {}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    #navigationCountrys{
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #navigationCountrys{
+        margin-bottom: 0;
+    }
+}
 @media screen and (min-width: 1025px) and (max-width: 1200px) {}
