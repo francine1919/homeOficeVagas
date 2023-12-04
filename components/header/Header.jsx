@@ -37,7 +37,7 @@ export default function Header() {
           <button id={styles.btnSearch}>Pesquisar</button>
         </div>
       </div>
-        <Image id={styles.logoMenuHamburguer} src={menuHamburguer} alt="Logo do Menu Hamburguer" />
+      <Image id={styles.logoMenuHamburguer} src={menuHamburguer} alt="Logo do Menu Hamburguer" />
     </header>
   )
 }
