@@ -1,0 +1,16 @@
+@import "../styles/cores.module.scss";
+
+#pageBlog{
+    background-color: $primary-color;
+    height: 100vh;
+}
+#boxInformation{
+    display: flex;
+    justify-content: center;
+}
+#waiting{
+    margin-top: 100px;
+    color: #fff;
+    width: 80%;
+    text-align: center;
+}
