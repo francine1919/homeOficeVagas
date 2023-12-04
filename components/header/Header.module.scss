@@ -59,6 +59,38 @@
     height: 40px;
     width: 40px;
 }
+
+#boxMenuCell{
+    width: 100%;
+    padding: 15px 0 20px;
+    position: absolute;
+    top: 0;
+    background-color: $secondary-color;
+    display: none;
+}
+#menuCellphone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.linksCellphone{
+    color: #fff;
+    margin: 10px 0;
+    padding: 10px 0;
+    text-decoration: none;
+    width: 85%;
+    font-size: 13px;
+}
+#boxSairCelular{
+    margin: 0 auto;
+    text-align: right;
+    width: 85%;
+}
+#sairMenuCelular{
+    width: 20px;
+    height: 20px;
+}
 @media screen and (min-width: 320px) and (max-width: 1024px) {
     #secondSection{
         display: none;
