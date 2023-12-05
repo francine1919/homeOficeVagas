@@ -8,8 +8,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { robotoFlex } from "@/fonts/font";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router = useRouter()
+
   function openModal(){
     let menu = document.querySelector(".boxMenuCell");
     menu.style.display = "block";
@@ -26,20 +29,20 @@ export default function Header() {
       <div id={styles.secondSection}>
         <nav>
           <ul id={styles.unOrdenedList}>
-            <li>
-              <Link id={styles.teste} className={styles.links} href="/">Home</Link>
+            <li> 
+              <Link id={`${router.pathname === "/" ? styles.teste : null}`} className={styles.links} href="/">Home</Link>
             </li>
             <li>
-              <Link className={styles.links} href="/vagas-internacionais">Vagas Internacionais</Link>
+              <Link id={`${router.pathname === "/vagas-internacionais" ? styles.teste : null}`} className={styles.links} href="/vagas-internacionais">Vagas Internacionais</Link>
             </li>
             <li>
-              <Link className={styles.links} href="/vagas-locais">Vagas Locais</Link>
+              <Link id={`${router.pathname === "/vagas-locais" ? styles.teste : null}`} className={styles.links} href="/vagas-locais">Vagas Locais</Link>
             </li>
             <li>
-              <Link className={styles.links} href="/blog">Blog</Link>
+              <Link id={`${router.pathname === "/blog" ? styles.teste : null}`} className={styles.links} href="/blog">Blog</Link>
             </li>
             <li>
-              <Link className={styles.links} href="/contatos">Contatos</Link>
+              <Link id={`${router.pathname === "/contatos" ? styles.teste : null}`} className={styles.links} href="/contatos">Contatos</Link>
             </li>
           </ul>
         </nav>
@@ -50,7 +53,7 @@ export default function Header() {
       </div>
       <Image onClick={() => openModal()} className="menuHamburger" id={styles.logoMenuHamburguer} src={menuHamburguer} alt="Logo do Menu Hamburguer" />
       
-      {/* ATENCAO A PARTIR DAQUI PRA BAIXO, ESTA SESSAO SÓ TEM EM CELULARES */}  
+      {/* ATENCAO, A PARTIR DAQUI PRA BAIXO, ESTA SESSAO SÓ TEM EM CELULARES */}  
       
       <div className="boxMenuCell" id={styles.boxMenuCell}>
         <nav id={styles.menuCellphone}>

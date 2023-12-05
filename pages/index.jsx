@@ -1,12 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import styles from "@/styles/index.module.scss";
 
 import logoMain from "@/public/logos/logo-um.png";
 import arrowRight from "@/public/icons/arrow_right_white.png"
-import sairMenuCelular from "@/public/icons/x_icon.png";
 
 import Header from '@/components/header/Header';
 

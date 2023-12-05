@@ -28,7 +28,7 @@ export default function VagasLocais() {
       </div>
 
       <main id={styles.mainContent}>
-        <div>
+        <div id={styles.sectionCardAndBanner}>
           <div id={styles.boxFilter}>
             <h3 id={styles.titleMainFilter}>Filtrar Resultados</h3>
             <form id={styles.formFilter} action="">
