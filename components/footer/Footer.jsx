@@ -28,19 +28,19 @@ export default function Footer(){
                     <nav>
                         <ul className={styles.unList}>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">A Home Office Vagas</Link>
+                                <Link className={styles.descriptionFooter} href="/contatos">A Home Office Vagas</Link>
                             </li>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">Vagas Internarcionais</Link>
+                                <Link className={styles.descriptionFooter} href="/vagas-internacionais">Vagas Internarcionais</Link>
                             </li>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">Blog</Link>
+                                <Link className={styles.descriptionFooter} href="/blog">Blog</Link>
                             </li>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">Artigos</Link>
+                                <Link className={styles.descriptionFooter} href="/blog">Artigos</Link>
                             </li>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">Vagas Locais Brasil</Link>
+                                <Link className={styles.descriptionFooter} href="/vagas-locais">Vagas Locais Brasil</Link>
                             </li>
                         </ul>    
                     </nav>
@@ -50,7 +50,7 @@ export default function Footer(){
                     <nav>
                         <ul className={styles.unList}>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">Anunciar no Site</Link>
+                                <Link className={styles.descriptionFooter} href="/contatos">Anunciar no Site</Link>
                             </li>
                             <li>
                                 <Link className={styles.descriptionFooter} href="#">Politica De Privacidade</Link>
