@@ -62,21 +62,34 @@
     .card{
         width: 100%;
     }
+    .boxTitle{
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .title{
         padding: 10px;
-        font-size: 15px;
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
     }
     .remuneration{
-        margin: 0;
         font-size: 15px;
         padding-right: 15px;
+        width: 85%;
+        margin: 0 auto 20px;
     }
-    .boxAboutJob{
-        flex-direction: column;
+    .boxDescription{
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
     }
     .descriptionJob{
         font-size: 15px;
-        padding: 0 25px;
+        padding: 0;
+    }
+    .boxAboutJob{
+        flex-direction: column;
+        width: 85%;
     }
     .showJob{
         width: 150px;
