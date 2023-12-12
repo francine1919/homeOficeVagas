@@ -1,13 +1,12 @@
-import CardJobs from "@/components/cardJobs/CardJobs";
-
-import Header from "@/components/header/Header";
-
 import Link from "next/link";
 
-import styles from "@/styles/vagas.module.scss";
-import { robotoFlex } from "@/fonts/font";
-
+import CardJobs from "@/components/cardJobs/CardJobs";
+import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+
+import styles from "@/styles/vagas.module.scss";
+
+import { robotoFlex } from "@/fonts/font";
 
 export default function VagasLocais() {
   return (
