@@ -15,7 +15,7 @@
 .title{
     background-color: $primary-color;
     color: #fff;
-    padding: 15px 50px;
+    padding: 15px 20px;
     margin: 20px 0;
     font-size: 20px;
     border-bottom-right-radius: 10px;
@@ -55,7 +55,11 @@
 .tags{
     color: $secondary-color;
 }
-
+#loadingJobs{
+    color: #fff;
+    font-size: 20px;
+    margin: 20px 0;
+}
 
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
