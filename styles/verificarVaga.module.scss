@@ -1,0 +1,287 @@
+@import './cores.module.scss';
+
+.vagaEscolhida{
+    background-color: $primary-color;
+}
+
+/* INICIO BANNER */
+#bannerOne{
+    height: 300px;
+    background-image: url(../public/jobs/banner_one.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 50px 0;
+}
+#bgBanner{
+    height: 100%;
+    background-color: #1e1e1ec5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bannerContent{
+    width: 80%;
+}
+#titleBanner{
+    color: $third-color;
+    border-left: 3px solid #fff;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+#descriptionBanner{
+    color: #fff;
+}
+/* FIM BANNER */
+
+/* INICIO JOBSECTION */
+#jobSection{
+    background-color: $third-color;
+    width: 1100px;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+#sectionInfoJob{
+    width: 600px;
+}
+#allOfJob{
+    margin: 30px 0;
+}
+.boxJob{
+    margin-bottom: 15px;
+}
+#titleMain{
+    background-color: $primary-color;
+    color: #fff;
+    padding: 10px 20px;
+    border-bottom-right-radius: 20px;
+}
+.titleJob{
+    color: $primary-color;
+    margin-bottom: 15px;
+}
+.descriptionJob{
+    color: #fff;
+}
+#btnSendCurriculum{
+    background-color: $primary-color;
+    padding: 10px 50px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+#boxButtons{
+    margin: 100px 0 50px;
+}
+#btnSendProblem{
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #FF6B00;
+    padding: 10px 50px;
+}
+/* FIM JOBSECTION */
+
+/* INICIO BANNER TWO */
+#bannerTwo{
+    width: 350px;
+    background-image: url(../public/jobs/pessoa_cadeirante.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    border-radius: 20px;
+}
+#bgBannerTwo{
+    height: 100%;
+    background-color: #1e1e1ec5;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+#bannerTwoContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+}
+#titleBannerTwo{
+    color: #FF6B00;
+    text-align: center;
+}
+#boxDescriptionBannerTwo{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.descriptionBannerTwo{
+    color: #fff;
+    text-align: center;
+}
+#btnBannerTwo{
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+/* FIM BANNER TWO */
+
+/* INICIO LOADING */
+#boxLoading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 300px;
+}
+#titleLoading{
+    color: #fff;
+    text-align: center;
+}
+/* FIM LOADING */
+
+/* INICIO BANNER TREE */
+#bannerTree{
+    height: 300px;
+    background-image: url(../public/jobs/banner_tree.jpg);
+    background-position: 0 -250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 50px 0;
+}
+#bgBannerTree{
+    height: 100%;
+    background-color: #1e1e1ec5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contentBannerTree{
+    display: flex;
+    align-items: center;
+}
+#titleBannerTree{
+    color: $third-color;
+    margin-bottom: 30px;
+}
+#descriptionBannerTree{
+    color: #fff;
+    width: 80%;
+}
+#btnBannerTree{
+    border: 2px solid #fff;
+    padding: 10px 50px;
+    color: #fff;
+    text-decoration: none;
+}
+/* FIM BANNER TREE */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    /* INICIO BANNER ONE */
+    #titleBanner{
+        border: 3px solid $third-color;
+        font-size: 25px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    #descriptionBanner{
+        text-align: center;
+        font-size: 15px;
+    }
+    /* FIM BANNER ONE */
+    /* INICIO JOBSECTION */
+    #jobSection{
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+    #sectionInfoJob{
+        order: 1;
+        width: 100%;
+    }
+    #titleMain{
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 0;
+    }
+    #allOfJob{
+        width: 85%;
+        margin: 50px auto;
+        padding: 20px;
+        border: 2px solid $primary-color;
+    }
+    .titleJob{
+        font-size: 20px;
+    }
+    .descriptionJob{
+    }
+    /* FIM JOBSECTION */
+    
+    /* INICIO BANNER TWO */
+    #bannerTwo{
+        width: 300px;
+        margin: 50px auto;
+    }
+    #titleBannerTwo{
+        font-size: 17px;
+    }
+    .descriptionBannerTwo{
+        font-size: 15px;
+    }
+    /* FIM BANNER TWO */
+
+    #boxButtons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #btnSendCurriculum{
+        width: 250px;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    #btnSendProblem{
+        width: 250px;
+        text-align: center;
+    }
+
+    /* INICIO BANNER TREE */
+    #bannerTree{
+        background-position: center;
+        height: 350px;
+    }
+    #contentBannerTree{
+        flex-direction: column;
+    }
+    #titleBannerTree{
+        font-size: 20px;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto 30px;
+    }
+    #descriptionBannerTree{
+        font-size: 15px;
+        margin: 0 auto 30px;
+        text-align: center;
+    }
+    #btnBannerTree{
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+    /* FIM BANNER TREE */
+    #titleLoading{
+        font-size: 20px;
+        width: 80%;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    
+}

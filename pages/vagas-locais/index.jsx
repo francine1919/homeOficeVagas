@@ -9,6 +9,7 @@ import styles from "@/styles/vagas.module.scss";
 import { robotoFlex } from "@/fonts/font";
 
 export default function VagasLocais() {
+
   return (
     <div id={styles.vagas} className={robotoFlex.className}>
       <Header/>
@@ -73,7 +74,6 @@ export default function VagasLocais() {
         </div>
 
         <div id={styles.sectionCards}>
-          <CardJobs/>
           <CardJobs/>
           <button id={styles.btnShowMoreJobs}>Mais vagas</button>
         </div>
