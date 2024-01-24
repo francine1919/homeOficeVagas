@@ -7,8 +7,61 @@ import Footer from "@/components/footer/Footer";
 import styles from "@/styles/vagas.module.scss";
 
 import { robotoFlex } from "@/fonts/font";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function VagasLocais() {
+  const [job, setVaga] = useState();
+  const [dataCountrys, setDataCountrys] = useState();
+  const [country, setCountry] = useState("");
+  const [dataCitys, setDataCitys] = useState();
+  const [city, setCity] = useState("");
+  const [statusBtnFilter, setStatusBtnFilter] = useState(false);
+
+  async function handleApi(){
+    await axios.get(`http://${window.location.host}/api/vagas`)
+    .then((response) => {
+      const dataResponse = response.data.dataCards;
+      setDataCountrys(dataResponse)
+    })
+    .catch((error) => {
+      console.log("your error", error.message)
+    })
+  }
+
+  async function handleCitys(){
+    if(!dataCountrys){
+      console.log("ainda nao temos data country")
+    }else{
+      const citys = dataCountrys.filter((vagas) => {
+        return vagas.pais === country
+      }).map((objetos) => {
+        return objetos.cidade
+      })
+
+      setDataCitys(citys)
+    }
+  }
+
+  function alterStatusBtnFilter(e){
+    e.preventDefault()
+    if(statusBtnFilter){
+      setTimeout(() => {
+        setStatusBtnFilter(false)
+      },3000)
+    }else{
+      setStatusBtnFilter(true)
+    }
+  }
+
+
+  useEffect(() => {
+    handleApi()
+  }, [])
+
+  useEffect(() => {
+    handleCitys()
+  },[country])
 
   return (
     <div id={styles.vagas} className={robotoFlex.className}>
@@ -31,24 +84,34 @@ export default function VagasLocais() {
         <div id={styles.sectionCardAndBanner}>
           <div id={styles.boxFilter}>
             <h3 id={styles.titleMainFilter}>Filtrar Resultados</h3>
-            <form id={styles.formFilter} action="">
+            <form id={styles.formFilter} onSubmit={alterStatusBtnFilter}>
               <div id={styles.boxMainForm}>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleFilter} htmlFor="">Vaga</label>
-                  <input className={styles.entrysFilter} type="text" />
+                  <input className={styles.entrysFilter} onChange={(e) => setVaga(e.target.value)} type="text" />
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleFilter} htmlFor="">País</label>
-                  <select className={styles.entrysFilter} name="" id="">
-                    <option value="">Argentina</option>
-                    <option value="">Brasil</option>
+                  <select className={styles.entrysFilter} onChange={(e) => setCountry(e.target.value)}>
+                    {Array.isArray(dataCountrys) && dataCountrys.length > 0 ? (
+                      <>
+                        <option>Países encontrados!</option>
+                        {dataCountrys.map((item) => <option key={item.id}>{item.pais}</option>)}
+                      </>
+                    ):
+                      <option>carregando...</option>}
                   </select>
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleFilter} htmlFor="">Cidade</label>
-                  <select className={styles.entrysFilter} name="" id="">
-                    <option value="">Buenos Aires</option>
-                    <option value="">Rio de Janeiro</option>
+                  <select className={styles.entrysFilter} onChange={(e) => setCity(e.target.value)} id="">
+                    {dataCitys ? (
+                      <>
+                        <option>Escolha uma cidade</option>
+                        {dataCitys.map((item) => <option key={item}>{item}</option>)}
+                      </>
+                    ) :
+                    <option>Escolha um País</option>}
                   </select>
                 </div>
               </div>
@@ -74,7 +137,12 @@ export default function VagasLocais() {
         </div>
 
         <div id={styles.sectionCards}>
-          <CardJobs/>
+          <CardJobs 
+            jobChoose={job}
+            countrySelect={country}
+            cityChoose={city}
+            statusButtonFilter={statusBtnFilter}
+          />
           <button id={styles.btnShowMoreJobs}>Mais vagas</button>
         </div>
       </main>

@@ -4,6 +4,7 @@ import styles from "@/styles/blog.module.scss";
 import { robotoFlex } from "@/fonts/font";
 
 export default function Blog() {
+ 
   return (
     <div id={styles.pageBlog} className={robotoFlex.className}>
         <Header/>

@@ -106,6 +106,10 @@
     border: none;
     border-radius: 5px;
     margin-top: 30px;
+    cursor: pointer;
+    &:hover{
+        background-color: #064c68;
+    }
 }
 
 /* FIM BOX FILTER */
@@ -163,9 +167,10 @@
     border-radius: 5px;
 }
 /* FIM BANNER TWO */
+
 #btnShowMoreJobs{
     background-color: $secondary-color;
-    width: 100%;
+    width: 750px;
     border:none;
     height: 50px;
     color: #fff;

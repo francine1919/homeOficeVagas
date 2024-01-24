@@ -22,15 +22,28 @@ export default function DetalhesVagaInternacionais() {
   const userId = query.id;
 
   async function showJob() {
-    await axios
-      .get("http://localhost:3000/api/vagas")
-      .then((response) => {
-        setJob(response.data.dataCards[userId]);
-      })
-      .catch((error) => {
-        console.log("ERROR", error.message);
-      });
-    }
+    console.log(`Vaga: https://${window.location.host}/api/vagas`)
+    
+    
+    /* ATENÇÃO: este trecho de código só roda em desenvolvimento, o de baixo apenas em produção. */
+    await axios.get(`http://localhost:3000/api/vagas`)
+    .then((response) => {
+      setJob(response.data.dataCards[userId]);
+    })
+    .catch((error) => {
+      console.log("Erro ao buscar vaga especifica", error.message);
+    });
+
+
+    /* await axios.get(`https://${window.location.host}/api/vagas`)
+    .then((response) => {
+      setJob(response.data.dataCards[userId]);
+    })
+    .catch((error) => {
+      console.log("Erro ao buscar vaga especifica", error.message);
+    }); */
+    
+  }
     
     useEffect(() => {
       showJob();
