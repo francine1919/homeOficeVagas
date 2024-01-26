@@ -5,7 +5,7 @@ import styles from "./CardJobs.module.scss"
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function CardJobs({jobChoose, countrySelect, cityChoose, statusButtonFilter}) {
+export default function CardJobs({jobChoose, countrySelect, cityChoose, statusButtonFilter, statusButtonCleanFilter}) {
   const [jobList, setJobList] = useState("");
   const [cardsFiltrado, setCardsFiltrados] = useState()
 
@@ -30,6 +30,11 @@ export default function CardJobs({jobChoose, countrySelect, cityChoose, statusBu
 
   async function showJobOrJobFilter(){
     try {
+      if(statusButtonCleanFilter && !jobChoose && !countrySelect && !cityChoose){
+        const allCards = await jobList.map((item) => item)
+        console.log("Cards:", allCards)
+        setCardsFiltrados(allCards)
+      }
       if(jobChoose){
         const filterChoose = await jobList.filter((item) => jobChoose.toLowerCase() === item.tituloDaVaga.toLowerCase())
         console.log("Filter Choose:", filterChoose)
