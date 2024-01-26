@@ -272,7 +272,7 @@ export default function handler(req, res) {
   if(req.method === "GET"){
     setTimeout(() => {
       res.status(200).json({dataCards})
-    }, 3000)
+    }, 1000)
   }else{
     res.status(500).json({ mensagem: "Algo incorreto aconteceu" })
   }

@@ -13,10 +13,11 @@ import axios from "axios";
 export default function VagasLocais() {
   const [job, setVaga] = useState();
   const [dataCountrys, setDataCountrys] = useState();
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState();
   const [dataCitys, setDataCitys] = useState();
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState();
   const [statusBtnFilter, setStatusBtnFilter] = useState(false);
+  const [statusBtnCleanFilter, setStatusBtnCleanFilter] = useState(false)
 
   async function handleApi(){
     await axios.get(`http://${window.location.host}/api/vagas`)
@@ -38,13 +39,12 @@ export default function VagasLocais() {
       }).map((objetos) => {
         return objetos.cidade
       })
-
       setDataCitys(citys)
     }
   }
 
   function alterStatusBtnFilter(e){
-    e.preventDefault()
+    e.preventDefault();
     if(statusBtnFilter){
       setTimeout(() => {
         setStatusBtnFilter(false)
@@ -54,6 +54,16 @@ export default function VagasLocais() {
     }
   }
 
+  function cleanFilter(){
+    if(job || country || city){
+      setStatusBtnCleanFilter(true)
+      setVaga(undefined)
+      setCountry(undefined)
+      setCity(undefined)
+    }else{
+      setStatusBtnCleanFilter(false)
+    }
+  }
 
   useEffect(() => {
     handleApi()
@@ -62,6 +72,8 @@ export default function VagasLocais() {
   useEffect(() => {
     handleCitys()
   },[country])
+
+  console.log("valores", job,country,city)
 
   return (
     <div id={styles.vagas} className={robotoFlex.className}>
@@ -115,8 +127,9 @@ export default function VagasLocais() {
                   </select>
                 </div>
               </div>
-              <div>
+              <div id={styles.boxButtonsFilter}>
                 <button id={styles.btnFilter}>Filtrar</button>
+                <button id={styles.btnCleanFilter} onClick={() => cleanFilter()}>Limpar Filtro</button>
               </div>
             </form>
           </div>
@@ -142,6 +155,7 @@ export default function VagasLocais() {
             countrySelect={country}
             cityChoose={city}
             statusButtonFilter={statusBtnFilter}
+            statusButtonCleanFilter={statusBtnCleanFilter}
           />
           <button id={styles.btnShowMoreJobs}>Mais vagas</button>
         </div>
