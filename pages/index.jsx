@@ -12,6 +12,7 @@ import { robotoFlex } from '@/fonts/font';
 import Footer from '@/components/footer/Footer';
 
 export default function Home() {
+
   return (
     <div className={robotoFlex.className}>
       <Head>
