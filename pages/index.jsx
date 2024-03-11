@@ -7,11 +7,75 @@ import logoMain from "@/public/logos/logo-um.png";
 import arrowRight from "@/public/icons/arrow_right_white.png"
 
 import Header from '@/components/header/Header';
-
-import { robotoFlex } from '@/fonts/font';
 import Footer from '@/components/footer/Footer';
 
+import { robotoFlex } from '@/fonts/font';
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import { dataJobs } from "@/redux/dataMain/dataMainSlice";
+import { newSearch } from "@/redux/searchHome/searchHomeSlice";
+
+import { useEffect, useState } from 'react';
+
+import axios from 'axios';
+
+import { Router, useRouter } from 'next/router';
+
 export default function Home() {
+  const [nameJob, setNameJob] = useState();
+  const [countrys, setCountrys] = useState();
+  const [citys, setCitys] = useState();
+
+  const [countrySelect , setCountrySelect] = useState();
+  const [citySelect , setCitySelect] = useState();
+  
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  async function handleJobs(){
+    await axios.get("http://localhost:3000/api/vagas")
+    .then((response) => {
+      dispatch(dataJobs(response.data))
+      const filterCountry = response.data.dataCards.map((item) => ({id: item.id, pais: item.pais, cidade: item.cidade}))
+
+      setCountrys(filterCountry)
+    })
+    .catch((error) => {
+      console.log(error.message)
+    })
+  }
+
+  async function handleCitys(){
+    if(!countrys){
+      return null
+    }else{
+      const citys = countrys.filter((item) => {
+        return item.pais === countrySelect
+      })
+      setCitys(citys)
+    }
+  }
+
+  function sendDataFilter(e){
+    e.preventDefault()
+    dispatch(newSearch({
+      filter: {
+        title: nameJob,
+        country: countrySelect,
+        city: citySelect
+      }
+    }))
+    router.push("/vaga-filtrada")
+  }
+
+  useEffect(() => { 
+    handleJobs()
+  }, [])
+
+  useEffect(() => { 
+    handleCitys()
+  }, [countrySelect])
 
   return (
     <div className={robotoFlex.className}>
@@ -37,15 +101,23 @@ export default function Home() {
             </div>
             <div id={styles.boxSearch}>
               <h2 id={styles.tituloForm}>Busque suas vagas aqui!</h2>
-              <form id={styles.formPesquisa} action="#">
-                <input className={styles.entradasForm} type="text" placeholder="Busque por Titulo" />
-                <select className={styles.entradasForm} name="" id="">
-                  <option value="">Argentina</option>
-                  <option value="">Uruguai</option>
-                  <option value="">Egito</option>
+              <form id={styles.formPesquisa} onSubmit={sendDataFilter} action="#">
+                <input className={styles.entradasForm} onChange={(e) => setNameJob(e.target.value)} type="text" placeholder="Busque por Titulo" />
+                <select className={styles.entradasForm} onChange={(e) => setCountrySelect(e.target.value)}>
+                  {countrys ? <>
+                    <option disabled>Países carregados</option>
+                    {countrys.map((item) => (
+                      <option key={item.id}>{item.pais}</option>
+                    ))}
+                  </> : <option>Carregando países...</option>}
                 </select>
-                <select className={styles.entradasForm} name="" id="">
-                  <option value="">Montevídeu</option>
+                <select className={styles.entradasForm} onChange={(e) => setCitySelect(e.target.value)} value={citySelect}>
+                  {citys ? <>
+                    <option>Escolha uma cidade</option>
+                    {citys.map((item) => (
+                      <option key={item.id}>{item.cidade}</option>
+                    ))}
+                  </> : <option>Escolha um país...</option>}
                 </select>
                 <button id={styles.btnBuscar}>Buscar</button>
               </form>

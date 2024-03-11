@@ -18,6 +18,10 @@
     background-image: url(../public/internacionalJobs/banner_one_inter.jpg);
     background-position: 0 -100px;
 }
+.bannerOneFiltro{
+    background-image: url(../public/filterJob/filter_job_01.jpg);
+    background-position: center;
+}
 #bgBannerOne{
     background-color: #1e1e1ec5;
     height: 100%;
@@ -29,6 +33,23 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
+}
+#boxTitleOneFilter{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $third-color;
+    border-radius: 10px;
+    width: 80%;
+    padding: 30px;
+}
+#titleBannerOneFilter{
+    color: #fff;
+    border-left: 3px solid #fff;
+    padding-left: 10px;
+}
+#descriptionBannerOneFilter{
+    color: #fff;
+    margin-top: 20px;
 }
 #boxTitleOne{
     display: flex;
@@ -129,6 +150,73 @@
 
 /* FIM BOX FILTER */
 
+/* INICIO CARD */
+.card{
+    border: 2px solid $primary-color;
+    width: 750px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    background-color: $third-color;
+}
+.boxTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    background-color: $primary-color;
+    color: #fff;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-size: 20px;
+    border-bottom-right-radius: 10px;
+}
+.remuneration{
+    color: $primary-color;
+    margin-right: 50px;
+}
+.descriptionJob{
+    color: $primary-color;
+    padding: 0 50px;
+    margin-bottom: 30px;
+}
+.boxAboutJob{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin-bottom: 30px;
+}
+.showJob{
+    background-color: $secondary-color;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    width: 180px;
+    text-align: center;
+    border-radius: 5px;
+}
+.unList{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+.tags{
+    color: $secondary-color;
+}
+#responseByFilter{
+    color: #fff;
+    font-size: 30px;
+}
+#loading{
+    color: #fff;
+    font-size: 20px;
+    margin: 20px 0;
+}
+/* FIM CARD */
+
 /* INICIO BANNER TWO */
 #bannerTwo{
     width: 300px;
@@ -140,6 +228,9 @@
 }
 .bannerTwoInternacional{
     background-image: url(../public/internacionalJobs/banner_two_inter.jpg);
+}
+.bannerTwoFiltro{
+    background-image: url(../public/filterJob/filter_job_02.jpg);
 }
 #bgBannerTwo{
     background-color: rgba(30, 30, 30, 0.603);
@@ -183,6 +274,27 @@
 }
 /* FIM BANNER TWO */
 
+/* INICIO INFORMACOES DE VAGAS */
+#infoAboutJobs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#resultJobsTitle{
+    color: #fff;
+}
+#resultsJobs{
+    color: #fff;
+    padding: 10px;
+    border: 2px solid $third-color;
+}
+#jobNotFound, #searchNotFound{
+    width: 750px;
+}
+#jobNotFoundTitle, #searchNotFoundTitle{
+    color: #fff;
+}
 #btnShowMoreJobs{
     background-color: $secondary-color;
     width: 750px;
@@ -195,6 +307,72 @@
         background-color: #07769b;
     }
 }
+#jobNotFoundDescription, #searchNotFoundDescription{
+    color: $third-color;
+    margin: 30px 0;
+}
+#goBlog{
+    text-decoration: none;
+    background-color: $secondary-color;
+    padding: 10px 20px; 
+    color: #fff;
+    border-radius: 5px;   
+    font-size: 13px;
+}
+/* FIM INFORMACOES DE VAGAS */
+#responseSearch{
+    width: 750px;
+}
+#boxResponseSearch{
+    margin-bottom: 50px;
+}
+#boxSearch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#searchTitle{
+    color: #fff;
+}
+#searchResults{
+    color: #fff;
+    border: 2px solid $third-color;
+    padding: 10px;
+    font-size: 13px;
+}
+#cardSearch{
+    color: #fff;
+    border-bottom: 3px solid #EEEEEE;
+    padding-bottom: 50px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: #064c68;
+    border-radius: 10px;
+    &:hover{
+        background-color: #064863;
+    }
+}
+#boxCardSearch{
+
+}
+#titleCardSearch{
+}
+#descriptionSearch{
+    margin: 30px 0 20px;
+}
+#boxTagsSearch{
+
+}
+.tagsSearch{
+    background-color: $secondary-color;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
 /* INICIO ADVERTISING */
 #advertising{
     height: 300px;
@@ -207,6 +385,9 @@
 }
 .bannerTreeInternacional{
     background-image: url(../public/internacionalJobs/banner_tree_inter.jpg);
+}
+.bannerTreeFiltro{
+    background-image: url(../public/filterJob/filter_jobs_03.jpg);
 }
 #bgAdvertising{
     background-color: #1e1e1e9f;
@@ -293,7 +474,77 @@
     color: #fff;
 }
 /* FIM BLOG */
+@media(320px <= width <= 480px){
+    .title{
+        border-radius: 0;
+    }
+    .remuneration{
+        text-align: center;
+    }
+    .descriptionJob{
+        text-align: center;
+    }
+    .showJob{
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    #responseByFilter{
+        color: #fff;
+        text-align: center;
+    }
+    #loading{
+        color: #fff;
+        margin-bottom: 30px;
+    }
+}
+
 @media screen and (min-width: 320px) and (max-width: 1024px) {
+    #sectionCards{
+        width: 85%;
+    }
+    .card{
+        width: 100%;
+    }
+    .boxTitle{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .title{
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+    }
+    .remuneration{
+        font-size: 15px;
+        padding-right: 15px;
+        width: 85%;
+        margin: 0 auto 20px;
+    }
+    .boxDescription{
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+    }
+    .descriptionJob{
+        font-size: 15px;
+        padding: 0;
+    }
+    .boxAboutJob{
+        flex-direction: column;
+        width: 85%;
+    }
+    .unList{
+        width: 100%;
+        column-gap: 10px;
+        row-gap: 5px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .tags{
+        font-size: 13px;
+    }
     .bannerOneLocal{
         background-position: center;
     }
@@ -320,6 +571,7 @@
         margin-top: 50px;
     }
     #btnShowMoreJobs{
+        width: 100%;
         &:hover{
             cursor: auto;
             background-color: #176B87;

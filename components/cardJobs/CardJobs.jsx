@@ -1,6 +1,6 @@
 import Link from "next/link.js";
 
-import styles from "./CardJobs.module.scss"
+import styles from "./CardJobs.module.scss";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -61,7 +61,7 @@ export default function CardJobs({jobChoose, countrySelect, cityChoose, statusBu
         setCardsFiltrados(filterCard)
       }
     } catch (error) {
-      console.log("erro do catch")
+      console.log("erro do catch", error.message)
     }
   }
 
