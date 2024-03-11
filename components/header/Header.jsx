@@ -10,8 +10,22 @@ import Link from "next/link";
 import { robotoFlex } from "@/fonts/font";
 import { useRouter } from "next/router";
 
+import { useDispatch } from "react-redux";
+
+import { useState } from "react";
+import { newSearch } from "@/redux/searchHome/searchHomeSlice";
+
 export default function Header() {
+  const [searchInput, setSearchInput] = useState();
+
+  const dispatch = useDispatch()
   const router = useRouter()
+
+  function goFilterPage(){
+    dispatch(newSearch(searchInput))
+
+    router.push("/vaga-filtrada")
+  }
 
   function openModal(){
     let menu = document.querySelector(".boxMenuCell");
@@ -47,8 +61,8 @@ export default function Header() {
           </ul>
         </nav>
         <div id={styles.boxSearch}>
-          <input id={styles.entrySearch} type="search" placeholder="Pesquise aqui" />
-          <button id={styles.btnSearch}>Pesquisar</button>
+          <input id={styles.entrySearch} onChange={(e) => setSearchInput(e.target.value)} type="search" placeholder="Pesquise aqui" />
+          <button onClick={() => goFilterPage()} id={styles.btnSearch}>Pesquisar</button>
         </div>
       </div>
       <Image onClick={() => openModal()} className="menuHamburger" id={styles.logoMenuHamburguer} src={menuHamburguer} alt="Logo do Menu Hamburguer" />

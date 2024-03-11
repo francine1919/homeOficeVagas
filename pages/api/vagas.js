@@ -6,6 +6,7 @@ export default function handler(req, res) {
       id: 0,  
       tituloDaVaga: "Secretariado com APX",
       formaDeRemuneracao: "A combinar",
+      salario: "Entre 1.000 e 2.000",
       descricaoDoBanner: "A vaga de desenvolvedor front-end na nossa empresa é focada em fazer a interface gráfica dos nossos aplicativos, aqui voce conta com uma equipe que te ajuda em todos os quesitos",
       requisitos: "Ter pelo menos 3 anos de experiencia na area.",
       descricaoDaVaga: "Estamos precisando de um profissional da área que saiba mexer com Figma, CorelDraw, InDesign e Canva. O trabalho é somente para pessoas com EXPERIÊNCIA.",
@@ -22,7 +23,8 @@ export default function handler(req, res) {
       horarioDoTrabalho: "08:00/18:00",
       horarioDeCriacao: "12:30",
       pais: "Brasil",
-      cidade: "Salvador"
+      cidade: "Salvador",
+      email: "kelvimarthur@gmail.com"
     },
     {
       id: 1,
