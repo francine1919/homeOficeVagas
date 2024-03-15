@@ -22,45 +22,44 @@ export default function DetalhesVagaInternacionais() {
   const userId = query.id;
 
   async function showJob() {
-    console.log(`Vaga: https://${window.location.host}/api/vagas`)
-    
-    
+    const configApi = {
+      method: 'get',
+      url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers',
+      headers: {
+        'X-Custom-Jobs': 'my-secret-endpoint-1@@89'
+      }
+    }
     /* ATENÇÃO: este trecho de código só roda em desenvolvimento, o de baixo apenas em produção. */
-    await axios.get(`http://localhost:3000/api/vagas`)
+    axios(configApi)
     .then((response) => {
-      setJob(response.data.dataCards[userId]);
+      const jobFilter = response.data.filter((item) => item.id == userId)
+      console.log(job)
+      setJob(jobFilter);
     })
     .catch((error) => {
+      console.log("erou")
       console.log("Erro ao buscar vaga especifica", error.message);
     });
-
-
-    /* await axios.get(`https://${window.location.host}/api/vagas`)
-    .then((response) => {
-      setJob(response.data.dataCards[userId]);
-    })
-    .catch((error) => {
-      console.log("Erro ao buscar vaga especifica", error.message);
-    }); */
-    
   }
     
     useEffect(() => {
       showJob();
     }, [userId]);
     
+    //console.log("teste", job[0].id, job[0].tituloDaVaga, job.length > 0)
+
   return (
     <div className={`${robotoFlex.className} ${styles.vagaEscolhida}`}>
       <Header/>
 
-      {job ? (
+      {job && job.length > 0 ? (
       <div>
 
       <div id={styles.bannerOne}>
         <div id={styles.bgBanner}> 
           <div id={styles.bannerContent}>
-            <h1 id={styles.titleBanner}>{job.tituloDaVaga}</h1>
-            <p id={styles.descriptionBanner}>{job.descricaoDoBanner}</p>
+            <h1 id={styles.titleBanner}>{job[0].tituloDaVaga}</h1>
+            <p id={styles.descriptionBanner}>{job[0].descricaoDoBanner}</p>
           </div>
         </div>
       </div>
@@ -68,36 +67,36 @@ export default function DetalhesVagaInternacionais() {
       <main id={styles.jobSection}>
         <div id={styles.sectionInfoJob}>
           <div className={styles.boxJob}>
-            <h2 id={styles.titleMain}>{job.tituloDaVaga}</h2>
+            <h2 id={styles.titleMain}>{job[0].tituloDaVaga}</h2>
           </div>
           <div id={styles.allOfJob}>
             <div className={styles.boxJob}>
               <h2 className={styles.titleJob}>Descrição</h2>
-              <p className={styles.descriptionJob}>{job.descricaoDaVaga}</p>
+              <p className={styles.descriptionJob}>{job[0].descricaoDaVaga}</p>
             </div>
             <div className={styles.boxJob}>
               <h2 className={styles.titleJob}>Requisitos</h2>
-              <p className={styles.descriptionJob}>{job.requisitos}</p>
+              <p className={styles.descriptionJob}>{job[0].requisitos}</p>
             </div>
             <div className={styles.boxJob}>
               <h2 className={styles.titleJob}>Escolaridade</h2>
-              <p className={styles.descriptionJob}>{job.escolaridadeMinima}</p>
+              <p className={styles.descriptionJob}>{job[0].escolaridadeMinima}</p>
             </div>
             <div className={styles.boxJob}>
               <h2 className={styles.titleJob}>Curso Superior</h2>
-              <p className={styles.descriptionJob}>{job.cursoSuperior}</p>
+              <p className={styles.descriptionJob}>{job[0].cursoSuperior}</p>
             </div>
             <div className={styles.boxJob}>
               <h2 className={styles.titleJob}>Jornada De Trabalho</h2>
-              <p className={styles.descriptionJob}>{job.jornadaDeTrabalho}</p>
+              <p className={styles.descriptionJob}>{job[0].jornadaDeTrabalho}</p>
             </div>
             <div className={styles.boxJob}>
               <h2 className={styles.titleJob}>Beneficios</h2>
-              <p className={styles.descriptionJob}>{job.beneficios}</p>
+              <p className={styles.descriptionJob}>{job[0].beneficios}</p>
             </div>
             <div className={styles.boxJob}>
               <h2 className={styles.titleJob}>Horário de Trabalho</h2>
-              <p className={styles.descriptionJob}>{job.horarioDoTrabalho}</p>
+              <p className={styles.descriptionJob}>{job[0].horarioDoTrabalho}</p>
             </div>
           </div>
           <div id={styles.boxButtons}>

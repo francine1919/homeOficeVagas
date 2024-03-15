@@ -25,7 +25,7 @@ export default function VagasLocais() {
   const minLimit = 0;
   const maxLimit = 5;
 
-  const [vagasMostradas, setVagasMostradas] = useState();
+  const [vagasMostradas, setVagasMostradas] = useState(); 
 
   const mostrarMaisNomes = () => {
     const proximoLimiteSuperior = vagasMostradas.length + 5;
@@ -40,23 +40,22 @@ export default function VagasLocais() {
   };
 
   async function getJobs(){
-    /* const config = {
+    const configApi = {
       method: 'get',
-      url: "https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers",
+      url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers',
       headers: {
-        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ZmExYjRhLTk2OWEtNDIyMS1hNGVhLTljMmU0ZThkYjU1YyIsImlhdCI6MTcwODk2MzYyOCwiZXhwIjoxNzA5MDUwMDI4fQ.9E4NZTAEAJoPl7uaCGT3pL_gxXnW7oTYmiPF1zWwZ8c',
-        'Content-Type': 'application/json',  // Pode variar dependendo da API que você está acessando
-      },
-    }; */
+        'X-Custom-Jobs': 'my-secret-endpoint-1@@89',
+      }
+    }
 
-    axios.get("http://localhost:3000/api/vagas")
+    axios(configApi)
     .then((response) => {
-      setJobs(response.data.dataCards)
+      setJobs(response.data)
 
-      const countrys = response.data.dataCards.map((item) => item.pais)
+      const countrys = response.data.map((item) => item.pais)
       setDataCountrys([...new Set(countrys)]);
     }).catch((error) => {
-      setJobs(error.message)
+      return null
     }) 
   }
 
@@ -164,7 +163,7 @@ export default function VagasLocais() {
                     {Array.isArray(dataCountrys) && dataCountrys.length > 0 ? (
                       <>
                         <option>Países encontrados!</option>
-                        {dataCountrys.map((item) => <option key={item.id}>{item}</option>)}
+                        {dataCountrys.map((item) => <option key={item}>{item}</option>)}
                       </>
                     ):
                       <option>carregando...</option>}

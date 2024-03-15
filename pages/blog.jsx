@@ -37,15 +37,6 @@ export default function Blog() {
   };
 
   async function getJobs(){
-    /* const config = {
-      method: 'get',
-      url: "https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers",
-      headers: {
-        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ZmExYjRhLTk2OWEtNDIyMS1hNGVhLTljMmU0ZThkYjU1YyIsImlhdCI6MTcwODk2MzYyOCwiZXhwIjoxNzA5MDUwMDI4fQ.9E4NZTAEAJoPl7uaCGT3pL_gxXnW7oTYmiPF1zWwZ8c',
-        'Content-Type': 'application/json',  // Pode variar dependendo da API que você está acessando
-      },
-    }; */
-
     axios.get("http://localhost:3000/api/vagas")
     .then((response) => {
       setJobs(response.data.dataCards)
