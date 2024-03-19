@@ -118,6 +118,10 @@
     height: 40px;
     border-radius: 5px;
     color: #fff;
+    padding-left:5px ;
+}
+.entrysFilter::placeholder{
+    color: rgb(190, 190, 190);
 }
 #boxButtonsFilter{
     width: 200px;
@@ -639,7 +643,9 @@
     /* FIM BLOG */
 }
 @media screen and (min-width: 481px) and (max-width: 768px){
-    
+    .unList{
+        margin-top: 30px;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
     

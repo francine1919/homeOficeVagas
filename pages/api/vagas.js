@@ -267,7 +267,73 @@ export default function handler(req, res) {
     horarioDeCriacao: "11:30",
     pais: "Egito",
     cidade: "Cairo"
-  }
+  },
+  {
+    id: 12,
+    tituloDaVaga: "Analista de Marketing Digital",
+    formaDeRemuneracao: "Salário fixo + bônus por desempenho",
+    descricaoDoBanner: "Estamos em busca de um profissional de marketing digital apaixonado por estratégias inovadoras. Se você gosta de desafios e quer fazer parte de uma equipe dinâmica, essa vaga é para você!",
+    requisitos: "Experiência comprovada em marketing digital, conhecimento em SEO, SEM, e familiaridade com ferramentas como Google Analytics e Facebook Ads.",
+    descricaoDaVaga: "O analista de marketing digital será responsável por desenvolver e implementar estratégias de marketing online, monitorar o desempenho das campanhas e analisar métricas para otimização contínua.",
+    escolaridadeMinima: "Ensino superior completo em Marketing, Publicidade ou áreas relacionadas.",
+    cursoSuperior: "Desejável formação em Marketing, Publicidade ou áreas afins.",
+    jornadaDeTrabalho: "Horário flexível",
+    beneficios: "Plano de saúde, vale-refeição, home office opcional",
+    tags: {
+      habilidades: ["SEO", "SEM", "Google Analytics", "Facebook Ads"],
+      experiencia: true,
+      nivel: "Pleno"
+    },
+    horas: "30 horas/semana",
+    horarioDoTrabalho: "Flexível",
+    horarioDeCriacao: "09:00",
+    pais: "Brasil",
+    cidade: "Espirito Santo"
+  },
+  {
+    id: 13,
+    tituloDaVaga: "Analista de Marketing Digital",
+    formaDeRemuneracao: "Salário fixo + bônus por desempenho",
+    descricaoDoBanner: "Estamos em busca de um profissional de marketing digital apaixonado por estratégias inovadoras. Se você gosta de desafios e quer fazer parte de uma equipe dinâmica, essa vaga é para você!",
+    requisitos: "Experiência comprovada em marketing digital, conhecimento em SEO, SEM, e familiaridade com ferramentas como Google Analytics e Facebook Ads.",
+    descricaoDaVaga: "O analista de marketing digital será responsável por desenvolver e implementar estratégias de marketing online, monitorar o desempenho das campanhas e analisar métricas para otimização contínua.",
+    escolaridadeMinima: "Ensino superior completo em Marketing, Publicidade ou áreas relacionadas.",
+    cursoSuperior: "Desejável formação em Marketing, Publicidade ou áreas afins.",
+    jornadaDeTrabalho: "Horário flexível",
+    beneficios: "Plano de saúde, vale-refeição, home office opcional",
+    tags: {
+      habilidades: ["SEO", "SEM", "Google Analytics", "Facebook Ads"],
+      experiencia: true,
+      nivel: "Pleno"
+    },
+    horas: "30 horas/semana",
+    horarioDoTrabalho: "Flexível",
+    horarioDeCriacao: "09:00",
+    pais: "Brasil",
+    cidade: "Brasília"
+  },
+  {
+    id: 14,
+    tituloDaVaga: "Analista de Marketing Digital",
+    formaDeRemuneracao: "Salário fixo + bônus por desempenho",
+    descricaoDoBanner: "Estamos em busca de um profissional de marketing digital apaixonado por estratégias inovadoras. Se você gosta de desafios e quer fazer parte de uma equipe dinâmica, essa vaga é para você!",
+    requisitos: "Experiência comprovada em marketing digital, conhecimento em SEO, SEM, e familiaridade com ferramentas como Google Analytics e Facebook Ads.",
+    descricaoDaVaga: "O analista de marketing digital será responsável por desenvolver e implementar estratégias de marketing online, monitorar o desempenho das campanhas e analisar métricas para otimização contínua.",
+    escolaridadeMinima: "Ensino superior completo em Marketing, Publicidade ou áreas relacionadas.",
+    cursoSuperior: "Desejável formação em Marketing, Publicidade ou áreas afins.",
+    jornadaDeTrabalho: "Horário flexível",
+    beneficios: "Plano de saúde, vale-refeição, home office opcional",
+    tags: {
+      habilidades: ["SEO", "SEM", "Google Analytics", "Facebook Ads"],
+      experiencia: true,
+      nivel: "Pleno"
+    },
+    horas: "30 horas/semana",
+    horarioDoTrabalho: "Flexível",
+    horarioDeCriacao: "09:00",
+    pais: "Brasil",
+    cidade: "Rio de Janeiro"
+  },
 
   ];
 

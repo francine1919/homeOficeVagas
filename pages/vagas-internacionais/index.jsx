@@ -1,14 +1,3 @@
-/* import Link from "next/link";
-
-import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
-import CardJobs from "@/components/cardJobs/CardJobs";
-
-import styles from "@/styles/vagas.module.scss";
-
-import { robotoFlex } from "@/fonts/font"; */
-
-
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
@@ -52,23 +41,22 @@ export default function VagasInternacionais() {
   };
 
   async function getJobs(){
-    /* const config = {
+    const configApi = {
       method: 'get',
-      url: "https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers",
+      url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/international/true',
       headers: {
-        'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU0ZmExYjRhLTk2OWEtNDIyMS1hNGVhLTljMmU0ZThkYjU1YyIsImlhdCI6MTcwODk2MzYyOCwiZXhwIjoxNzA5MDUwMDI4fQ.9E4NZTAEAJoPl7uaCGT3pL_gxXnW7oTYmiPF1zWwZ8c',
-        'Content-Type': 'application/json',  // Pode variar dependendo da API que você está acessando
-      },
-    }; */
+        'X-Custom-Jobs': 'my-secret-endpoint-1@@89',
+      }
+    }
 
-    axios.get("http://localhost:3000/api/vagas")
+    axios(configApi)
     .then((response) => {
-      setJobs(response.data.dataCards)
+      setJobs(response.data)
 
-      const countrys = response.data.dataCards.map((item) => item.pais)
+      const countrys = response.data.map((item) => item.pais)
       setDataCountrys([...new Set(countrys)]);
     }).catch((error) => {
-      setJobs(error.message)
+      return null
     }) 
   }
 
@@ -100,7 +88,7 @@ export default function VagasInternacionais() {
         setVagasMostradas(completeFilter)
       }
     } catch (error) {
-      console.log("erro do catch", error.message)
+      return null
     }
   }
   

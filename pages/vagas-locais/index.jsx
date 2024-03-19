@@ -12,9 +12,7 @@ import Link from "next/link";
 
 export default function VagasLocais() {
   const [nameJobChoice, setNameJobChoice] = useState();
-  const [countryChoice, setCountryChoice] = useState(); 
   const [cityChoice, setCityChoice] = useState(); 
-  const [dataCitys, setDataCitys] = useState();
   const [dataCountrys, setDataCountrys] = useState();
   const [message, setMessage] = useState("Aguarde um momento...");
 
@@ -42,7 +40,7 @@ export default function VagasLocais() {
   async function getJobs(){
     const configApi = {
       method: 'get',
-      url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers',
+      url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/international/false',
       headers: {
         'X-Custom-Jobs': 'my-secret-endpoint-1@@89',
       }
@@ -63,63 +61,41 @@ export default function VagasLocais() {
     try {
       if(nameJobChoice){
         const filterNameJobChoose = await jobs.filter((item) => nameJobChoice.toLowerCase() === item.tituloDaVaga.toLowerCase())
-        console.log("Filter Choose:", filterNameJobChoose.length)
         setVagasMostradas(filterNameJobChoose)
       }
-      if(countryChoice){
-        const filterCountryChoice = await jobs.filter((item) => countryChoice === item.pais)
-        console.log("Filter Country Select:", filterCountryChoice)
-        setVagasMostradas(filterCountryChoice)
+      if(cityChoice){
+        const filterCityChoice = await jobs.filter((item) => cityChoice === item.cidade)
+        setVagasMostradas(filterCityChoice)
       }
-      if(nameJobChoice && countryChoice){
-        const filterJobAndCountry = await jobs.filter((item) => nameJobChoice === item.tituloDaVaga && countryChoice === item.pais)
-        console.log("Filter Jobs and Country:", filterJobAndCountry)
-        setVagasMostradas(filterJobAndCountry)
-      }
-      if(countryChoice && cityChoice){
-        const filterCountryAndCity = await jobs.filter((item) => countryChoice === item.pais && cityChoice === item.cidade)
-        console.log("Filter Country and city:", filterCountryAndCity)
-        setVagasMostradas(filterCountryAndCity)
-      }
-      if(nameJobChoice && countryChoice && cityChoice){
-        const completeFilter = await jobs.filter((item) => nameJobChoice.toLowerCase() === item.tituloDaVaga.toLowerCase() && countryChoice === item.pais && cityChoice === item.cidade)
-        console.log("Filtro completo:", completeFilter)
-        setVagasMostradas(completeFilter)
+      if(nameJobChoice && cityChoice){
+        const filterJobAndCity = await jobs.filter((item) => nameJobChoice === item.tituloDaVaga && cityChoice === item.cidade)
+        setVagasMostradas(filterJobAndCity)
       }
     } catch (error) {
-      console.log("erro do catch", error.message)
+      return null
     }
   }
   
   function putOnState(e){
     e.preventDefault()
     showJobOrJobFilter()
-    dispatch(searchByJobs({nameJobChoice, countryChoice, cityChoice}))
+    dispatch(searchByJobs({nameJobChoice, cityChoice}))
   } 
 
   function cleanerState(){
     setNameJobChoice("")
-    setCountryChoice("")
     setCityChoice("")
 
     const minClean = 0;
     const maxClean = 5;
     setVagasMostradas(jobs.slice(minClean, maxClean))
     
-    dispatch(searchByJobs({nameJobChoice, countryChoice, cityChoice}))
+    dispatch(searchByJobs({nameJobChoice, cityChoice}))
   } 
 
   useEffect(() => {
     getJobs()
   }, [])
-
-  useEffect(() => {
-    if(countryChoice){
-      const searchCitys = jobs.filter((item) => item.pais === countryChoice).map((item) => item.cidade)
-
-      setDataCitys([...new Set(searchCitys)])
-    }
-  },[countryChoice])
 
   useEffect(() => {
     if(!jobs){
@@ -158,28 +134,8 @@ export default function VagasLocais() {
                   <input className={styles.entrysFilter} value={nameJobChoice} onChange={(e) => setNameJobChoice(e.target.value)} type="text" />
                 </div>
                 <div className={styles.boxInputs}>
-                  <label className={styles.titleFilter} htmlFor="">País</label>
-                  <select className={styles.entrysFilter} value={countryChoice} onChange={(e) => setCountryChoice(e.target.value)}>
-                    {Array.isArray(dataCountrys) && dataCountrys.length > 0 ? (
-                      <>
-                        <option>Países encontrados!</option>
-                        {dataCountrys.map((item) => <option key={item}>{item}</option>)}
-                      </>
-                    ):
-                      <option>carregando...</option>}
-                  </select>
-                </div>
-                <div className={styles.boxInputs}>
-                  <label className={styles.titleFilter} htmlFor="">Cidade</label>
-                  <select className={styles.entrysFilter} value={cityChoice} onChange={(e) => setCityChoice(e.target.value)} id="">
-                    {dataCitys ? (
-                      <>
-                        <option>Escolha uma cidade</option>
-                        {dataCitys.map((item) => <option key={item}>{item}</option>)}
-                      </>
-                    ) :
-                    <option>Escolha um País</option>}
-                  </select>
+                  <label className={styles.titleFilter} htmlFor="">Pesquisar por Cidade</label>
+                  <input className={styles.entrysFilter} value={cityChoice} onChange={(e) => setCityChoice(e.target.value)} type="text" placeholder="Ex: Sao Paulo"/>
                 </div>
               </div>
               <div id={styles.boxButtonsFilter}>
