@@ -26,6 +26,7 @@ export default function Home() {
   const [nameJob, setNameJob] = useState();
   const [countrys, setCountrys] = useState();
   const [citys, setCitys] = useState();
+  const [dataLocal, setDataLocal] = useState();
 
   const [countrySelect , setCountrySelect] = useState();
   const [citySelect , setCitySelect] = useState();
@@ -34,15 +35,28 @@ export default function Home() {
   const router = useRouter();
 
   async function handleJobs(){
-    await axios.get("http://localhost:3000/api/vagas")
+    const configApi = {
+      method: 'get',
+      url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers',
+      headers: {
+        'X-Custom-Jobs': 'my-secret-endpoint-1@@89'
+      }
+    }
+    
+    axios(configApi)
     .then((response) => {
       dispatch(dataJobs(response.data))
-      const filterCountry = response.data.dataCards.map((item) => ({id: item.id, pais: item.pais, cidade: item.cidade}))
+      const data = response.data.map((item) => ({
+        pais: item.pais,
+        cidade: item.cidade
+      }))
+      const dataCountrys = data.map((item) => item.pais)
 
-      setCountrys(filterCountry)
+      setDataLocal(data)
+      setCountrys([...new Set(dataCountrys)])
     })
     .catch((error) => {
-      console.log(error.message)
+      return null
     })
   }
 
@@ -50,9 +64,8 @@ export default function Home() {
     if(!countrys){
       return null
     }else{
-      const citys = countrys.filter((item) => {
-        return item.pais === countrySelect
-      })
+      const citys = dataLocal.filter((item) => item.pais === countrySelect)
+
       setCitys(citys)
     }
   }
@@ -60,12 +73,11 @@ export default function Home() {
   function sendDataFilter(e){
     e.preventDefault()
     dispatch(newSearch({
-      filter: {
         title: nameJob,
         country: countrySelect,
         city: citySelect
       }
-    }))
+    ))
     router.push("/vaga-filtrada")
   }
 
@@ -107,7 +119,7 @@ export default function Home() {
                   {countrys ? <>
                     <option disabled>Países carregados</option>
                     {countrys.map((item) => (
-                      <option key={item.id}>{item.pais}</option>
+                      <option key={item}>{item}</option>
                     ))}
                   </> : <option>Carregando países...</option>}
                 </select>

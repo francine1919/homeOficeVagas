@@ -47,6 +47,10 @@
     border-radius: 5px;
     font-weight: 700;
     border: none;
+    &:hover{
+        background-color: #c9c9c9;
+        cursor: pointer;
+    }
 }
 #navigationCountrys{
     display: flex;
@@ -120,6 +124,11 @@
         height: 150px;
         width: 80%;
         column-gap: 10px;
+    }
+    #btnBuscar{
+        &:hover{
+            cursor: default;
+        }
     }
 }
 @media screen and (min-width: 480px) and (max-width: 768px) {

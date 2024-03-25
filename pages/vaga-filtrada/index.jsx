@@ -1,4 +1,3 @@
-import CardJobs from "@/components/cardJobs/CardJobs";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { robotoFlex } from "@/fonts/font";
@@ -7,21 +6,133 @@ import styles from "@/styles/vagas.module.scss"
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 
 import axios from "axios";
+import { newSearch } from "@/redux/searchHome/searchHomeSlice";
 
 export default function VagaFiltrada() {
-    const [search, setSearch] = useState(false);
-    const [filter, setFilter] = useState(false);
+    const [dataJobs, setDataJobs] = useState();
+    const [cards, setCards] = useState();
 
-    const searchState = useSelector((state) => state.search)
-    const dataJobs = useSelector((state) => state.dataMainSlice)
+    const [countrys, setCountrys] = useState();
+    const [citys, setCitys] = useState();
+    
+    const [job, setJob] = useState();
+    const [countrySelect, setCountrySelect] = useState();
+    const [citySelect, setCitySelect] = useState();
+    
+    const searchState = useSelector((state) => state.search);
+    const dispatch = useDispatch();
 
-    const searchPagHome = searchState.search;
-    const filterTitlePagHome = searchState.filter.title;
-    const filterCountryPagHome = searchState.filter.country;
-    const filterCityPagHome = searchState.filter.city;
+    const searchPagHome = searchState;
+
+    const filterTitlePagHome = searchPagHome.value.filter.title;
+    const filterCountryPagHome = searchPagHome.value.filter.country;
+    const filterCityPagHome = searchPagHome.value.filter.city;
+
+    const minLimit = 0;
+    const maxLimit = 5;
+
+    const mostrarMaisNomes = () => {
+      const proximoLimiteSuperior = cards.length + 5;
+      const maisNomes = dataJobs.slice(cards.length, proximoLimiteSuperior);
+      setCards([...cards, ...maisNomes]);
+      
+      if(dataJobs.length === cards.length){
+        alert("As vagas acabaram!")
+      }else{
+        return null
+      }
+    };
+
+    async function getAllJobs(){
+      const configApi = {
+        method: 'get',
+        url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/offers',
+        headers: {
+          'X-Custom-Jobs': 'my-secret-endpoint-1@@89'
+        }
+      }
+
+      axios(configApi)
+      .then((response) => {
+        setDataJobs(response.data)
+
+        const countrys = response.data.map((item) => item.pais)
+        setCountrys([...new Set(countrys)]);
+      })
+      .catch((error) => {
+        return null
+      })
+    }
+
+    async function showCard(){
+      try {
+        if(filterTitlePagHome){
+          const filterTitle = await dataJobs.filter((item) => filterTitlePagHome.toLowerCase() === item.tituloDaVaga.toLowerCase())
+          setCards(filterTitle)
+        }
+        if(filterCountryPagHome){
+          const filterCountry = await dataJobs.filter((item) => filterCountryPagHome === item.pais)
+          setCards(filterCountry)
+        }
+        if(filterTitlePagHome && filterCountryPagHome){
+          const filterTitleAndCountry = await dataJobs.filter((item) => filterTitlePagHome === item.tituloDaVaga && filterCountryPagHome === item.pais)
+          setCards(filterTitleAndCountry)
+        }
+        if(filterCountryPagHome && filterCityPagHome){
+          const filterCountryAndCity = await dataJobs.filter((item) => filterCountryPagHome === item.pais && filterCityPagHome === item.cidade)
+          setCards(filterCountryAndCity)
+        }
+        if(filterTitlePagHome && filterCountryPagHome && filterCityPagHome){
+          const completeFilter = await dataJobs.filter((item) => filterTitlePagHome.toLowerCase() === item.tituloDaVaga.toLowerCase() && filterCountryPagHome === item.pais && filterCityPagHome === item.cidade)
+          setCards(completeFilter)
+        }
+      } catch (error) {
+        return null
+      }
+    }
+
+    function putOnState(e){
+      e.preventDefault()
+      showCard()
+      dispatch(newSearch({
+        title: job,
+        country: countrySelect,
+        city: citySelect
+      }
+    ))
+    }
+
+    function cleanerState(){
+      setJob("")
+      setCountrySelect("")
+      setCitySelect("")
+    } 
+
+    useEffect(() => {
+      showCard()
+    }, [filterTitlePagHome, filterCountryPagHome, filterCityPagHome, dataJobs]);
+
+    useEffect(() => {
+      getAllJobs()
+    }, [])
+
+    useEffect(() => {
+      if(dataJobs){
+        const filterCitys = dataJobs.filter((item) => item.pais === countrySelect).map((item) => item.cidade);
+        setCitys([...new Set(filterCitys)]);
+      }
+    }, [countrySelect])
+
+    useEffect(() => {
+      if(cards){
+        setCards(dataJobs.slice(minLimit, maxLimit));
+      }
+    }, []);
+
+    console.log(job, countrySelect, citySelect)
 
     return (
         <div id={styles.vagas} className={robotoFlex.className}>
@@ -42,42 +153,40 @@ export default function VagaFiltrada() {
                 <div>
                   <div id={styles.boxFilter}>
                       <h3 id={styles.titleMainFilter}>Filtrar Resultados</h3>
-                      <form id={styles.formFilter}>
+                      <form id={styles.formFilter} onSubmit={putOnState}>
                           <div id={styles.boxMainForm}>
                               <div className={styles.boxInputs}>
                                 <label className={styles.titleFilter} htmlFor="">Vaga</label>
-                                <input className={styles.entrysFilter} onChange={(e) => setVaga(e.target.value)} type="text" />
+                                <input className={styles.entrysFilter} value={job} onChange={(e) => setJob(e.target.value)} type="text" />
                               </div>
                               <div className={styles.boxInputs}>
                                   <label className={styles.titleFilter} htmlFor="">País</label>
-                                  <select className={styles.entrysFilter} onChange={(e) => setCountry(e.target.value)}>
-                                      {/* {Array.isArray(dataCountrys) && dataCountrys.length > 0 ? (
+                                  <select className={styles.entrysFilter} value={countrySelect} onChange={(e) => setCountrySelect(e.target.value)}>
+                                      {Array.isArray(countrys) && countrys.length > 0 ? (
                                         <>
                                           <option>Países encontrados!</option>
-                                          {dataCountrys.map((item) => <option key={item.id}>{item.pais}</option>)}
+                                          {countrys.map((item) => <option key={item}>{item}</option>)}
                                         </>
                                       ):
-                                      <option>carregando...</option>} */}
-                                      <option value="">Brasil</option>
+                                      <option>carregando...</option>}
                                   </select>
                               </div>
                               <div className={styles.boxInputs}>
                                   <label className={styles.titleFilter} htmlFor="">Cidade</label>
-                                  <select className={styles.entrysFilter} onChange={(e) => setCity(e.target.value)} id="">
-                                      {/* {dataCitys ? (
+                                  <select className={styles.entrysFilter} value={citySelect} onChange={(e) => setCitySelect(e.target.value)} id="">
+                                      {citys ? (
                                         <>
                                           <option>Escolha uma cidade</option>
-                                          {dataCitys.map((item) => <option key={item}>{item}</option>)}
+                                          {citys.map((item) => <option key={item}>{item}</option>)}
                                         </>
                                       ) :
-                                      <option>Escolha um País</option>} */}
-                                      <option value="">Brasilia</option>
+                                      <option>Escolha um País</option>}
                                   </select>
                               </div>
                           </div>
                           <div id={styles.boxButtonsFilter}>
                             <button id={styles.btnFilter}>Filtrar</button>
-                            <button id={styles.btnCleanFilter}>Limpar Filtro</button>
+                            <button id={styles.btnCleanFilter} onClick={() => cleanerState()}>Limpar Filtro</button>
                           </div>
                       </form>
                     </div>
@@ -95,75 +204,47 @@ export default function VagaFiltrada() {
                         </div>
                     </div>
                 </div>
-
-                {filterTitlePagHome || filterCountryPagHome || filterCityPagHome || searchPagHome ? 
+                {filterTitlePagHome || filterCountryPagHome || filterCityPagHome ?  
                 
-                filterTitlePagHome || filterCountryPagHome || filterCityPagHome ? 
-                
-                <div>
-                  {filterTitlePagHome || filterCountryPagHome || filterCityPagHome ? <>
-                  <div id={styles.infoAboutJobs}>
-                    <h4 id={styles.resultJobsTitle}>Exibindo vagas de emprego relacionado a: {filterTitlePagHome || "Titulo: Não Inserido"} - {filterCountryPagHome || "País: Não inserido"} - {filterCityPagHome || "Cidade: não inserido"}</h4>
-                    <span id={styles.resultsJobs}>Resultado: 24 vagas</span>
-                  </div>
+                cards ? (
                   <div>
-                  <CardJobs 
-                    jobChoose={filterTitlePagHome}
-                    countrySelect={filterCountryPagHome}
-                    cityChoose={filterCityPagHome}
-                  />
-                    <button id={styles.btnShowMoreJobs}>Mais vagas</button>
-                  </div>
-                  
-                  </> : <div id={styles.jobNotFound}>
-                          <h2 id={styles.jobNotFoundTitle}>Não achamos nenhuma vaga relacionada a: {filterTitlePagHome} - {filterCountryPagHome} - {filterCityPagHome}</h2>
-                          <p id={styles.jobNotFoundDescription}>Tente pesquisar por outras vagas e aproveite para usar o filtro ao lado!</p>
-                          <Link id={styles.goBlog} href="/blog">Ir para Blog</Link>
-                        </div>}
-                </div>
-                
-                : searchPagHome ? 
-                
-                <div id={styles.responseSearch}>
-                    <div id={styles.boxResponseSearch}>
-                        <div id={styles.boxSearch}>
-                          <h4 id={styles.searchTitle}>Exibindo resultados sobre: {searchPagHome}</h4>
-                          <span id={styles.searchResults}>Resultado: 2 Artigos</span>
-                        </div>
+                    <div id={styles.infoAboutJobs}>
+                      <h4 id={styles.resultJobsTitle}>Exibindo vagas de emprego relacionado a: {filterTitlePagHome || null} {filterCountryPagHome || null} {filterCityPagHome || null}</h4>
+                      <span id={styles.resultsJobs}>Resultado: {cards.length} vagas</span>
                     </div>
-
-                    <Link href="/bolas" id={styles.cardSearch}>
-                        <div id={styles.boxCardSearch}>
-                          <h3 id={styles.titleCardSearch}>Senai lança processo seletivo com + de 200 vagas até o dia 28/06.</h3>
-                          <p id={styles.descriptionSearch}>Por Maria Aquino, sexta-feira, 9 de agosto de 2023</p>
+                    <div>
+                      {cards.map((card) => (
+                        <div key={card.id} className={styles.card}>
+                          <div className={styles.boxTitle}>
+                              <h2 className={styles.title}>{card.tituloDaVaga}</h2>
+                              <h3 className={styles.remuneration}>{card.formaDeRemuneracao}</h3>
+                          </div>
+                          <div className={styles.boxDescription}>
+                              <p className={styles.descriptionJob}>{card.descricaoDaVaga}</p>
+                          </div>
+                          <div className={styles.boxAboutJob}>
+                              <Link className={styles.showJob} href={`/vagas-locais/${card.id}`} >Verificar Vaga</Link>
+                              <ul className={styles.unList}>
+                                <li className={styles.tags}>{card.tags.habilidades[0]}</li>
+                                <li className={styles.tags}>{card.tags.habilidades[1]}</li>
+                                <li className={styles.tags}>{card.tags?.habilidades[2]}</li>
+                                <li className={styles.tags}>{card.tags?.habilidades[3]}</li>
+                                <li className={styles.tags}>{card.horarioDeCriacao}</li>
+                              </ul>
+                          </div>
                         </div>
-                        <div id={styles.boxTagsSearch}>
-                          <span className={styles.tagsSearch}>Senai</span>
-                          <span className={styles.tagsSearch}>Emprego</span>
-                          <span className={styles.tagsSearch}>Processo Seletivo</span>
-                        </div>
-                    </Link>
-
-                    <Link href="/bolas" id={styles.cardSearch}>
-                        <div id={styles.boxCardSearch}>
-                          <h3 id={styles.titleCardSearch}>Senai lança processo seletivo com + de 200 vagas até o dia 28/06.</h3>
-                          <p id={styles.descriptionSearch}>Por Maria Aquino, sexta-feira, 9 de agosto de 2023</p>
-                        </div>
-                        <div id={styles.boxTagsSearch}>
-                          <span className={styles.tagsSearch}>Senai</span>
-                          <span className={styles.tagsSearch}>Emprego</span>
-                          <span className={styles.tagsSearch}>Processo Seletivo</span>
-                        </div>
-                    </Link>
-                </div>
-                : <div id={styles.searchNotFound}>
-                    <h2 id={styles.searchNotFoundTitle}>Não achamos nada relacionado a: {searchPagHome}</h2>
-                    <p id={styles.searchNotFoundDescription}>Tente pesquisar por outros assuntos ou visite o nosso Blog! É só clicar no botão abaixo.</p>
-                    <Link id={styles.goBlog} href="/blog">Ir para Blog</Link>
+                      ))}
+                    </div>
+                  <div>
+                    <button id={styles.btnShowMoreJobs} onClick={() => mostrarMaisNomes()}>Mais vagas</button>
                   </div>
-
-                : <p>Voce nao pesquisou nada</p>
-                }                  
+                </div>
+                ) : <h3 id={styles.waiting}>Aguarde...</h3>
+                
+                : <div id={styles.boxNotSearch}>
+                    <h3 id={styles.notSearchOne}>Nada foi pesquisado.</h3>
+                    <p id={styles.notSearchTwo}>Use o filtro nesta página se desejar buscar alguma vaga.</p>
+                  </div>}             
             </main>
 
             <div id={styles.advertising} className={styles.bannerTreeFiltro}>

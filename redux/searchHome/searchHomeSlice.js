@@ -16,12 +16,13 @@ export const searchHomeSlice = createSlice({
     initialState,
     reducers: {
         newSearch: (state, actions) => {
-            
-            
-            state.search = searchEntry;
-            state.filter.title = filter.title;
-            state.filter.country = filter.country;
-            state.filter.city = filter.city;
+            const { searchInput, title, country, city } = actions.payload;
+
+            state.value.search = searchInput;
+            state.value.filter.title = title;
+            state.value.filter.country = country;
+            state.value.filter.city = city;
+
         }
     }
 })
