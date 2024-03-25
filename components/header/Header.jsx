@@ -22,7 +22,7 @@ export default function Header() {
   const router = useRouter()
 
   function goFilterPage(){
-    dispatch(newSearch(searchInput))
+    dispatch(newSearch({searchInput}))
 
     router.push("/vaga-filtrada")
   }
