@@ -132,8 +132,6 @@ export default function VagaFiltrada() {
       }
     }, []);
 
-    console.log(job, countrySelect, citySelect)
-
     return (
         <div id={styles.vagas} className={robotoFlex.className}>
             <Header/>

@@ -33,20 +33,16 @@ export default function DetalhesVagaInternacionais() {
     axios(configApi)
     .then((response) => {
       const jobFilter = response.data.filter((item) => item.id == userId)
-      console.log(job)
       setJob(jobFilter);
     })
     .catch((error) => {
-      console.log("erou")
-      console.log("Erro ao buscar vaga especifica", error.message);
+      return null
     });
   }
     
     useEffect(() => {
       showJob();
     }, [userId]);
-    
-    //console.log("teste", job[0].id, job[0].tituloDaVaga, job.length > 0)
 
   return (
     <div className={`${robotoFlex.className} ${styles.vagaEscolhida}`}>
