@@ -1,0 +1,222 @@
+@import "../styles/cores.module.scss";
+
+#pesquisa{
+    background-color: $primary-color;
+}
+/* INICIO BANNER ONE */
+#bannerOne{
+    height: 300px;
+    width: 100%;
+    margin: 50px 0;
+    background-size: cover;
+    background-image: url(../public/pesquisa/banner_one.jpg);
+    background-position: 0 -100px;
+}
+#bgBannerOne{
+    background-color: #1e1e1ec5;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#contentBannerOne{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+#boxTitleOneFilter{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $third-color;
+    border-radius: 10px;
+    width: 80%;
+    padding: 30px;
+}
+#titleBannerOneFilter{
+    color: #fff;
+    border-left: 3px solid #fff;
+    padding-left: 10px;
+}
+#descriptionBannerOneFilter{
+    color: #fff;
+    margin-top: 20px;
+}
+/* FIM BANNER ONE */
+
+#bannerAndMainContent{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 50px;
+    border-top: 2px solid #fff;
+}
+/* INICIO BANNER TWO */
+#bannerTwo{
+    width: 300px;
+    height: 550px;
+    background-size: cover;
+    background-image: url(../public/pesquisa/banner_two.jpg);
+}
+#bgBannerTwo{
+    background-color: rgba(30, 30, 30, 0.603);
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#contentBannerTwo{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#titleBannerTwo{
+    color: #FF6B00;
+    text-align: center;
+    font-size: 20px;
+    width: 85%;
+}
+.descriptionTwo{
+    color: #fff;
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#boxDescriptionTwo{
+    width: 80%;
+}
+#btnWantBanner{
+    display: block;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+}
+/* FIM BANNER TWO */
+
+/* INICIO MAIN CONTENT */
+#responseSearch{
+    width: 780px;
+}
+#boxResponseSearch{
+    margin-bottom: 50px;
+}
+#boxSearch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#searchTitle{
+    color: #fff;
+}
+#searchResults{
+    color: #fff;
+    border: 2px solid $third-color;
+    padding: 10px;
+    font-size: 13px;
+}
+
+/* INICIO CARD */
+#cardSearch{
+    color: #fff;
+    border-bottom: 3px solid #EEEEEE;
+    padding-bottom: 50px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: #064c68;
+    border-radius: 10px;
+    &:hover{
+        background-color: #064863;
+    }
+}
+#descriptionSearch{
+    margin: 30px 0 20px;
+}
+.tagsSearch{
+    background-color: $secondary-color;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+/* FIM CARD */
+
+/* INICIO SEARCH NOT FOUND */
+#searchNotFound{
+    width: 750px;
+}
+#searchNotFoundTitle{
+    color: #fff;
+    margin-bottom: 10px;
+}
+#searchNotFoundDescription{
+    color: #858585;
+    margin-bottom: 50px;
+}
+#goInternationalJobPage{
+    background-color: $secondary-color;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+#goLocalJobPage{
+    background-color: $secondary-color;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+/* FIM SEARCH NOT FOUND */
+/* FIM MAIN CONTENT */
+
+/* INICIO BANNER TREE */
+#bannerTree{
+    height: 300px;
+    margin: 50px 0;
+    background-size: cover;
+    background-position: 0px -250px;
+    background-image: url(../public/pesquisa/banner_tree.jpg);
+}
+#bgAdvertising{
+    background-color: #1e1e1e9f;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contentAdvertising{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#titleAdvertising{
+    color: $third-color;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+#descriptionAdvertising{
+    color: #fff;
+    width: 80%;
+}
+#wantBannerTwo{
+    display: block;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 0;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+}
+/* INICIO BANNER TREE */

@@ -64,27 +64,22 @@ export default function VagasInternacionais() {
     try {
       if(nameJobChoice){
         const filterNameJobChoose = await jobs.filter((item) => nameJobChoice.toLowerCase() === item.tituloDaVaga.toLowerCase())
-        console.log("Filter Choose:", filterNameJobChoose.length)
         setVagasMostradas(filterNameJobChoose)
       }
       if(countryChoice){
         const filterCountryChoice = await jobs.filter((item) => countryChoice === item.pais)
-        console.log("Filter Country Select:", filterCountryChoice)
         setVagasMostradas(filterCountryChoice)
       }
       if(nameJobChoice && countryChoice){
         const filterJobAndCountry = await jobs.filter((item) => nameJobChoice === item.tituloDaVaga && countryChoice === item.pais)
-        console.log("Filter Jobs and Country:", filterJobAndCountry)
         setVagasMostradas(filterJobAndCountry)
       }
       if(countryChoice && cityChoice){
         const filterCountryAndCity = await jobs.filter((item) => countryChoice === item.pais && cityChoice === item.cidade)
-        console.log("Filter Country and city:", filterCountryAndCity)
         setVagasMostradas(filterCountryAndCity)
       }
       if(nameJobChoice && countryChoice && cityChoice){
         const completeFilter = await jobs.filter((item) => nameJobChoice.toLowerCase() === item.tituloDaVaga.toLowerCase() && countryChoice === item.pais && cityChoice === item.cidade)
-        console.log("Filtro completo:", completeFilter)
         setVagasMostradas(completeFilter)
       }
     } catch (error) {

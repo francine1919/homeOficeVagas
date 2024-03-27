@@ -21,10 +21,10 @@ export default function Header() {
   const dispatch = useDispatch()
   const router = useRouter()
 
-  function goFilterPage(){
+  function goSearchPage(){
     dispatch(newSearch({searchInput}))
 
-    router.push("/vaga-filtrada")
+    router.push("/pesquisa")
   }
 
   function openModal(){
@@ -61,8 +61,8 @@ export default function Header() {
           </ul>
         </nav>
         <div id={styles.boxSearch}>
-          <input id={styles.entrySearch} onChange={(e) => setSearchInput(e.target.value)} type="search" placeholder="Pesquise aqui" />
-          <button onClick={() => goFilterPage()} id={styles.btnSearch}>Pesquisar</button>
+          <input id={styles.entrySearch} onChange={(e) => setSearchInput(e.target.value)} type="search" placeholder="Pesquise aqui" required/>
+          <button onClick={() => goSearchPage()} id={styles.btnSearch}>Pesquisar</button>
         </div>
       </div>
       <Image onClick={() => openModal()} className="menuHamburger" id={styles.logoMenuHamburguer} src={menuHamburguer} alt="Logo do Menu Hamburguer" />
