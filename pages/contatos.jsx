@@ -1,5 +1,7 @@
 import styles from "@/styles/contatos.module.scss";
+
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -9,9 +11,18 @@ import iconEmail from "@/public/icons/icon_white_email.png";
 import iconWhatsapp from "@/public/icons/icon_white_whatsapp.png";
 
 import { robotoFlex } from "@/fonts/font";
-import Footer from "@/components/footer/Footer";
+
+import { useState } from "react";
 
 export default function Contatos() {
+
+  const [name, setName] = useState();
+  const [tellPhone, setTellPhone] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
+
+  console.log(tellPhone)
+
   return (
     <div id={styles.contactPage} className={robotoFlex.className}>
       <Header/>
@@ -25,8 +36,8 @@ export default function Contatos() {
                 <p id={styles.descriptionBanner}>Nesta página voce consegue falar com a gente. Temos varios meios de comunicações, fique a vontade para escolher o que lhe agradar melhor.</p>
               </div>
               <div id={styles.boxLinksPartners}>
-                <Link id={styles.linkPartnerSite} href="#">Anunciar no Site</Link>
-                <Link id={styles.linkPartner} href="#">Parcerias</Link>
+                <Link id={styles.linkPartnerSite} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e gostaria de anunciar em seu site!" target="_blank">Anunciar no Site</Link>
+                <Link id={styles.linkPartner} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em parcerias!" target="_blank">Parcerias</Link>
               </div>
             </div>
           </div>
@@ -52,19 +63,19 @@ export default function Contatos() {
               <form id={styles.formPage} method="post">
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Nome</label>
-                  <input className={styles.entrys} type="text" name="" id="" />
+                  <input className={styles.entrys} type="text" onChange={(e) => setName(e.target.value)} minLength="3" maxLength="40" required/>
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Email</label>
-                  <input className={styles.entrys} type="text" name="" id="" />
+                  <input className={styles.entrys} type="email" onChange={(e) => setEmail(e.target.value)} minLength="7" maxLength="40" required/>
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Telefone</label>
-                  <input className={styles.entrys} type="text" name="" id="" />
+                  <input className={styles.entrys} type="tel" onChange={(e) => setTellPhone(e.target.value)} min="8" max="13" required/>
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Mensagem</label>
-                  <textarea id={styles.areaEntry} cols="30" rows="10"></textarea>
+                  <textarea id={styles.areaEntry} cols="30" rows="10" onChange={(e) => setMessage(e.target.value)} min="20" max="500" required></textarea>
                 </div>
                 <button id={styles.sendBtn}>Enviar</button>
               </form>

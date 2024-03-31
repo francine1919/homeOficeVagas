@@ -211,7 +211,7 @@ export default function VagasInternacionais() {
                   <p className={styles.descriptionJob}>{card.descricaoDaVaga}</p>
               </div>
               <div className={styles.boxAboutJob}>
-                  <Link className={styles.showJob} href={`/vagas-locais/${card.id}`} >Verificar Vaga</Link>
+                  <Link className={styles.showJob} href={`/vagas-internacionais/${card.id}`} >Verificar Vaga</Link>
                   <ul className={styles.unList}>
                     <li className={styles.tags}>{card.tags.habilidades[0]}</li>
                     <li className={styles.tags}>{card.tags.habilidades[1]}</li>
