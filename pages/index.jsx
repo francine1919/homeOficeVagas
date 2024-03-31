@@ -81,6 +81,16 @@ export default function Home() {
     router.push("/vaga-filtrada")
   }
 
+  function goPageSearch(pais, cidade){
+    dispatch(newSearch({
+      title: '',
+      country: pais,
+      city: cidade
+    }))
+
+    router.push('/vaga-filtrada');
+  }
+
   useEffect(() => { 
     handleJobs()
   }, [])
@@ -136,15 +146,15 @@ export default function Home() {
             </div>
           </main>
           <nav id={styles.navigationCountrys}>
-            <a className={styles.countrys} href="">Brasília</a>
-            <a className={styles.countrys} href="">Sydney</a>
-            <a className={styles.countrys} href="">Salvador</a>
-            <a className={styles.countrys} href="">Seul</a>
-            <a className={styles.countrys} href="">New York</a>
-            <a className={styles.countrys} href="">Montreal</a>
-            <a className={styles.countrys} href="">Paris</a>
-            <a className={styles.countrys} href="">Johannesburgo</a>
-            <a className={styles.countrys} href="">São Paulo</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("Brasil","Rio de Janeiro")}>Rio de Janeiro</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("United States","Los Angeles")}>Los Angeles</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("Brasil","Curitiba")}>Curitiba</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("United States","Seattle")}>Seattle</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("Germany","Munich")}>Munich</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("United States","Chicago")}>Chicago</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("Uruguai","Montevideo")}>Montevideu</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("United Kingdom","Manchester")}>Manchester</a>
+            <a className={styles.countrys} onClick={() => goPageSearch("Australia","Sydney")}>Sydney</a>
           </nav>
           <Footer/>
         </div>
