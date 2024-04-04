@@ -1,0 +1,40 @@
+@import "./cores.module.scss";
+
+#page404{
+    background-color: $primary-color;
+    color: #fff;
+}
+#mainContent{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#boxContent{
+    width: 600px;
+}
+#titleOps{
+    margin-bottom: 30px;
+}
+#description{
+    margin-bottom: 30px;
+}
+#goHome{
+    background-color: $secondary-color;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+@media (320px <= width <= 1024px){
+    #boxContent{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #description{
+        text-align: center;
+    }
+}

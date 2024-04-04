@@ -1,0 +1,50 @@
+@import "./cores.module.scss";
+
+#page500{
+    background-color: $primary-color;
+}
+#boxMain{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+#boxImg{
+    margin: 50px 20px;
+}
+#boxTitles{
+    color: $primary-color;
+    width: 800px;
+}
+#title{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+@media (320px <= width <= 1024px){
+    #boxMain{
+        flex-direction: column;
+    }
+    #boxImg{
+        margin: 0;
+    }
+    #boxTitles{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #imgDisconnect{
+        width: 200px;
+        height: 200px;
+    }
+    #title{
+        font-size: 23px;
+    }
+    #description{
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}
