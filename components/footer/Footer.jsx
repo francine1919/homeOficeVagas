@@ -91,7 +91,7 @@ export default function Footer(){
                                 <Link className={styles.descriptionFooter} href="#">Politica De Privacidade</Link>
                             </li>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">Termos e Condições</Link>
+                                <Link className={styles.descriptionFooter} href="/termos-e-condicoes">Termos e Condições</Link>
                             </li>
                         </ul>
                     </nav>
