@@ -1,0 +1,77 @@
+@import "./cores.module.scss";
+
+#termsAndConditionsPage{
+    background-color: $primary-color;
+}
+#mainContent{
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+#boxMainContent{
+    border: 2px solid #fff;
+    width: 80%;
+    padding: 50px;
+}
+#boxTitles{
+    border-bottom: 2px solid $third-color;
+    margin-bottom: 50px;
+}
+#title, #titleBySite{
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#titleMain{
+    color: $third-color;
+    text-transform: uppercase;
+    border-bottom: 2px solid $third-color;
+}
+#titleDate{
+    color: #fff;
+    margin-bottom: 50px;
+}
+#welcomeTitle{
+    color: #fff;
+    margin-bottom: 30px;
+}
+.description, #descriptionBySite{
+    color: #CACACA;
+    margin-bottom: 20px;
+}
+#homeOfficeVagas{
+    color: #fff;
+    margin-top: 50px;
+}
+
+@media(320px <= width <= 480px){
+    #boxMainContent{
+        padding: 50px;
+    }
+    #titleBySite{
+        font-size: 25px;
+        text-align: center;
+        line-height: 50px;
+    }
+    #titleDate{
+        font-size: 17px;
+        text-align: center;
+    }
+    #welcomeTitle{
+        font-size: 16px;
+        text-align: center;
+    }
+    #descriptionBySite{
+        font-size: 15px;
+        text-align: justify;
+    }
+    .description{
+        font-size: 15px;
+        text-align: justify;
+    }
+}
+@media(481px <= width <= 780px){
+    #titleBySite{
+        line-height: 50px;
+    } 
+}
