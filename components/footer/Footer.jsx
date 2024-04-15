@@ -88,7 +88,7 @@ export default function Footer(){
                                 <Link className={styles.descriptionFooter} href="/contatos">Anunciar no Site</Link>
                             </li>
                             <li>
-                                <Link className={styles.descriptionFooter} href="#">Politica De Privacidade</Link>
+                                <Link className={styles.descriptionFooter} href="/politica-de-privacidade">Politica De Privacidade</Link>
                             </li>
                             <li>
                                 <Link className={styles.descriptionFooter} href="/termos-e-condicoes">Termos e Condições</Link>

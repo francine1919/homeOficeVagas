@@ -15,7 +15,7 @@ export default function ServerErrorPage() {
       <Header/>
       <div id={styles.boxMain}>
         <div id={styles.boxImg}>
-          <Image id={styles.imgDisconnect} src={disconnectImg} width={300} height={300}/>
+          <Image id={styles.imgDisconnect} src={disconnectImg} width={300} height={300} alt="Erro de servidor"/>
         </div>
         <div id={styles.boxTitles}>
           <h1 id={styles.title}>Erro no Servidor!</h1>

@@ -1,0 +1,53 @@
+@import "./cores.module.scss";
+
+#box{
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+#content{
+    border: 2px solid #fff;
+    width: 80%;
+    padding: 50px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#boxTitles{
+    border-bottom: 2px solid #fff;
+}
+#titleMain{
+    color: $third-color;
+    margin-bottom: 30px;
+}
+#titleMainSpan{
+    border-bottom: 2px solid #fff;
+}
+#subTitleMain{
+    color: #fff;
+    margin-bottom: 30px;
+}
+#descriptionMain{
+    color: #CACACA;
+    margin-bottom: 40px;
+}
+#mainContent{
+    margin: 50px 0 0;
+}
+.title{
+    color: #fff;
+    margin-bottom: 30px;
+}
+.description{
+    color: #CACACA;
+    margin-bottom: 30px;
+}
+#teamTitle{
+    color: #fff;
+    margin-top: 50px;
+}
+@media (320px <= width <= 480px){
+    .description{
+        text-align: justify;
+    }
+}

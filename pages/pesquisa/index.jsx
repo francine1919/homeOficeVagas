@@ -109,7 +109,7 @@ export default function PesquisaHov() {
                 
                   {shownCard.map((item) => {
                    return(
-                     <div>
+                     <div key={item.id}>
                        <Link href="/teste" id={styles.cardSearch}>
                           <div id={styles.boxCardSearch}>
                             <h3 id={styles.titleCardSearch}>{item.titulo}</h3>
