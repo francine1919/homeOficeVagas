@@ -17,9 +17,15 @@ import 'animate.css';
 
 export default function DetalhesVagaInternacionais() {
   const [job, setJob] = useState();
+  const [modalIsOnline, setModalIsOnline] = useState(false);
+
+  const abreModal = () => setModalIsOnline(true);
+  const fechaModal = () => setModalIsOnline(false);
 
   const { query } = useRouter();
   const userId = query.id;
+
+  const modal = document.querySelector("#modal")
 
   async function showJob() {
     const configApi = {
@@ -96,10 +102,22 @@ export default function DetalhesVagaInternacionais() {
             </div>
           </div>
           <div id={styles.boxButtons}>
-            <Link id={styles.btnSendCurriculum} href="/">Enviar Curriculo</Link>
-            <Link id={styles.btnSendProblem} href="/">Relatar Problema</Link>
+            {job[0].email.includes("@") ? <button id={styles.btnShowEmail} onClick={() => abreModal()}>Visualizar email</button> : <Link id={styles.btnSendCurriculum} href={job[0].email}>Enviar Curriculo</Link>}
+            <Link id={styles.btnSendProblem} href="/contatos">Relatar Problema</Link>
           </div>
         </div>
+
+        {/* MODAL */}
+        {modalIsOnline ? (
+          <div id={styles.modal}>
+            <h4 id={styles.titleModal}>Olá, querido usuário</h4>
+            <p id={styles.descriptionModal}>Para se candidatar para esta vaga, você deve enviar o seu curriculo para o email abaixo. Boa sorte!</p>
+            <h4 id={styles.emailModal}>{job[0].email}</h4>
+            <button id={styles.okButtonModal} onClick={() => fechaModal()}>certo, entendido</button>
+          </div>
+        ) : null}
+        {/* MODAL */}
+        
         <div id={styles.bannerTwo}>
           <div id={styles.bgBannerTwo}>
             <div id={styles.bannerTwoContent}>
