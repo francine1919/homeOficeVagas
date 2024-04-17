@@ -128,8 +128,10 @@ export default function PesquisaHov() {
                 <div id={styles.searchNotFound}>
                   <h2 id={styles.searchNotFoundTitle}>Não achamos nada relacionado a: {stateSearch === undefined || stateSearch.length <= 0 ? "nada foi pesquisado" : stateSearch}</h2>
                   <p id={styles.searchNotFoundDescription}>Tente pesquisar por outros assuntos nas abas de Vagas locais e Vagas Internacionais.</p>
-                  <Link id={styles.goInternationalJobPage} href="/vagas-locais">Vagas Locais</Link>
-                  <Link id={styles.goLocalJobPage} href="/vagas-internacionais">Vagas Internacionais</Link>
+                  <div id={styles.goPages}>
+                    <Link id={styles.goInternationalJobPage} href="/vagas-locais">Vagas Locais</Link>
+                    <Link id={styles.goLocalJobPage} href="/vagas-internacionais">Vagas Internacionais</Link>
+                  </div>
                 </div> 
               }
             </div>

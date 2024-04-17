@@ -220,3 +220,172 @@
     border-radius: 5px;
 }
 /* INICIO BANNER TREE */
+
+@media (320px <= width <= 480px){
+    #bannerOne{
+        background-position: 0;
+        height: 400px;
+    }
+    #titleBannerOneFilter{
+        border-left: none;
+        padding-left: 0;
+        font-size: 25px;
+        text-align: center;
+    }
+    #descriptionBannerOneFilter{
+        text-align: center;
+    }
+    #bannerAndMainContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    #searchNotFound{
+        width: auto;
+        margin-top: 50px;
+    }
+    #searchNotFoundTitle{
+        text-align: center;
+    }
+    #searchNotFoundDescription{
+        text-align: center;
+    }
+    #goPages{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #goInternationalJobPage{
+        padding:10px 0;
+        text-align: center;
+        width: 250px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    #goLocalJobPage{
+        padding: 10px 0;
+        width: 250px;
+        text-align: center;
+    }
+    #bannerTree{
+        height: 350px;
+        background-position: 0;
+    }
+    #contentAdvertising{
+        flex-direction: column;
+    }
+    #boxDescritionAdvertising{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #titleAdvertising{
+        text-align: center;
+        width: 80%;
+    }
+    #descriptionAdvertising{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    #wantBannerTwo{
+        padding: 10px 0;
+    }
+}
+@media (481px <= width <= 768px){
+    #bannerOne{
+        background-position: 0;
+    }
+    #bannerAndMainContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    #searchNotFound{
+        width: auto;
+        margin: 50px 0 0;
+    }
+    #searchNotFoundTitle{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    #searchNotFoundDescription{
+        text-align: center;
+    }
+    #goPages{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #goInternationalJobPage{
+        width: 250px;
+        margin: 0 0 20px;
+        text-align: center;
+    }
+    #goLocalJobPage{
+        text-align: center;
+        width: 250px;
+    }
+    #bannerTree{
+        background-position: 0;
+        height: 350px;
+    }
+    #contentAdvertising{
+        flex-direction: column;
+    }
+    #boxDescritionAdvertising{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #titleAdvertising{
+        text-align: center;
+    }
+    #descriptionAdvertising{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+@media (769px <= width <= 1024px){
+    #bannerAndMainContent{
+        flex-direction: column;
+        align-items: center;
+    }
+    #searchNotFound{
+        width: 80%;
+        margin: 30px auto 0;
+    }
+    #searchNotFoundTitle{
+        text-align: center;
+    }
+    #searchNotFoundDescription{
+        text-align: center;
+    }
+    #goPages{
+        display: flex;
+        justify-content: center;
+    }
+    #bannerTree{
+        background-position: 0;
+    }
+    #boxDescritionAdvertising{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #titleAdvertising{
+        font-size: 25px;
+    }
+    #descriptionAdvertising{
+        font-size: 15px;
+    }
+    #wantBannerTwo{
+        font-size: 15px;
+        padding: 10px;
+        width: 150px;
+    }
+}
+@media (1025px <= width <= 1200px){
+    #searchNotFound{
+        width: 500px;
+    }
+}
