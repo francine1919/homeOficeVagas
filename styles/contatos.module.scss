@@ -30,9 +30,6 @@
   width: 85%;
 }
 
-#titlesContact {
-}
-
 #titleBanner {
   color: #fff;
   font-size: 40px;
@@ -322,7 +319,7 @@
   height: 40px;
 }
 
-@media screen and (min-width: 320px) and (max-width: 468px) {
+@media screen and (min-width: 320px) and (max-width: 1040px) {
   #sectionMainContact {
     display: flex;
     flex-direction: column;
@@ -529,5 +526,166 @@
 
   #sectionForm {
     margin-top: 50px;
+  }
+}
+@media (480px <= width <= 768px){
+  #titleBanner{
+    width: 100%;
+    font-size: 20px;
+  }
+  #descriptionBanner{
+    width: 100%;
+  }
+  #mainTextContact{
+    width: 100%;
+  }
+  #titleMainContact{
+    width: 100%;
+  }
+  .descripitonMainContact{
+    width: 100%;
+    text-align: justify;
+  }
+  #boxLinkMainContact{
+    width: 100%;
+    margin-top: 50px;
+    justify-content: space-between;
+  }
+  .whiteLink{
+    width: 170px;
+    font-size: 14px;
+  }
+  .blueLink{
+    font-size: 14px;
+    width: 170px;
+  }
+  #sectionWebtech{
+    height: auto;
+  }
+  #boxTitleWebtech{
+    width: 80%;
+  }
+  #titleWebtech{
+    width: 100%;
+    font-size: 23px;
+  }
+  .descriptionWebtech{
+    width: 100%;
+    font-size: 14px;
+  }
+  #boxLinksWebtech{
+    width: 80%;
+    justify-content: space-between;
+  }
+}
+@media (769px <= width <= 1040px){
+  #titleBanner{
+    width: 100%;
+    font-size: 27px;
+  }
+  #descriptionBanner{
+    font-size: 15px;
+    width: 100%;
+  }
+  #mainTextContact{
+    width: 100%;
+  }
+  #titleMainContact{
+    width: 100%;
+  }
+  .descripitonMainContact{
+    width: 100%;
+  }
+  .whiteLink{
+    font-size: 15px;
+    width: 200px;
+  }
+  #boxLinkMainContact{
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .blueLink{
+    width: 200px;
+    font-size: 15px;
+  }
+  #sectionWebtech{
+    height: auto;
+    padding-bottom: 20px;
+  }
+  #boxTitleWebtech{
+    width: 80%;
+  }
+  #titleWebtech{
+    width: 100%
+  }
+  .descriptionWebtech{
+    width: 100%;
+    font-size: 15px;
+  }
+  #boxLinksWebtech{
+    width: 80%;
+    justify-content: space-between;
+  }
+}
+@media (1041px <= width <= 1200px){
+  #content{
+    flex-direction: column;
+
+  }
+  #titlesContact{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  #titleBanner{
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+  }
+  #descriptionBanner{
+    width: 100%;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #boxLinksPartners{
+    justify-content: space-evenly;
+  }
+  #linkPartnerSite, #linkPartner{
+    font-size: 15px;
+  }
+  #sectionWebtech{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+  }
+  #boxTitleWebtech{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #titleWebtech{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .descriptionWebtech{
+    text-align: center;
+    margin: 20px 0;
+  }
+  #boxLinksWebtech{
+    justify-content: space-evenly;
+    margin-top: 30px;
+  }
+  #bgAdvertising{
+    flex-direction: column;
+    justify-content: center;
+  }
+  #titleAdvertising{
+    text-align: center;
+  }
+  #wantBannerAdvertising{
+    margin-top: 20px;
   }
 }
