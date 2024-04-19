@@ -104,7 +104,7 @@ export default function Contatos() {
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
               <p id={styles.descriptionAdvertising}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
             </div>
-            <Link id={styles.wantBannerAdvertising} href="#">Quero este Banner</Link>
+            <a id={styles.wantBannerAdvertising} href="homeofficevagas77@gmail.com">Quero este Banner</a>
           </div>
         </div>
 
