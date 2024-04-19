@@ -64,7 +64,7 @@ export default function VagasLocais() {
         setVagasMostradas(filterNameJobChoose)
       }
       if(cityChoice){
-        const filterCityChoice = await jobs.filter((item) => cityChoice === item.cidade)
+        const filterCityChoice = await jobs.filter((item) => cityChoice.toLowerCase() === item.cidade.toLowerCase())
         setVagasMostradas(filterCityChoice)
       }
       if(nameJobChoice && cityChoice){
@@ -135,7 +135,7 @@ export default function VagasLocais() {
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleFilter} htmlFor="">Pesquisar por Cidade</label>
-                  <input className={styles.entrysFilter} value={cityChoice} onChange={(e) => setCityChoice(e.target.value)} type="text" placeholder="Ex: Sao Paulo"/>
+                  <input className={styles.entrysFilter} value={cityChoice} onChange={(e) => setCityChoice(e.target.value)} type="text" placeholder="Ex: são paulo"/>
                 </div>
               </div>
               <div id={styles.boxButtonsFilter}>
