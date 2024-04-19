@@ -154,7 +154,7 @@ export default function VagasLocais() {
                   <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por mais de 2.000 mil pessoas POR DIAA!</p>
                   <p className={styles.descriptionTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
                 </div>
-                <Link id={styles.btnWantBanner} href="/">Quero este Banner</Link>
+                <a id={styles.btnWantBanner} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function VagasLocais() {
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
               <p id={styles.descriptionAdvertising}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
             </div>
-            <Link href="/" id={styles.wantBannerTwo}>Quero este banner</Link>
+            <a href="mailto:homeofficevagas77@gmail.com" id={styles.wantBannerTwo}>Quero este banner</a>
           </div>
         </div>
       </div>

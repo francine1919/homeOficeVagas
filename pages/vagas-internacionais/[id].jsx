@@ -125,7 +125,7 @@ export default function DetalhesVagasInternacionais(){
                       <p className={styles.descriptionBannerTwo}>Aqui a sua empresa será vista por mais de 2.000 mil pessoas POR DIAA!</p>
                       <p className={styles.descriptionBannerTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
                     </div>
-                    <Link id={styles.btnBannerTwo} href="/contatos">Quero este Banner</Link>
+                    <a id={styles.btnBannerTwo} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function DetalhesVagasInternacionais(){
                     <h2 id={styles.titleBannerTree}>Anuncie sua empresa neste Banner!</h2>
                     <p id={styles.descriptionBannerTree}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
                   </div>
-                  <Link id={styles.btnBannerTree} href="/">Quero este banner</Link>
+                  <a id={styles.btnBannerTree} href="mailto:homeofficevagas77@gmail.com">Quero este banner</a>
                 </div>
               </div>
             </div>
