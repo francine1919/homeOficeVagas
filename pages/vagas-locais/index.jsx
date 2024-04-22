@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchByJobs } from "@/redux/searchJobs/searchJobsSlice";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function VagasLocais() {
   const [nameJobChoice, setNameJobChoice] = useState();
@@ -107,6 +108,23 @@ export default function VagasLocais() {
 
   return (
     <div id={styles.vagas} className={robotoFlex.className}>
+      <Head>
+        <title>Vagas Locais - Home Office Vagas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Encontre oportunidades de emprego local no Home Office Vagas. Vagas disponíveis em todas as regiões e estados do Brasil." />
+        <meta property="og:site_name" content="Home Office Vagas" />
+        <meta property="og:title" content="Vagas Locais - Home Office Vagas" />
+        <meta property="og:description" content="Encontre oportunidades de emprego local no Home Office Vagas. Vagas disponíveis em todas as regiões e estados do Brasil." />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:url" content="https://homeofficevagas.com.br/vagas-locais" />
+        <meta property="og:type" content="article" />
+        <meta name="keywords" content="vagas locais, emprego local, Brasil, oportunidades de emprego, regiões, estados" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="author" content="Equipe Home Office Vagas" />
+        <link rel="canonical" href="https://homeofficevagas.com.br/vagas-locais" />
+      </Head>
+
       <Header/>
 
       <div id={styles.bannerOne} className={styles.bannerOneLocal}>
@@ -151,7 +169,7 @@ export default function VagasLocais() {
                 <h3 id={styles.titleBannerTwo}>Anuncie sua empresa com a gente!</h3>
                 <div id={styles.boxDescriptionTwo}>
                   <p className={styles.descriptionTwo}>Quer ter a sua empresa aparecendo para milhares de pessoas? Vem com a gente!</p>
-                  <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por mais de 2.000 mil pessoas POR DIAA!</p>
+                  <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por milhares de pessoas POR DIAA!</p>
                   <p className={styles.descriptionTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
                 </div>
                 <a id={styles.btnWantBanner} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
@@ -192,7 +210,7 @@ export default function VagasLocais() {
           <div id={styles.contentAdvertising}>
             <div id={styles.boxDescritionAdvertising}>
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
-              <p id={styles.descriptionAdvertising}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
+              <p id={styles.descriptionAdvertising}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
             <a href="mailto:homeofficevagas77@gmail.com" id={styles.wantBannerTwo}>Quero este banner</a>
           </div>

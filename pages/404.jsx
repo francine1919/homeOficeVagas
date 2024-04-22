@@ -5,10 +5,15 @@ import Link from "next/link";
 
 import styles from "@/styles/404.module.scss";
 import { robotoFlex } from "@/fonts/font";
+import Head from "next/head";
 
 export default function NotFoundPage(){
     return(
         <div className={robotoFlex.className} id={styles.page404}>
+            <Head>
+                <title>Erro 404 - Página Não Encontrada | Home Office Vagas</title>
+                <meta name="description" content="A página que você está tentando acessar não foi encontrada. Verifique se o URL está correto ou retorne à página inicial." />
+            </Head>
             <Header/>
             <main id={styles.mainContent}>
                 <div id={styles.boxContent}>

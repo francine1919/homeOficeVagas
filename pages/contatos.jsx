@@ -13,6 +13,7 @@ import iconWhatsapp from "@/public/icons/icon_white_whatsapp.png";
 import { robotoFlex } from "@/fonts/font";
 
 import { useState } from "react";
+import Head from "next/head";
 
 export default function Contatos() {
 
@@ -25,6 +26,23 @@ export default function Contatos() {
 
   return (
     <div id={styles.contactPage} className={robotoFlex.className}>
+      <Head>
+        <title>Contatos - Home Office Vagas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Entre em contato com a equipe da Home Office Vagas. Temos diversos meios de comunicação disponíveis para atender às suas necessidades. Preencha o formulário de contato ou visite nossas redes sociais para falar conosco." />
+        <meta property="og:site_name" content="Home Office Vagas" />
+        <meta property="og:title" content="Contatos - Home Office Vagas" />
+        <meta property="og:description" content="Entre em contato com a equipe da Home Office Vagas. Temos diversos meios de comunicação disponíveis para atender às suas necessidades. Preencha o formulário de contato ou visite nossas redes sociais para falar conosco." />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:url" content="https://homeofficevagas.com.br/contatos" />
+        <meta property="og:type" content="article" />
+        <meta name="keywords" content="contatos, Home Office Vagas, formulário de contato, redes sociais, anunciar no site" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="author" content="Equipe Home Office Vagas" />
+        <link rel="canonical" href="https://homeofficevagas.com.br/contatos" />
+      </Head>
+
       <Header/>
 
       <div id={styles.banner}>
@@ -102,7 +120,7 @@ export default function Contatos() {
           <div id={styles.bgAdvertising}>
             <div>
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
-              <p id={styles.descriptionAdvertising}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
+              <p id={styles.descriptionAdvertising}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
             <a id={styles.wantBannerAdvertising} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
           </div>

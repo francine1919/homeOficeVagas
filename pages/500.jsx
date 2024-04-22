@@ -8,10 +8,15 @@ import Footer from "@/components/footer/Footer";
 import { robotoFlex } from "@/fonts/font";
 
 import styles from "@/styles/500.module.scss";
+import Head from "next/head";
 
 export default function ServerErrorPage() {
   return (
     <div className={robotoFlex.className} id={styles.page500}>
+      <Head>
+        <title>Erro 500 - Internal Server Error | Home Office Vagas</title>
+        <meta name="description" content="Ocorreu um erro interno no servidor. Estamos trabalhando para resolver o problema. Tente novamente mais tarde." />
+      </Head>
       <Header/>
       <div id={styles.boxMain}>
         <div id={styles.boxImg}>

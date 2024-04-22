@@ -3,10 +3,28 @@ import Header from "@/components/header/Header";
 import { robotoFlex } from "@/fonts/font";
 
 import styles from "@/styles/politicaPrivacidade.module.scss";
+import Head from "next/head";
 
 export default function PolicePrivacyPage() {
   return (
     <div className={robotoFlex.className}>
+        <Head>
+            <title>Política de Privacidade - Home Office Vagas</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="description" content="Política de Privacidade do site Home Office Vagas. Saiba como protegemos suas informações pessoais enquanto você utiliza nosso serviço de busca de empregos." />
+            <meta property="og:site_name" content="Home Office Vagas" />
+            <meta property="og:title" content="Política de Privacidade - Home Office Vagas" />
+            <meta property="og:description" content="Política de Privacidade do site Home Office Vagas. Saiba como protegemos suas informações pessoais enquanto você utiliza nosso serviço de busca de empregos." />
+            <meta property="og:locale" content="pt_BR" />
+            <meta property="og:url" content="https://homeofficevagas.com.br/politica-de-privacidade" />
+            <meta property="og:type" content="article" />
+            <meta name="keywords" content="política de privacidade, Home Office Vagas, informações pessoais, cookies, segurança da informação" />
+            <meta name="robots" content="index,follow" />
+            <meta name="googlebot" content="index,follow" />
+            <meta name="author" content="Equipe Home Office Vagas" />
+            <link rel="canonical" href="https://homeofficevagas.com.br/politica-de-privacidade" />
+        </Head>
+
         <Header/>
         <div id={styles.box}>
             <div id={styles.content}>

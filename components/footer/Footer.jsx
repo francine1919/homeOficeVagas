@@ -55,7 +55,7 @@ export default function Footer(){
                     </div>
                     <div id={styles.aboutUsTwo}>
                         <h3 className={styles.titleFooter}>Sobre Nós</h3>
-                        <p id={styles.descriptionAboutUsTwo}>Somos uma empresa focada em vagas de emprego gratuitas para todos.</p>
+                        <p id={styles.descriptionAboutUsTwo}>Somos uma empresa focada em vagas de emprego remota para todos.</p>
                     </div>
                 </div>
                 <div id={styles.information}>
@@ -115,7 +115,7 @@ export default function Footer(){
                     <div>
                         <h3 className={`${styles.titleFooter} ${styles.registerTitle}`}>Cadastre-se para obter vagas em seu e-mail!</h3>
                         <div id={styles.boxRegister}>
-                            <input id={styles.inputRegister} value={emailNewsLetter} onChange={(e) => getValue(e.target.value)} type="text" placeholder="Seu email aqui"/>
+                            <input id={styles.inputRegister} value={emailNewsLetter} onChange={(e) => getValue(e.target.value)} type="text" placeholder="Seu email aqui" maxLength="35"/>
                             <button onClick={() => cleanInput(emailNewsLetter)} id={styles.btnRegister}>cadastrar</button>
                         </div>
                     </div>

@@ -14,6 +14,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { robotoFlex } from "@/fonts/font";
 
 import 'animate.css';
+import Head from "next/head";
 
 export default function DetalhesVagaInternacionais() {
   const [job, setJob] = useState();
@@ -24,8 +25,6 @@ export default function DetalhesVagaInternacionais() {
 
   const { query } = useRouter();
   const userId = query.id;
-
-  const modal = document.querySelector("#modal")
 
   async function showJob() {
     const configApi = {
@@ -46,12 +45,29 @@ export default function DetalhesVagaInternacionais() {
     });
   }
     
-    useEffect(() => {
-      showJob();
-    }, [userId]);
+  useEffect(() => {
+    showJob();
+  }, [userId]);
 
   return (
     <div className={`${robotoFlex.className} ${styles.vagaEscolhida}`}>
+      <Head>
+        <title>Vagas de Emprego em [cidade] - [Nome da Empresa]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Encontre as melhores vagas de emprego em [Localização] na [Nome da Empresa]. Candidate-se hoje mesmo para oportunidades de carreira emocionantes." />
+        <meta property="og:site_name" content="[Nome da Empresa]" />
+        <meta property="og:title" content="Vagas de Emprego em [Localização] - [Nome da Empresa]" />
+        <meta property="og:description" content="Encontre as melhores vagas de emprego em [Localização] na [Nome da Empresa]. Candidate-se hoje mesmo para oportunidades de carreira emocionantes." />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:url" content={`https://homeofficevagas.com.br/vagas-locais/${userId}`} />
+        <meta property="og:type" content="website" />
+        <meta name="keywords" content="vagas de emprego, [Localização], carreira, [Indústria ou Área de Atuação], [Habilidades ou Competências]" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="author" content="[Nome da Empresa]" />
+        <link rel="canonical" href={`https://homeofficevagas.com.br/vagas-locais/${userId}`} />
+      </Head>
+
       <Header/>
 
       {job && job.length > 0 ? (
@@ -72,34 +88,41 @@ export default function DetalhesVagaInternacionais() {
             <h2 id={styles.titleMain}>{job[0].tituloDaVaga}</h2>
           </div>
           <div id={styles.allOfJob}>
-            <div className={styles.boxJob}>
-              <h2 className={styles.titleJob}>Descrição</h2>
-              <p className={styles.descriptionJob}>{job[0].descricaoDaVaga}</p>
-            </div>
-            <div className={styles.boxJob}>
-              <h2 className={styles.titleJob}>Requisitos</h2>
-              <p className={styles.descriptionJob}>{job[0].requisitos}</p>
-            </div>
-            <div className={styles.boxJob}>
-              <h2 className={styles.titleJob}>Escolaridade</h2>
-              <p className={styles.descriptionJob}>{job[0].escolaridadeMinima}</p>
-            </div>
-            <div className={styles.boxJob}>
-              <h2 className={styles.titleJob}>Curso Superior</h2>
-              <p className={styles.descriptionJob}>{job[0].cursoSuperior}</p>
-            </div>
-            <div className={styles.boxJob}>
-              <h2 className={styles.titleJob}>Jornada De Trabalho</h2>
-              <p className={styles.descriptionJob}>{job[0].jornadaDeTrabalho}</p>
-            </div>
-            <div className={styles.boxJob}>
-              <h2 className={styles.titleJob}>Beneficios</h2>
-              <p className={styles.descriptionJob}>{job[0].beneficios}</p>
-            </div>
-            <div className={styles.boxJob}>
-              <h2 className={styles.titleJob}>Horário de Trabalho</h2>
-              <p className={styles.descriptionJob}>{job[0].horarioDoTrabalho}</p>
-            </div>
+          {job[0].descricaoDaVaga ? 
+                <div className={styles.boxJob}>
+                  <h2 className={styles.titleJob}>Descrição</h2>
+                  <p className={styles.descriptionJob}>{job[0].descricaoDaVaga}</p>
+                </div> : null }
+                {job[0].requisitos ? 
+                <div className={styles.boxJob}>
+                  <h2 className={styles.titleJob}>Requisitos</h2>
+                  <p className={styles.descriptionJob}>{job[0].requisitos}</p>
+                </div> : null }
+                {job[0].escolaridadeMinima ? 
+                <div className={styles.boxJob}>
+                  <h2 className={styles.titleJob}>Escolaridade</h2>
+                  <p className={styles.descriptionJob}>{job[0].escolaridadeMinima}</p>
+                </div> : null }
+                {job[0].cursoSuperior ? 
+                <div className={styles.boxJob}>
+                  <h2 className={styles.titleJob}>Curso Superior</h2>
+                  <p className={styles.descriptionJob}>{job[0].cursoSuperior}</p>
+                </div> : null }
+                {job[0].jornadaDeTrabalho ? 
+                <div className={styles.boxJob}>
+                  <h2 className={styles.titleJob}>Jornada De Trabalho</h2>
+                  <p className={styles.descriptionJob}>{job[0].jornadaDeTrabalho}</p>
+                </div> : null }
+                {job[0].beneficios ? 
+                <div className={styles.boxJob}>
+                  <h2 className={styles.titleJob}>Beneficios</h2>
+                  <p className={styles.descriptionJob}>{job[0].beneficios}</p>
+                </div> : null }
+                {job[0].horarioDoTrabalho ? 
+                <div className={styles.boxJob}>
+                  <h2 className={styles.titleJob}>Horário de Trabalho</h2>
+                  <p className={styles.descriptionJob}>{job[0].horarioDoTrabalho}</p>
+                </div> : null}
           </div>
           <div id={styles.boxButtons}>
             {job[0].email.includes("@") ? <button id={styles.btnShowEmail} onClick={() => abreModal()}>Visualizar email</button> : <Link id={styles.btnSendCurriculum} href={job[0].email}>Enviar Curriculo</Link>}
@@ -124,7 +147,7 @@ export default function DetalhesVagaInternacionais() {
               <h3 id={styles.titleBannerTwo}>Anuncie a sua empresa com a gente!</h3>
               <div id={styles.boxDescriptionBannerTwo}>
                 <p className={styles.descriptionBannerTwo}>Quer ter a sua empresa aparecendo para milhares de pessoas? Vem com a gente!</p>
-                <p className={styles.descriptionBannerTwo}>Aqui a sua empresa será vista por mais de 2.000 mil pessoas POR DIAA!</p>
+                <p className={styles.descriptionBannerTwo}>Aqui a sua empresa será vista por milhares de pessoas POR DIAA!</p>
                 <p className={styles.descriptionBannerTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
               </div>
               <a id={styles.btnBannerTwo} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
@@ -144,7 +167,7 @@ export default function DetalhesVagaInternacionais() {
           <div id={styles.contentBannerTree}>
             <div>
               <h2 id={styles.titleBannerTree}>Anuncie sua empresa neste Banner!</h2>
-              <p id={styles.descriptionBannerTree}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
+              <p id={styles.descriptionBannerTree}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
             <a id={styles.btnBannerTree} href="mailto:homeofficevagas77@gmail.com">Quero este banner</a>
           </div>

@@ -3,10 +3,28 @@ import Header from "@/components/header/Header";
 import { robotoFlex } from "@/fonts/font";
 
 import styles from "@/styles/termosCondicoes.module.scss";
+import Head from "next/head";
 
 export default function TermsAndConditionsPage() {
   return (
     <div className={robotoFlex.className} id={styles.termsAndConditionsPage}>
+        <Head>
+            <title>Termos e Condições - Home Office Vagas</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="description" content="Termos e Condições do site Home Office Vagas. Leia atentamente antes de utilizar nosso serviço de busca de empregos." />
+            <meta property="og:site_name" content="Home Office Vagas" />
+            <meta property="og:title" content="Termos e Condições - Home Office Vagas" />
+            <meta property="og:description" content="Termos e Condições do site Home Office Vagas. Leia atentamente antes de utilizar nosso serviço de busca de empregos." />
+            <meta property="og:locale" content="pt_BR" />
+            <meta property="og:url" content="https://homeofficevagas.com.br/termos-e-condicoes" />
+            <meta property="og:type" content="article" />
+            <meta name="keywords" content="termos e condições, Home Office Vagas, emprego, vagas de emprego, Brasília, Distrito Federal" />
+            <meta name="robots" content="index,follow" />
+            <meta name="googlebot" content="index,follow" />
+            <meta name="author" content="Equipe Home Office Vagas" />
+            <link rel="canonical" href="https://homeofficevagas.com.br/termos-e-condicoes" />
+        </Head>
+
         <Header/>
         <main id={styles.mainContent}>
             <div id={styles.boxMainContent}>

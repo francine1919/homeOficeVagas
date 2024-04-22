@@ -10,6 +10,7 @@ import { useSelector,useDispatch } from "react-redux";
 
 import axios from "axios";
 import { newSearch } from "@/redux/searchHome/searchHomeSlice";
+import Head from "next/head";
 
 export default function VagaFiltrada() {
     const [dataJobs, setDataJobs] = useState();
@@ -134,6 +135,23 @@ export default function VagaFiltrada() {
 
     return (
         <div id={styles.vagas} className={robotoFlex.className}>
+          <Head>
+            <title>Vagas de Emprego em {filterTitlePagHome || filterCountryPagHome || filterCityPagHome} - Home Office Vagas</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="description" content="Encontre as melhores vagas de emprego em Germany na Home Office Vagas. Explore oportunidades de trabalho em áreas como Data Science, Quality Assurance, Technical Writing e muito mais. Aproveite para encontrar a sua vaga ideal e acompanhar as últimas notícias no nosso blog." />
+            <meta property="og:site_name" content="Home Office Vagas" />
+            <meta property="og:title" content={`Vagas de Emprego e/ou/em:${filterTitlePagHome || filterCountryPagHome || filterCityPagHome} - Home Office Vagas`} />
+            <meta property="og:description" content={`Encontre as melhores vagas de emprego e/ou/em:${filterTitlePagHome || filterCountryPagHome || filterCityPagHome} na Home Office Vagas. Explore oportunidades de trabalho em áreas como Data Science, Quality Assurance, Technical Writing e muito mais. Aproveite para encontrar a sua vaga ideal e acompanhar as últimas notícias no nosso blog.`} />
+            <meta property="og:locale" content="pt_BR" />
+            <meta property="og:url" content="https://homeofficevagas.com.br/vaga-filtrada" />
+            <meta property="og:type" content="website" />
+            <meta name="keywords" content={`vagas de emprego, ${filterTitlePagHome || filterCountryPagHome || filterCityPagHome}, Data Science, Quality Assurance, Technical Writing`} />
+            <meta name="robots" content="index,follow" />
+            <meta name="googlebot" content="index,follow" />
+            <meta name="author" content="Equipe Home Office Vagas" />
+            <link rel="canonical" href="https://homeofficevagas.com.br/vaga-filtrada" />
+          </Head>
+
             <Header/>
 
             <div id={styles.bannerOne} className={styles.bannerOneFiltro}>
@@ -194,7 +212,7 @@ export default function VagaFiltrada() {
                             <h3 id={styles.titleBannerTwo}>Anuncie sua empresa com a gente!</h3>
                             <div id={styles.boxDescriptionTwo}>
                               <p className={styles.descriptionTwo}>Quer ter a sua empresa aparecendo para milhares de pessoas? Vem com a gente!</p>
-                              <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por mais de 2.000 mil pessoas POR DIAA!</p>
+                              <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por milhares de pessoas POR DIAA!</p>
                               <p className={styles.descriptionTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
                             </div>
                             <a id={styles.btnWantBanner} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
@@ -250,7 +268,7 @@ export default function VagaFiltrada() {
                   <div id={styles.contentAdvertising}>
                     <div id={styles.boxDescritionAdvertising}>
                       <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
-                      <p id={styles.descriptionAdvertising}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
+                      <p id={styles.descriptionAdvertising}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
                     </div>
                     <a href="mailto:homeofficevagas77@gmail.com" id={styles.wantBannerTwo}>Quero este banner</a>
                   </div>
