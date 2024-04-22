@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchByJobs } from "@/redux/searchJobs/searchJobsSlice";
 import Link from "next/link";
+import Head from "next/head";
 
 
 export default function VagasInternacionais() {
@@ -125,9 +126,25 @@ export default function VagasInternacionais() {
     }
   }, [jobs, minLimit, maxLimit]);
 
-
   return (
     <div id={styles.vagas} className={robotoFlex.className}>
+      <Head>
+        <title>Vagas Internacionais - Home Office Vagas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Encontre oportunidades de emprego internacional no Home Office Vagas. Escolha entre vagas em países como Portugal, Espanha, França e muito mais!" />
+        <meta property="og:site_name" content="Home Office Vagas" />
+        <meta property="og:title" content="Vagas Internacionais - Home Office Vagas" />
+        <meta property="og:description" content="Encontre oportunidades de emprego internacional no Home Office Vagas. Escolha entre vagas em países como Portugal, Espanha, França e muito mais!" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:url" content="https://homeofficevagas.com.br/vagas-internacionais" />
+        <meta property="og:type" content="article" />
+        <meta name="keywords" content="vagas internacionais, emprego internacional, Portugal, Espanha, França, oportunidades de emprego" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta name="author" content="Equipe Home Office Vagas" />
+        <link rel="canonical" href="https://homeofficevagas.com.br/vagas-internacionais" />
+      </Head>
+
       <Header/>
 
       <div id={styles.bannerOne} className={styles.bannerOneInternacional}>
@@ -191,7 +208,7 @@ export default function VagasInternacionais() {
                 <h3 id={styles.titleBannerTwo}>Anuncie sua empresa com a gente!</h3>
                 <div id={styles.boxDescriptionTwo}>
                   <p className={styles.descriptionTwo}>Quer ter a sua empresa aparecendo para milhares de pessoas? Vem com a gente!</p>
-                  <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por mais de 2.000 mil pessoas POR DIAA!</p>
+                  <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por milhares de pessoas POR DIAA!</p>
                   <p className={styles.descriptionTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
                 </div>
                 <a id={styles.btnWantBanner} href="mailto:mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
@@ -205,7 +222,7 @@ export default function VagasInternacionais() {
             <div key={card.id} className={styles.card}>
               <div className={styles.boxTitle}>
                   <h2 className={styles.title}>{card.tituloDaVaga}</h2>
-                  <h3 className={styles.remuneration}>{card.formaDeRemuneracao}</h3>
+                  <h3 className={styles.remuneration}>{card.salario}/{card.tipoDeTrabalho}</h3>
               </div>
               <div className={styles.boxDescription}>
                   <p className={styles.descriptionJob}>{card.descricaoDaVaga}</p>
@@ -232,7 +249,7 @@ export default function VagasInternacionais() {
           <div id={styles.contentAdvertising}>
             <div id={styles.boxDescritionAdvertising}>
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
-              <p id={styles.descriptionAdvertising}>Aqui o seu anuncio é visto por mais de 2.000 pessoas todos os dias. Venha ser visto, a sua empresa precisa disso.</p>
+              <p id={styles.descriptionAdvertising}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
             <a href="mailto:homeofficevagas77@gmail.com" id={styles.wantBannerTwo}>Quero este banner</a>
           </div>
