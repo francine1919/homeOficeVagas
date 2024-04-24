@@ -15,6 +15,8 @@ import { robotoFlex } from "@/fonts/font";
 import { useState } from "react";
 import Head from "next/head";
 
+import { ToastContainer, toast } from 'react-toastify';
+
 export default function Contatos() {
 
   const [name, setName] = useState();
@@ -22,7 +24,18 @@ export default function Contatos() {
   const [email, setEmail] = useState();
   const [message, setMessage] = useState();
 
-  console.log(tellPhone)
+  function submitForm(){
+    return toast.success('Solicitação Enviada!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+      });
+  }
 
   return (
     <div id={styles.contactPage} className={robotoFlex.className}>
@@ -71,8 +84,8 @@ export default function Contatos() {
               <p className={styles.descripitonMainContact}>Use o botão abaixo “quero anunciar”, se voce deseja anunciar em nosso site.</p>
             </div>
             <div id={styles.boxLinkMainContact}>
-              <Link className={styles.whiteLink} href="#">Quero anunciar</Link>
-              <Link className={styles.blueLink} href="#">Mensagem</Link>
+              <a className={styles.whiteLink} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e gostaria de anunciar em seu site!" target="_blank">Quero anunciar</a>
+              <a className={styles.blueLink} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em parcerias!" target="_blank">Mensagem</a>
             </div>
           </div>
           <div id={styles.sectionForm}>
@@ -95,8 +108,9 @@ export default function Contatos() {
                   <label className={styles.titleEntrys} htmlFor="">Mensagem</label>
                   <textarea id={styles.areaEntry} cols="30" rows="10" onChange={(e) => setMessage(e.target.value)} min="20" max="500" required></textarea>
                 </div>
-                <button id={styles.sendBtn}>Enviar</button>
+                <button id={styles.sendBtn} onClick={() => submitForm()}>Enviar</button>
               </form>
+              <ToastContainer />
               <p id={styles.dataClients}>Seus dados estão seguros! Não se preocupe, não compartilhamos seus dados com ninguem.</p>
             </div>
           </div>
