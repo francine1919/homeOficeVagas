@@ -101,13 +101,13 @@ export default function Footer(){
                     <div className={styles.boxIconsContactUs}>
                         <Image className={styles.icons} src={iconTell} height={20} width={20} alt="icone de telefone"/>
                         <div>
-                            <span className={styles.descriptionFooter}>61 9 9244-4596</span>
+                            <span className={styles.descriptionFooter}>homeofficevagas77@gmail.com</span>
                         </div>
                     </div>
                     <div className={styles.boxIconsContactUs}>
                         <Image className={styles.icons} src={iconEmail} height={20} width={20} alt="icone de email"/>
                         <div>
-                            <span className={styles.descriptionFooter}>homeofficevagas@gmail.com</span>
+                            <span className={styles.descriptionFooter}>61 9 8243-4868</span>
                         </div>
                     </div>
                 </div>
