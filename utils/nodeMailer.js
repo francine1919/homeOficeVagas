@@ -1,48 +1,45 @@
-/* "use strict";
-const nodemailer = require("nodemailer");
-const dotenv = require("dotenv");
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
 
 dotenv.config();
 
-export default async function welcomeHomeOfficeVagas(registeredEmail) {
-    const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: false,
-        tls: {
-            rejectUnauthorized: false,
-        },
-        auth: {
-            user: process.env.USER,
-            pass: process.env.PASS,
-        },
-    });
+export default async function sendMessageHov(name, email, tellPhone, message){
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.GOOGLE_USER,
+      pass: process.env.GOOGLE_PASS,
+    },tls: {
+      rejectUnauthorized: false // não verificar o certificado
+  }
+  });
 
-    const configEmail = {
-        from: "Boas Vindas a Home Office Vagas",
-        to: "kelvimarthur@gmail.com",
-        subject: "Site Home Office Vagas",
-        text: "Mensagem do site Home Office Vagas",
-        html: `
-                <h1>Seja bem vindo a nossa NewsLetter</h1>
-                <h2>O email compartilhado com a HOV, não é compartilhado com nenhum terceiro, fique tranquilo.</h2>
-                
-                <h2>A partir de agora toda segunda-feira iremos te mandar vagas. Torcemos por voce! Boa sorte!.</h2>
-                <h4>Por HOV - Empregos Online | 61 9 8243-4868</h4>
-        `
-    };
-    try {
-        const enviarEmail = await transporter.sendMail(configEmail)
+  const mailOptions = {
+    from: '"Contato Site HOV" <homeofficevagas77@gmail.com>',
+    to: "homeofficevagas77@gmail.com",
+    subject: "Site Home Office Vagas",
+    text: "Mensagem do Home Office Vagas",
+    html: `
+        <h1>Mensagem do Site - HOV</h1>
+        <h2>Os dados abaixo são de clientes, não compartilhe e nem use para fins mal intencionados.</h2>
+        <p>Nome do Cliente: ${name}</p>
+        <p>Email: ${email}</p>
+        <p>Telefone: ${tellPhone}</p>
+        <p>Mensagem: ${message}</p>
+        <h3>Obrigado por usar o nosso site.</h3>
+      `,
+  }
 
-        if (enviarEmail.includes("250 2.0.0 OK")) {
-            console.log("NODEMAILER - A mensagem foi entregue com sucesso!");
-            return true
-        } else {
-            console.log("NODEMAILER - Houve um problema ao enviar a mensagem.");
-            return false
-        }
-    } catch (error) {
-        console.error("NODEMAILER - Erro ao enviar email:", error)
-        return false
+  const sendEmail = await transporter.sendMail(mailOptions)
+  
+  try {  
+    if(sendEmail.response.includes("250 2.0.0 OK")){
+      console.log("deu certo",sendEmail)
     }
-} */
+  } catch (error) {
+    console.log("deu errado", sendEmail)
+  }
+  
+}

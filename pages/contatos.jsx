@@ -16,27 +16,68 @@ import { useState } from "react";
 import Head from "next/head";
 
 import { ToastContainer, toast } from 'react-toastify';
+import axios from "axios";
 
 export default function Contatos() {
 
-  const [name, setName] = useState();
-  const [tellPhone, setTellPhone] = useState();
-  const [email, setEmail] = useState();
-  const [message, setMessage] = useState();
+  const [name, setName] = useState("");
+  const [tellPhone, setTellPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  function submitForm(){
-    return toast.success('Solicitação Enviada!', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light"
-      });
+  function cleanForm(){
+    setName("")
+    setTellPhone("")
+    setEmail("")
+    setMessage("")
   }
 
+  async function submitForm(e){
+    e.preventDefault()
+    const apiConfig = {
+      method: 'POST',
+      url: "http://localhost:3000/api/emailContact",
+      data: {
+        name: name,
+        tellPhone: tellPhone,
+        email: email,
+        message: message
+      }
+    }
+
+    axios(apiConfig)
+    .then((response) => {
+      cleanForm()
+      
+      return (toast.success('Solicitação Enviada!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        closeButton: false,
+        theme: "light"
+      }));
+        
+    })
+    .catch((error) => {
+      console.log(error) 
+      return toast.info('Tivemos um erro, use o nosso Whatsapp ao lado.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        closeButton: false,
+        theme: "light"
+        });
+    })   
+  }
+  
   return (
     <div id={styles.contactPage} className={robotoFlex.className}>
       <Head>
@@ -91,24 +132,24 @@ export default function Contatos() {
           <div id={styles.sectionForm}>
             <div id={styles.boxForm}>
               <h3 id={styles.titleForm}>Preencha o formulário abaixo para entrar em contato conosco.</h3>
-              <form id={styles.formPage} method="post">
+              <form id={styles.formPage} onSubmit={submitForm} method="post">
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Nome</label>
-                  <input className={styles.entrys} type="text" onChange={(e) => setName(e.target.value)} minLength="3" maxLength="40" required/>
+                  <input className={styles.entrys} value={name} type="text" onChange={(e) => setName(e.target.value)} minLength="3" maxLength="40" required/>
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Email</label>
-                  <input className={styles.entrys} type="email" onChange={(e) => setEmail(e.target.value)} minLength="7" maxLength="40" required/>
+                  <input className={styles.entrys} value={email} type="email" onChange={(e) => setEmail(e.target.value)} minLength="7" maxLength="40" required/>
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Telefone</label>
-                  <input className={styles.entrys} type="tel" onChange={(e) => setTellPhone(e.target.value)} min="8" max="13" required/>
+                  <input className={styles.entrys} value={tellPhone} type="tel" onChange={(e) => setTellPhone(e.target.value)} min="8" max="13" required/>
                 </div>
                 <div className={styles.boxInputs}>
                   <label className={styles.titleEntrys} htmlFor="">Mensagem</label>
-                  <textarea id={styles.areaEntry} cols="30" rows="10" onChange={(e) => setMessage(e.target.value)} min="20" max="500" required></textarea>
+                  <textarea id={styles.areaEntry} value={message} cols="30" rows="10" onChange={(e) => setMessage(e.target.value)} min="20" max="500" required></textarea>
                 </div>
-                <button id={styles.sendBtn} onClick={() => submitForm()}>Enviar</button>
+                <button id={styles.sendBtn}>Enviar</button>
               </form>
               <ToastContainer />
               <p id={styles.dataClients}>Seus dados estão seguros! Não se preocupe, não compartilhamos seus dados com ninguem.</p>
@@ -147,8 +188,8 @@ export default function Contatos() {
           </div>
           <div id={styles.boxIconsSocialMedias}>
             <Image className={styles.iconSocial} src={iconInstagram} alt="Icone Insta"/>
-            <Image className={styles.iconSocial} src={iconWhatsapp} alt="Icone Whatsapp"/>
-            <Image className={styles.iconSocial} src={iconEmail} alt="Icone Email"/>
+            <a href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, equipe Home Office Vagas!" target="_blank"><Image className={styles.iconSocial} src={iconWhatsapp} alt="Icone Whatsapp"/></a>
+            <a href="mailto:homeofficevagas77@gmail.com"><Image className={styles.iconSocial} src={iconEmail} alt="Icone Email"/></a>
           </div>
         </div>
 
