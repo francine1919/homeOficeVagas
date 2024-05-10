@@ -4,7 +4,6 @@ export default async function emailContact(req, res) {
   if (req.method === 'POST') {
     const { name, email, tellPhone, message } = req.body;
     try {
-      console.log("acerto")
       await sendMessageHov(name, email, tellPhone, message);
       res.status(200).json({ message: 'E-mail enviado com sucesso!' });
     } catch (error) {
