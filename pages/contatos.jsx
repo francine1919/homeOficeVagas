@@ -63,7 +63,6 @@ export default function Contatos() {
         
     })
     .catch((error) => {
-      console.log(error) 
       return toast.info('Tivemos um erro, use o nosso Whatsapp ao lado.', {
         position: "top-right",
         autoClose: 5000,
@@ -74,7 +73,7 @@ export default function Contatos() {
         progress: undefined,
         closeButton: false,
         theme: "light"
-        });
+      });
     })   
   }
   
