@@ -8,42 +8,60 @@ import iconTell from "@/public/icons/tell_icon.png";
 
 import styles from "./Footer.module.scss";
 
-/* import welcomeHomeOfficeVagas from "@/utils/nodeMailer" ; */
-
 import { useState } from 'react';
-
-import { useDispatch } from "react-redux";
-
-import { registerEmail } from "@/redux/welcomeEmail/welcomeEmailSlice";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import axios from "axios";
+
 export default function Footer(){
     const [emailNewsLetter, setEmailNewsLetter] = useState();
-
-    const dispatch = useDispatch();
 
     function getValue(value){
         setEmailNewsLetter(value)
     }
-    function cleanInput(email){
-        dispatch(registerEmail(email))
+    async function cleanInput(email){
+        const configApi = {
+            method: 'post',
+            url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/contact',
+            headers: { 
+                "X-Custom-Jobs": process.env.NEXT_PUBLIC_VALUE_API
+            },
+            data: { "contactInfo" : emailNewsLetter }
+        }
 
-        toast.success('Email Cadastrado com sucesso!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
+        axios(configApi)
+        .then(() => {
+            setEmailNewsLetter("")
 
-        setEmailNewsLetter("")
+            toast.success('Email Cadastrado com sucesso!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        })
+        .catch(() => {
+            setEmailNewsLetter("")
+
+            toast.info('Tivemos um erro, use o nosso Whatsapp ao lado.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                closeButton: false,
+                theme: "light"
+            });
+        })
     }
-
     return(
         <footer>
             <div id={styles.footerIndex}>
@@ -115,7 +133,7 @@ export default function Footer(){
                     <div>
                         <h3 className={`${styles.titleFooter} ${styles.registerTitle}`}>Cadastre-se para obter vagas em seu e-mail!</h3>
                         <div id={styles.boxRegister}>
-                            <input id={styles.inputRegister} value={emailNewsLetter} onChange={(e) => getValue(e.target.value)} type="text" placeholder="Seu email aqui" maxLength="35"/>
+                            <input id={styles.inputRegister} value={emailNewsLetter} onChange={(e) => getValue(e.target.value)} type="email" placeholder="Seu email aqui" maxLength="35"/>
                             <button onClick={() => cleanInput(emailNewsLetter)} id={styles.btnRegister}>cadastrar</button>
                         </div>
                     </div>
