@@ -36,10 +36,12 @@ export default async function sendMessageHov(name, email, tellPhone, message){
   
   try {  
     if(sendEmail.response.includes("250 2.0.0 OK")){
-      console.log("deu certo",sendEmail)
+      return true
+      /* console.log("deu certo",sendEmail) */
     }
   } catch (error) {
-    console.log("deu errado", sendEmail)
+      return false
+    /* console.log("deu errado", sendEmail) */
   }
   
 }

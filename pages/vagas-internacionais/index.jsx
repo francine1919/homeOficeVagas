@@ -46,7 +46,7 @@ export default function VagasInternacionais() {
       method: 'get',
       url: 'https://home-office-jobs-6a2f088fb390.herokuapp.com/job/international/true',
       headers: {
-        'X-Custom-Jobs': 'my-secret-endpoint-1@@89',
+        'X-Custom-Jobs': process.env.NEXT_PUBLIC_VALUE_API,
       }
     }
 
