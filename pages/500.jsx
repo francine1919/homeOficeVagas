@@ -16,6 +16,8 @@ export default function ServerErrorPage() {
       <Head>
         <title>Erro 500 - Internal Server Error | Home Office Vagas</title>
         <meta name="description" content="Ocorreu um erro interno no servidor. Estamos trabalhando para resolver o problema. Tente novamente mais tarde." />
+      
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330292410910997" crossorigin="anonymous"></script>
       </Head>
       <Header/>
       <div id={styles.boxMain}>
