@@ -67,7 +67,7 @@ export default function DetalhesVagasFiltradas(){
             <meta name="author" content="[Nome da Empresa]" />
             <link rel="canonical" href={`https://homeofficevagas.com.br/vagas-locais/${userId}`} />
 
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330292410910997" crossorigin="anonymous"></script>
+            <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
           </Head>
           <Header/>
           
