@@ -24,7 +24,7 @@ export default function TermsAndConditionsPage() {
             <meta name="author" content="Equipe Home Office Vagas" />
             <link rel="canonical" href="https://homeofficevagas.com.br/termos-e-condicoes" />
 
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330292410910997" crossorigin="anonymous"></script>
+            <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
         </Head>
 
         <Header/>

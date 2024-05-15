@@ -14,7 +14,7 @@ export default function NotFoundPage(){
                 <title>Erro 404 - Página Não Encontrada | Home Office Vagas</title>
                 <meta name="description" content="A página que você está tentando acessar não foi encontrada. Verifique se o URL está correto ou retorne à página inicial." />
                 
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330292410910997" crossorigin="anonymous"></script>
+                <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
             </Head>
             <Header/>
             <main id={styles.mainContent}>

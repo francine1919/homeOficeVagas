@@ -84,7 +84,7 @@ export default function PesquisaHov() {
         <meta name="author" content="Equipe Home Office Vagas" />
         <link rel="canonical" href="https://homeofficejobs.com.br/pesquisa" />
 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5330292410910997" crossorigin="anonymous"></script>
+        <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
       </Head>
 
         <Header/>
