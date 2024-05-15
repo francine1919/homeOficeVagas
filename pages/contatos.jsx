@@ -165,8 +165,8 @@ export default function Contatos() {
             <p className={styles.descriptionWebtech}>Aqui nós criamos todos os tipos de sites, desde landing-pages até e-commerces robustos. Temos clientes no Brasil todo, visite o nosso site para olhar alguns cases de sucesso que trabalhamos.</p>
           </div>
           <div id={styles.boxLinksWebtech}>
-            <Link className={styles.blueLink} href="#">Visitar Site</Link>
-            <Link className={styles.whiteLink} href="#">Quero um site</Link>
+            <Link className={styles.blueLink} href="https://webtechservicos.com.br/">Visitar Site</Link>
+            <Link className={styles.whiteLink} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em um site!">Quero um site</Link>
           </div>
         </div>
 

@@ -125,7 +125,7 @@ export default function Footer(){
                     <div className={styles.boxIconsContactUs}>
                         <Image className={styles.icons} src={iconEmail} height={20} width={20} alt="icone de email"/>
                         <div>
-                            <span className={styles.descriptionFooter}>61 9 8243-4868</span>
+                            <span className={styles.descriptionFooter}>+55 61 9 8243-4868</span>
                         </div>
                     </div>
                 </div>

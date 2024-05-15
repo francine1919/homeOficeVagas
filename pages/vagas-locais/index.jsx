@@ -225,27 +225,27 @@ export default function VagasLocais() {
         </div>
         <div id={styles.contentBlog}>
           <div className={styles.boxBlog}>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Brasília é escolhida para sediar o maior evento de mercado de trabalho do Centro-Oeste.</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://exame.com/carreira/guia-de-carreira/carta-de-apresentacao-como-fazer-e-modelos/" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>Veja como fazer uma carta de apresentação: como fazer e modelos</h3>
+              <p className={styles.descriptionBlog}>A importância da carta de apresentação transcende a mera formalidade. Ela pode ser um documento importante para desbloquear oportunidades tanto no cenário profissional quanto acadêmico.</p>
+              <h6 className={styles.dateBlog}>29 de Dezembro de 2023</h6>
             </Link>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Sesc abre 500 vagas de emprego temporário neste fim de ano.</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://blog.solides.com.br/entrevista-de-emprego-candidatos/?utm_medium=paid&utm_source=adwords&utm_term=&utm_campaign=Google_Pesquisa_RDD_lead_blog_BR&hsa_acc=5023217460&hsa_cam=12550667912&hsa_grp=129846598923&hsa_ad=694567306310&hsa_src=g&hsa_tgt=dsa-1466823538259&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjwupGyBhBBEiwA0UcqaPU9ZYfCTvbdhHzXwC4naC-coMEOw6yAz_h2sOvc-Yc_b_Txe7NbEhoCx1kQAvD_BwE" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>Entrevista de emprego: como se preparar e as principais perguntas dos recrutadores</h3>
+              <p className={styles.descriptionBlog}>Para que serve uma entrevista de emprego? Ela representa a oportunidade de estabelecer contato direto com a pessoa responsável por identificar o perfil mais adequado à vaga. </p>
+              <h6 className={styles.dateBlog}>07 de Julho de 2023</h6>
             </Link>
           </div>
           <div className={styles.boxBlog}>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Veja aqui como está o mercado de TI e como conseguir uma bolsa de estudos Grátis!</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://www.linkedin.com/pulse/guia-pr%C3%A1tico-para-melhorar-seu-perfil-linkedin-vitor-guimar%C3%A3es/" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>Guia Prático para Melhorar seu Perfil no LinkedIn</h3>
+              <p className={styles.descriptionBlog}>Veja neste artigo como voce pode melhorar o seu Linkedin e sair na frente de muitas pessoas com Vitor Guimarães.</p>
+              <h6 className={styles.dateBlog}>31 de Agosto de 2021</h6>
             </Link>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Como se dar bem em uma entrevista de emprego com Ana Sirquera</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://blog.manpowergroup.com.br/soft-skills-mais-buscadas-pelas-empresas" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>Conheça as 7 soft skills mais buscadas pelas empresas</h3>
+              <p className={styles.descriptionBlog}>Em um mercado de trabalho em constante evolução, como o que vivenciamos atualmente, o desenvolvimento de habilidades técnicas é fundamental para o sucesso em todas as carreiras profissionais.</p>
+              <h6 className={styles.dateBlog}>14 de Setembro de 2024</h6>
             </Link>
           </div>
         </div>
