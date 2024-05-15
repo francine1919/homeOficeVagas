@@ -264,27 +264,27 @@ export default function VagasInternacionais() {
         </div>
         <div id={styles.contentBlog}>
           <div className={styles.boxBlog}>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Brasília é escolhida para sediar o maior evento de mercado de trabalho do Centro-Oeste.</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://oantagonista.com.br/brasil/emprego-formal-no-brasil-crescimento-recorde-em-2024-impulsiona-economia/" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>Emprego formal no Brasil: crescimento recorde em 2024 impulsiona economia</h3>
+              <p className={styles.descriptionBlog}>Dados divulgados pelo Ministério do Trabalho e Emprego revelam que o país experimentou um aumento significativo na geração de empregos formais.</p>
+              <h6 className={styles.dateBlog}>21 de Março de 2024</h6>
             </Link>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Sesc abre 500 vagas de emprego temporário neste fim de ano.</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://g1.globo.com/economia/noticia/2024/04/30/brasil-cria-2443-mil-empregos-formais-em-marco-com-aumento-de-257percent.ghtml" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>Brasil cria 244,3 mil empregos formais em março; aumento é de 25,7%</h3>
+              <p className={styles.descriptionBlog}>Dados do Cadastro Geral de Empregados e Desempregados foram divulgados pelo Ministério do Trabalho. No primeiro trimestre deste ano, 719 mil vagas com carteira assinada foram criadas, alta de 33,9% em relação a 2023.</p>
+              <h6 className={styles.dateBlog}>30 de Abril de 2024</h6>
             </Link>
           </div>
           <div className={styles.boxBlog}>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Veja aqui como está o mercado de TI e como conseguir uma bolsa de estudos Grátis!</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://www.serasaexperian.com.br/carreiras/blog-carreiras/como-se-preparar-para-uma-entrevista-de-emprego/" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>13 dicas de como se preparar para uma entrevista de emprego</h3>
+              <p className={styles.descriptionBlog}>O comportamento é um dos itens analisados durante uma entrevista de emprego e tem papel fundamental para decidir se a pessoa vai conseguir a vaga ou não.</p>
+              <h6 className={styles.dateBlog}>09 de Maio de 2023</h6>
             </Link>
-            <Link href="/" className={styles.cardsBlog}>
-              <h3 className={styles.titleBlog}>Como se dar bem em uma entrevista de emprego com Ana Sirquera</h3>
-              <p className={styles.descriptionBlog}>Aprenda com uma especialista de ponta, Ana Vanessa explica como voce pode sair bem em uma entrevista de emprego.</p>
-              <h6 className={styles.dateBlog}>25 de Fevereiro de 2023</h6>
+            <Link href="https://forbes.com.br/carreira/2023/12/o-futuro-do-trabalho-chegou-16-tendencias-para-2024/" className={styles.cardsBlog}>
+              <h3 className={styles.titleBlog}>O futuro do trabalho chegou: 16 tendências para 2024</h3>
+              <p className={styles.descriptionBlog}>De áreas mais promissoras a habilidades em alta demanda, veja o que esperar do mercado e esteja à frente das movimentações</p>
+              <h6 className={styles.dateBlog}>23 de Dezembro de 2023</h6>
             </Link>
           </div>
         </div>
