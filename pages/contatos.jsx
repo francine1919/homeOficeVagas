@@ -36,7 +36,7 @@ export default function Contatos() {
     e.preventDefault()
     const apiConfig = {
       method: 'POST',
-      url: "http://localhost:3000/api/emailContact",
+      url: "https://homeofficevagas.com.br/api/emailContact",
       data: {
         name: name,
         tellPhone: tellPhone,
@@ -165,8 +165,8 @@ export default function Contatos() {
             <p className={styles.descriptionWebtech}>Aqui nós criamos todos os tipos de sites, desde landing-pages até e-commerces robustos. Temos clientes no Brasil todo, visite o nosso site para olhar alguns cases de sucesso que trabalhamos.</p>
           </div>
           <div id={styles.boxLinksWebtech}>
-            <Link className={styles.blueLink} href="https://webtechservicos.com.br/">Visitar Site</Link>
-            <Link className={styles.whiteLink} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em um site!">Quero um site</Link>
+            <Link className={styles.blueLink} href="https://webtechservicos.com.br/" target="_blank">Visitar Site</Link>
+            <Link className={styles.whiteLink} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em um site!" target="_blank">Quero um site</Link>
           </div>
         </div>
 
@@ -178,7 +178,7 @@ export default function Contatos() {
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
               <p id={styles.descriptionAdvertising}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
-            <a id={styles.wantBannerAdvertising} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
+            <a id={styles.wantBannerAdvertising} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em anunciar nos Banners do site de voces!">Quero este Banner</a>
           </div>
         </div>
 

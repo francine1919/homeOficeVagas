@@ -152,7 +152,7 @@ export default function DetalhesVagaInternacionais() {
                 <p className={styles.descriptionBannerTwo}>Aqui a sua empresa será vista por milhares de pessoas POR DIAA!</p>
                 <p className={styles.descriptionBannerTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
               </div>
-              <a id={styles.btnBannerTwo} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
+              <a id={styles.btnBannerTwo} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em anunciar nos Banners do site de voces!">Quero este Banner</a>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function DetalhesVagaInternacionais() {
               <h2 id={styles.titleBannerTree}>Anuncie sua empresa neste Banner!</h2>
               <p id={styles.descriptionBannerTree}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
-            <a id={styles.btnBannerTree} href="mailto:homeofficevagas77@gmail.com">Quero este banner</a>
+            <a id={styles.btnBannerTree} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em anunciar nos Banners do site de voces!">Quero este banner</a>
           </div>
         </div>
       </div>

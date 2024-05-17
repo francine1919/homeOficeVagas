@@ -2,73 +2,58 @@ export default async function artigos(req,res){
     const data = [
         {
             id: 1,
-            titulo: "Senai lança processo seletivo com + de 200 vagas até o dia 28/06.",
-            escritoPor: "Por Maria Aquino, sexta-feira, 9 de agosto de 2023",
+            titulo: "Brasil cria 306,1 mil empregos formais em fevereiro",
+            escritoPor: "Por Luana Zanobia, quarta-feira, 8 de Maio de 2024",
             tags: [
-                "Senai",
-                "Emprego",
-                "Processo Seletivo"
-            ]
+                "Formais",
+                "Inflacao",
+                "Geracao"
+            ],
+            url: "https://veja.abril.com.br/economia/brasil-cria-3061-mil-empregos-formais-em-fevereiro/"
         },
         {
             id: 2,
-            titulo: "Novas descobertas científicas revolucionam a medicina moderna",
-            escritoPor: "Por João Silva, terça-feira, 17 de outubro de 2023",
+            titulo: "Brasil investe na recuperação do fluxo de turistas estrangeiros de 2019",
+            escritoPor: "Por Valéria França, sexta-feira, 17 de maio de 2024",
             tags: [
-                "Ciência",
-                "Medicina",
-                "Descobertas Científicas"
-            ]
+                "Turista",
+                "Internacional",
+                "Economia"
+            ],
+            url: "https://veja.abril.com.br/brasil/brasil-investe-a-recuperacao-do-fluxo-de-turistas-estrangeiros-de-2019/"
         },
         {
             id: 3,
-            titulo: "Startup inovadora lança aplicativo para facilitar o aprendizado de idiomas",
-            escritoPor: "Por Ana Oliveira, quinta-feira, 5 de maio de 2023",
+            titulo: "Agências do trabalhador terminam a semana com 520 vagas de emprego disponíveis",
+            escritoPor: "Por Catarina Loiola, quinta-feira, 16 de maio de 2024",
             tags: [
-                "Startup",
-                "Idiomas",
-                "Tecnologia"
-            ]
+                "PCD",
+                "Remuneração",
+                "Empregador"
+            ],
+            url:"https://www.agenciabrasilia.df.gov.br/2024/05/16/agencias-do-trabalhador-terminam-a-semana-com-520-vagas-de-emprego-disponiveis/"
         },
         {
             id: 4,
-            titulo: "Evento cultural traz artistas renomados à cidade",
-            escritoPor: "Por José Santos, segunda-feira, 20 de fevereiro de 2023",
+            titulo: "Verisure tem mais de 200 chances de emprego para atendimento, vendas e outros setores",
+            escritoPor: "Por Extra, segunda-feira, 17 de Maio de 2024",
             tags: [
-                "Cultura",
-                "Arte",
-                "Evento Cultural"
-            ]
+                "Vagas",
+                "Processo Seletivo",
+                "Oportunidade"
+            ],
+            url: "https://extra.globo.com/economia/emprego/noticia/2024/05/verisure-tem-mais-de-200-chances-de-emprego-para-atendimento-vendas-e-outros-setores.ghtml"
         },
         {
             id: 5,
-            titulo: "Pesquisadores descobrem nova espécie de animal no fundo do oceano",
-            escritoPor: "Por Laura Pereira, domingo, 14 de setembro de 2023",
+            titulo: "DF tem 500 vagas de emprego com salários de até R$ 5 mil nesta sexta",
+            escritoPor: "Por Luciano Arcoverde, domingo, 14 de setembro de 2023",
             tags: [
-                "Biologia Marinha",
-                "Descobertas",
-                "Natureza"
-            ]
-        },
-        {
-            id: 6,
-            titulo: "Economia global enfrenta desafios diante de eventos recentes",
-            escritoPor: "Por Carlos Fernandes, quarta-feira, 8 de junho de 2023",
-            tags: [
-                "Economia",
-                "Global",
-                "Desafios Econômicos"
-            ]
-        },
-        {
-            id: 7,
-            titulo: "Novo filme blockbuster bate recordes de bilheteria no primeiro fim de semana",
-            escritoPor: "Por Amanda Costa, segunda-feira, 3 de abril de 2023",
-            tags: [
-                "Cinema",
-                "Filmes",
-                "Blockbuster"
-            ]
+                "Cargos",
+                "Agencia do Trabalhador",
+                "Taguatinga Norte"
+            ],
+            url: "https://www.metropoles.com/distrito-federal/df-tem-500-vagas-de-emprego-com-salarios-de-ate-r-5-mil-nesta-sexta"
         }
     ];
 
