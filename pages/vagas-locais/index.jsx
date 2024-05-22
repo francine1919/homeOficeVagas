@@ -174,7 +174,7 @@ export default function VagasLocais() {
                   <p className={styles.descriptionTwo}>Aqui a sua empresa será vista por milhares de pessoas POR DIAA!</p>
                   <p className={styles.descriptionTwo}>E aí, gostou da idéia? Clica no botão abaixo e adquira a sua empresa neste Banner mesmo!</p>
                 </div>
-                <a id={styles.btnWantBanner} href="mailto:homeofficevagas77@gmail.com">Quero este Banner</a>
+                <a id={styles.btnWantBanner} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em anunciar nos Banners do site de voces!">Quero este Banner</a>
               </div>
             </div>
           </div>
@@ -214,7 +214,7 @@ export default function VagasLocais() {
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
               <p id={styles.descriptionAdvertising}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
-            <a href="mailto:homeofficevagas77@gmail.com" id={styles.wantBannerTwo}>Quero este banner</a>
+            <a href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em anunciar nos Banners do site de voces!" id={styles.wantBannerTwo}>Quero este banner</a>
           </div>
         </div>
       </div>
