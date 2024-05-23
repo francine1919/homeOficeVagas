@@ -178,7 +178,7 @@ export default function Contatos() {
               <h2 id={styles.titleAdvertising}>Anuncie sua empresa neste Banner!</h2>
               <p id={styles.descriptionAdvertising}>Destaque sua empresa, alcance visibilidade constante. Seja notado por todos os clientes em potencial!</p>
             </div>
-            <a id={styles.wantBannerAdvertising} href="https://api.whatsapp.com/send?phone=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em anunciar nos Banners do site de voces!">Quero este Banner</a>
+            <a id={styles.wantBannerAdvertising} href=" e=5561982434868&text=Olá, vim do site Home Office Vagas e tenho interesse em anunciar nos Banners do site de voces!">Quero este Banner</a>
           </div>
         </div>
 

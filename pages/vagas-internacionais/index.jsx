@@ -11,7 +11,6 @@ import { searchByJobs } from "@/redux/searchJobs/searchJobsSlice";
 import Link from "next/link";
 import Head from "next/head";
 
-
 export default function VagasInternacionais() {
   const [nameJobChoice, setNameJobChoice] = useState();
   const [countryChoice, setCountryChoice] = useState(); 
@@ -64,7 +63,7 @@ export default function VagasInternacionais() {
   async function showJobOrJobFilter(){
     try {
       if(nameJobChoice){
-        const filterNameJobChoose = await jobs.filter((item) => nameJobChoice.toLowerCase() === item.tituloDaVaga.toLowerCase())
+        const filterNameJobChoose = await jobs.filter((item) => item.tituloDaVaga.toLowerCase().includes(nameJobChoice.toLowerCase()))
         setVagasMostradas(filterNameJobChoose)
       }
       if(countryChoice){
@@ -223,6 +222,7 @@ export default function VagasInternacionais() {
           {vagasMostradas ? vagasMostradas.length > 0 ? vagasMostradas.map((card, index) => (
             <div key={card.id} className={styles.card}>
               <div className={styles.boxTitle}>
+                  {/* <h2 className={styles.title}>{card.tituloDaVaga}</h2> */}
                   <h2 className={styles.title}>{card.tituloDaVaga}</h2>
                   <h3 className={styles.remuneration}>{card.salario}/{card.tipoDeTrabalho}</h3>
               </div>

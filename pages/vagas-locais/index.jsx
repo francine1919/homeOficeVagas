@@ -61,7 +61,7 @@ export default function VagasLocais() {
   async function showJobOrJobFilter(){
     try {
       if(nameJobChoice){
-        const filterNameJobChoose = await jobs.filter((item) => nameJobChoice.toLowerCase() === item.tituloDaVaga.toLowerCase())
+        const filterNameJobChoose = await jobs.filter((item) => item.tituloDaVaga.toLowerCase().includes(nameJobChoice.toLowerCase()))
         setVagasMostradas(filterNameJobChoose)
       }
       if(cityChoice){
