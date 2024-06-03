@@ -61,7 +61,7 @@ export default function VagasLocais() {
   async function showJobOrJobFilter(){
     try {
       if(nameJobChoice){
-        const filterNameJobChoose = await jobs.filter((item) => nameJobChoice.toLowerCase() === item.tituloDaVaga.toLowerCase())
+        const filterNameJobChoose = await jobs.filter((item) => item.tituloDaVaga.toLowerCase().includes(nameJobChoice.toLowerCase()))
         setVagasMostradas(filterNameJobChoose)
       }
       if(cityChoice){
@@ -184,8 +184,9 @@ export default function VagasLocais() {
           {vagasMostradas ? vagasMostradas.length > 0 ? vagasMostradas.map((card, index) => (
             <div key={card.id} className={styles.card}>
               <div className={styles.boxTitle}>
-                  <h2 className={styles.title}>{card.tituloDaVaga}</h2>
-                  <h3 className={styles.remuneration}>{card.formaDeRemuneracao}</h3>
+                  {/* <h2 className={styles.title}>{card.tituloDaVaga}</h2> */}
+                  {card.tipoDeTrabalho === "Projeto" || card.tipoDeTrabalho === "projeto" ? <h2 className={styles.tituloDaVagaProjeto}>{card.tituloDaVaga}</h2> : <h2 className={styles.title}>{card.tituloDaVaga}</h2>}
+                  <h3 className={styles.remuneration}>{card.salario}/{card.tipoDeTrabalho}</h3>
               </div>
               <div className={styles.boxDescription}>
                   <p className={styles.descriptionJob}>{card.descricaoDaVaga}</p>

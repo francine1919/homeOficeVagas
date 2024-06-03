@@ -127,7 +127,7 @@ export default function DetalhesVagaInternacionais() {
                 </div> : null}
           </div>
           <div id={styles.boxButtons}>
-            {job[0].email.includes("@") ? <button id={styles.btnShowEmail} onClick={() => abreModal()}>Visualizar email</button> : <Link id={styles.btnSendCurriculum} href={job[0].email}>Enviar Curriculo</Link>}
+            {job[0].email.includes("@") ? <button id={styles.btnShowEmail} onClick={() => abreModal()}>Visualizar email</button> : <Link id={styles.btnSendCurriculum} href={job[0].email} target="_blank">Enviar Curriculo</Link>}
             <Link id={styles.btnSendProblem} href="/contatos">Relatar Problema</Link>
           </div>
         </div>
