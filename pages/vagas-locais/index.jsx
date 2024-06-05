@@ -122,7 +122,6 @@ export default function VagasLocais() {
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
         <meta name="author" content="Equipe Home Office Vagas" />
-        <link rel="canonical" href="https://homeofficevagas.com.br/vagas-locais" />
 
         <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
       </Head>

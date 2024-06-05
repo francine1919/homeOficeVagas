@@ -117,7 +117,6 @@ export default function Home() {
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
         <meta name="author" content="WEBTECH - Soluções em Tecnologia" />
-        <link rel="canonical" href="https://homeofficevagas.com.br/" />
 
         <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
       </Head>

@@ -52,20 +52,19 @@ export default function DetalhesVagasInternacionais(){
     return(
         <div className={`${robotoFlex.className} ${styles.vagaEscolhida}`}>
           <Head>
-            <title>Vagas de Emprego em [cidade] - [Nome da Empresa]</title>
+            <title>{job ? job.length > 0 ? `Vagas de Emprego Internacionais - ${job[0].tituloDaVaga}` : "Vagas de Emprego Internacionais" : "Carregando..."}</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="description" content="Encontre as melhores vagas de emprego em [Localização] na [Nome da Empresa]. Candidate-se hoje mesmo para oportunidades de carreira emocionantes." />
-            <meta property="og:site_name" content="[Nome da Empresa]" />
-            <meta property="og:title" content="Vagas de Emprego em [Localização] - [Nome da Empresa]" />
-            <meta property="og:description" content="Encontre as melhores vagas de emprego em [Localização] na [Nome da Empresa]. Candidate-se hoje mesmo para oportunidades de carreira emocionantes." />
+            <meta name="description" content="Encontre as melhores vagas de emprego Internacionais em nossa página. Candidate-se hoje mesmo para oportunidades de carreira emocionantes." />
+            <meta property="og:site_name" content="Home Office Vagas" />
+            <meta property="og:title" content="Vagas de Emprego Internacionais - Empresa Internacionais ou Brasileira" />
+            <meta property="og:description" content="Encontre as melhores vagas de emprego Internacionais em nossa página. Candidate-se hoje mesmo para oportunidades de carreira emocionantes." />
             <meta property="og:locale" content="pt_BR" />
             <meta property="og:url" content={`https://homeofficevagas.com.br/vagas-locais/${userId}`} />
             <meta property="og:type" content="website" />
-            <meta name="keywords" content="vagas de emprego, [Localização], carreira, [Indústria ou Área de Atuação], [Habilidades ou Competências]" />
+            <meta name="keywords" content={job ? job.length > 0 ? `vagas de emprego, Brasil, carreira, ${job[0].tags.habilidades[0]},${job[0].tags.habilidades[1]},${job[0].tags.habilidades[2]}` : "Vagas de Emprego Internacionais" : "Carregando..."} />
             <meta name="robots" content="index,follow" />
             <meta name="googlebot" content="index,follow" />
-            <meta name="author" content="[Nome da Empresa]" />
-            <link rel="canonical" href={`https://homeofficevagas.com.br/vagas-locais/${userId}`} />
+            <meta name="author" content="Home Office Vagas" />
 
             <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
           </Head>

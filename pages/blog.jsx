@@ -23,7 +23,6 @@ export default function Blog() {
         <meta name="robots" content="noindex,nofollow" />
         <meta name="googlebot" content="noindex,nofollow" />
         <meta name="author" content="Equipe Home Office Vagas" />
-        <link rel="canonical" href="https://homeofficevagas.com.br/blog" />
 
         <meta name="google-adsense-account" content="ca-pub-5330292410910997" />
       </Head>
