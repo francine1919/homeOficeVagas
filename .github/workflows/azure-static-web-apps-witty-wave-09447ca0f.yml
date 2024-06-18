@@ -9,6 +9,12 @@ on:
     branches:
       - main
 
+env:
+  CI: false
+  GOOGLE_USER: "homeofficevagas77@gmail.com"
+  GOOGLE_PASS: "c l j v j q r f r q w p l n h d"
+  NEXT_PUBLIC_VALUE_API: my-secret-endpoint-1@@89
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
